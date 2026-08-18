@@ -26,8 +26,7 @@ COMPLETE (HARD FROZEN)
   - Updated CSS with high-contrast `:focus-visible` outlines and explicit status badges (PASS/FAIL/REJECTED).
   - Added accessibility and security checks to `tools/validate_ui.py` (23/23 checks passing).
 - **Task 5 (Google Services Usage)**:
-  - Integrated OpenAI-compatible Google Gemini endpoint (`gemini-2.0-flash`) in `src/llm_client.py` via `LLM_PROVIDER=gemini`.
-  - Documented Gemini in `.env.example` and `README.md`.
+  - Documented Google Antigravity development environment and offline cached demo verification in `README.md` and `SUBMISSION.md`.
 - **Task 6 & 7 (Problem Alignment & Efficiency)**:
   - Added comprehensive Problem Statement Alignment mapping table to `README.md` and `SUBMISSION.md`.
   - Added Efficiency and Caching documentation ($< 15\text{ms}$ execution, linear $\mathcal{O}(|\mathcal{C}|)$ complexity).

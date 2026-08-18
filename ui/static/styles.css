@@ -343,6 +343,24 @@ select:focus {
   padding: 1.25rem;
 }
 
+.summary-strip {
+  background: var(--bg-card);
+  border-left: 4px solid var(--primary);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-main);
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-strip strong {
+  color: var(--primary);
+  letter-spacing: 0.05em;
+}
+
 pre {
   background: var(--code-bg);
   color: #e2e8f0;
@@ -351,7 +369,9 @@ pre {
   font-family: var(--font-mono);
   font-size: 0.9rem;
   line-height: 1.6;
-  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: hidden;
   border: 1px solid var(--border);
 }
 

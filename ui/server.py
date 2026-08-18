@@ -24,6 +24,7 @@ from src.config import (
 from src.gate import load_or_generate_gate_cache
 from src.infer import infer_interests
 from src.pipeline import run_pipeline_for_reels
+from src.signals import extract_signal
 
 app = FastAPI(title="ScrollSense Demo Server", version="1.0.0")
 
@@ -65,7 +66,7 @@ class RunRequest(BaseModel):
     case: ALLOWED_CASES = Field(default="trap_java_to_swe", description="Named test case or checkpoint")
     extractor: Literal["deterministic", "ai", "hybrid"] = Field(default="hybrid", description="deterministic | ai | hybrid")
     explainer: Literal["deterministic", "ai", "hybrid"] = Field(default="hybrid", description="deterministic | ai | hybrid")
-    llm_provider: Literal["cache", "mock", "gemini", "openai_compatible"] = Field(default="cache", description="cache | mock | gemini | openai_compatible")
+    llm_provider: Literal["cache", "mock", "openai_compatible"] = Field(default="cache", description="cache | mock | openai_compatible")
     run_baselines: bool = Field(default=True, description="Whether to include naive baselines")
 
 
@@ -209,7 +210,7 @@ def api_run(req: RunRequest) -> Dict[str, Any]:
             {
                 "reel_id": r.get("reel_id", ""),
                 "title": r.get("title", ""),
-                "topic": r.get("topic", ""),
+                "topic": r.get("topic") or extract_signal(r).get("topic", ""),
                 "content_type": r.get("content_type", ""),
             }
             for r in watched_items

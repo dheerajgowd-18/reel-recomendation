@@ -6,7 +6,6 @@
 - `requirements-dev.txt` pinning pytest, pytest-cov, and ruff.
 - `pytest.ini` and `ruff.toml` configurations.
 - `SECURITY.md` detailing defense-in-depth architecture, zero-secrets policy, and HTTP security headers.
-- Google Gemini provider alias (`gemini-2.0-flash`) in `src/llm_client.py` via OpenAI-compatible API.
 - Security response headers (`X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Referrer-Policy: no-referrer`) and strict Pydantic HTTP 422 input validation in `ui/server.py`.
 - WCAG AA accessibility improvements: skip-to-content links, `role="alert"`, `aria-live="polite"`, `:focus-visible` styling, and explicit text badges.
 - `SUBMISSION.md` comprehensive hackathon submission briefing.

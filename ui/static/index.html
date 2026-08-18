@@ -15,13 +15,20 @@
     <header class="app-header" role="banner">
       <div class="header-brand">
         <h1>ScrollSense</h1>
-        <span class="header-tagline">Identity-Gated Tech Recommendation Agent</span>
+        <span class="header-tagline">An AI agent that makes scrolling useful — it figures out what a student is really interested in and recommends tech Reels that match.</span>
       </div>
       <div class="header-meta">
         <span class="ai-badge" id="ai-model-badge" aria-label="Active AI Model">AI Model: nvidia/nemotron-3.5-lightning-30b-a3b</span>
         <span class="badge badge-success" id="server-status-badge">STATUS: OFFLINE SAFE</span>
       </div>
     </header>
+
+    <!-- Plain Summary Strip directly under header -->
+    <section class="summary-strip" aria-label="Plain Language Summary">
+      <p>
+        <strong>THE SIMPLE STORY:</strong> A student watches a Java meme, a developer lifestyle vlog, an interview joke, and a laptop review. A basic system says "likes Java → show more Java." ScrollSense says "this person is exploring software engineering as a career" — and recommends content that actually helps, while blocking get-rich-quick hype.
+      </p>
+    </section>
 
     <!-- Error / Safety Banner with role="alert" -->
     <div id="safety-banner" class="banner banner-error hidden" role="alert" aria-live="assertive">
@@ -34,7 +41,7 @@
     <!-- Controls Bar -->
     <section class="controls-card" aria-label="Demo Controls and Configuration">
       <div class="control-group">
-        <label for="case-select">Test Case / Scenario:</label>
+        <label for="case-select">Pick a scenario:</label>
         <select id="case-select" aria-label="Select Test Scenario">
           <option value="trap_java_to_swe" selected>The Trap: Java Meme to SWE (R1-R4)</option>
           <option value="non_trap_gaming_only">Non-Trap: Gaming Only (R5-R7)</option>
@@ -45,7 +52,7 @@
       </div>
 
       <div class="control-group">
-        <label for="extractor-select">Signal Extractor:</label>
+        <label for="extractor-select">How the AI reads Reels:</label>
         <select id="extractor-select" aria-label="Select Signal Extractor Mode">
           <option value="hybrid" selected>Hybrid (Nemotron + Rules)</option>
           <option value="deterministic">Deterministic Only</option>
@@ -54,7 +61,7 @@
       </div>
 
       <div class="control-group">
-        <label for="explainer-select">Explanation Engine:</label>
+        <label for="explainer-select">How explanations are written:</label>
         <select id="explainer-select" aria-label="Select Explanation Engine Mode">
           <option value="hybrid" selected>Hybrid (Nemotron + Rules)</option>
           <option value="deterministic">Deterministic Only</option>
@@ -63,19 +70,18 @@
       </div>
 
       <div class="control-group">
-        <label for="provider-select">LLM Provider:</label>
+        <label for="provider-select">AI mode:</label>
         <select id="provider-select" aria-label="Select LLM Provider Endpoint">
           <option value="cache" selected>Cache (100% Offline Safe)</option>
           <option value="mock">Mock Synthetic</option>
-          <option value="gemini">Gemini 2.0 Flash</option>
           <option value="openai_compatible" id="opt-live-llm">Live NVIDIA API</option>
         </select>
       </div>
 
       <div class="button-group">
-        <button class="btn btn-primary" id="btn-run-full" aria-label="Run Full Pipeline and Baseline Comparison">Run Full Comparison</button>
-        <button class="btn btn-secondary" id="btn-run-scrollsense" aria-label="Run ScrollSense Pipeline Only">Run ScrollSense</button>
-        <button class="btn btn-outline" id="btn-run-baselines" aria-label="Run Naive Baselines Only">Run Baselines Only</button>
+        <button class="btn btn-primary" id="btn-run-full" aria-label="Compare everything">Compare everything</button>
+        <button class="btn btn-secondary" id="btn-run-scrollsense" aria-label="Run ScrollSense">Run ScrollSense</button>
+        <button class="btn btn-outline" id="btn-run-baselines" aria-label="Run basic systems only">Run basic systems only</button>
       </div>
     </section>
 
@@ -91,41 +97,41 @@
       <!-- Panel 1: Watched Session Reels -->
       <section class="panel-card" id="panel-watched" aria-labelledby="heading-watched">
         <div class="panel-header">
-          <h2 id="heading-watched">1. Watched Session Reels</h2>
-          <span class="panel-subtitle">Multi-Reel Context</span>
+          <h2 id="heading-watched">1. What the student watched</h2>
+          <span class="panel-subtitle">Four Reels. One hidden interest.</span>
         </div>
         <div class="panel-body" id="watched-list">
-          <p class="placeholder-text">Click 'Run Full Comparison' to evaluate watched reels...</p>
+          <p class="placeholder-text">Click 'Compare everything' to evaluate watched reels...</p>
         </div>
       </section>
 
       <!-- Panel 2: Naive Baselines (Trap Failure) -->
       <section class="panel-card danger-card" id="panel-baselines" aria-labelledby="heading-baselines">
         <div class="panel-header">
-          <h2 id="heading-baselines">2. Naive Baselines (Trap Failure)</h2>
-          <span class="badge badge-danger">FAIL: OVERFITTING</span>
+          <h2 id="heading-baselines">2. What a basic system would do</h2>
+          <span class="badge badge-danger">WRONG — JUST REPEATS JAVA</span>
         </div>
         <div class="panel-body" id="baselines-content">
-          <p class="placeholder-text">Baselines compare surface matching vs latent inference.</p>
+          <p class="placeholder-text">Simple systems match keywords. They see "Java meme" and recommend more Java.</p>
         </div>
       </section>
 
       <!-- Panel 3: ScrollSense Latent Inference -->
       <section class="panel-card success-card" id="panel-scrollsense" aria-labelledby="heading-scrollsense">
         <div class="panel-header">
-          <h2 id="heading-scrollsense">3. ScrollSense (Trap Escaped)</h2>
-          <span class="badge badge-success">PASS: LATENT MATCH</span>
+          <h2 id="heading-scrollsense">3. What ScrollSense does</h2>
+          <span class="badge badge-success">RIGHT — SEES THE BIGGER PICTURE</span>
         </div>
         <div class="panel-body" id="scrollsense-content">
-          <p class="placeholder-text">ScrollSense results will render here.</p>
+          <p class="placeholder-text">ScrollSense infers the real interest: becoming a software engineer.</p>
         </div>
       </section>
 
       <!-- Panel 4: Identity Graph Activations -->
       <section class="panel-card" id="panel-graph" aria-labelledby="heading-graph">
         <div class="panel-header">
-          <h2 id="heading-graph">4. Identity Graph Traversal</h2>
-          <span class="panel-subtitle">1-Hop Competency Expansion</span>
+          <h2 id="heading-graph">4. How ScrollSense connects the dots</h2>
+          <span class="panel-subtitle">From "Java meme" to "wants a software engineering career" — then picks useful next steps from that map.</span>
         </div>
         <div class="panel-body" id="graph-content">
           <p class="placeholder-text">Activated nodes from identity graph will appear here.</p>
@@ -135,32 +141,32 @@
       <!-- Panel 5: Anti-Hype Gate -->
       <section class="panel-card" id="panel-gate" aria-labelledby="heading-gate">
         <div class="panel-header">
-          <h2 id="heading-gate">5. Anti-Hype Quality Gate</h2>
-          <span class="panel-subtitle">Predatory Clickbait Filter</span>
+          <h2 id="heading-gate">5. Hype & clickbait blocked</h2>
+          <span class="panel-subtitle">Videos promising jobs, shortcuts, or secrets are filtered out before ranking.</span>
         </div>
         <div class="panel-body" id="gate-content">
-          <p class="placeholder-text">Gate decisions and hype rejections will appear here.</p>
+          <p class="placeholder-text">Filtered hype and clickbait candidates will appear here.</p>
         </div>
       </section>
 
       <!-- Panel 6: AI / Nemotron Status -->
       <section class="panel-card" id="panel-ai" aria-labelledby="heading-ai">
         <div class="panel-header">
-          <h2 id="heading-ai">6. AI / Nemotron Layer Status</h2>
+          <h2 id="heading-ai">6. AI status (plain version)</h2>
           <span class="panel-subtitle">Guardrails & Caching</span>
         </div>
         <div class="panel-body" id="ai-status-content">
           <div class="ai-status-item">
-            <strong>Model:</strong> <code>nvidia/nemotron-3.5-lightning-30b-a3b</code>
+            <strong>AI model:</strong> <code>NVIDIA Nemotron (nvidia/nemotron-3.5-lightning-30b-a3b)</code>
           </div>
           <div class="ai-status-item">
-            <strong>Evidence Layer:</strong> <span class="badge badge-info" id="ai-evidence-mode">Cached Nemotron Signals</span>
+            <strong>What the AI does:</strong> <span class="badge badge-info" id="ai-evidence-mode">Reads each Reel & writes structured evidence</span>
           </div>
           <div class="ai-status-item">
-            <strong>Decision Layer:</strong> <span class="badge badge-success">Deterministic Pipeline (Rules)</span>
+            <strong>Who makes the final decision:</strong> <span class="badge badge-success">Safety-rule pipeline, not the AI</span>
           </div>
           <div class="ai-status-item">
-            <strong>Fallback Status:</strong> <span id="ai-fallback-status">No Fallback Needed</span>
+            <strong>Works without internet:</strong> <span id="ai-fallback-status">Yes (pre-checked AI signals)</span>
           </div>
         </div>
       </section>
@@ -169,16 +175,16 @@
     <!-- Panel 7: Final Contract Output Block -->
     <section class="output-panel" aria-labelledby="heading-contract">
       <div class="panel-header">
-        <h2 id="heading-contract">7. Final Required Contract Output Block</h2>
+        <h2 id="heading-contract">7. Final answer (exact required format)</h2>
         <button class="btn btn-small" id="btn-copy-output" aria-label="Copy exact output text block">Copy Text Block</button>
       </div>
-      <pre id="output-block-text" tabindex="0" aria-label="Formatted output block">Click 'Run Full Comparison' to generate standard recommendation output...</pre>
+      <pre id="output-block-text" tabindex="0" aria-label="Formatted output block">Click 'Compare everything' to generate standard recommendation output...</pre>
     </section>
 
     <!-- Panel 8: Trace Telemetry Viewer -->
     <section class="trace-panel" aria-label="Trace Telemetry">
       <details>
-        <summary><strong>8. Telemetry & Execution Trace Viewer (JSON)</strong></summary>
+        <summary><strong>8. Technical trace (for curious judges)</strong></summary>
         <pre id="trace-json-text" tabindex="0" aria-label="Pipeline trace JSON output">{}</pre>
       </details>
     </section>

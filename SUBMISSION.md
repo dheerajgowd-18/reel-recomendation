@@ -75,9 +75,8 @@ ScrollSense operates a 6-stage deterministic pipeline:
 
 ## 5. Google Services Usage
 
-- **Development Environment**: Developed and verified within the **Google Antigravity** agentic IDE.
-- **Google Gemini Provider Support**: Integrated OpenAI-compatible Google Gemini endpoint (`gemini-2.0-flash`) via `LLM_PROVIDER=gemini`.
-- **Default Reliability**: Operates offline by default using local JSON caches.
+- Built end-to-end with Google Antigravity (agentic IDE).
+- The deployed demo runs in cached mode for reproducible, offline-safe evaluation.
 
 ---
 

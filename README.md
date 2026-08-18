@@ -200,9 +200,16 @@ python -m src.run --all-checkpoints --mode real
 
 ## Google Services Usage
 
-- **Development Platform**: Built using the **Google Antigravity** advanced agentic coding environment.
-- **Google Gemini Provider**: Optional Google Gemini integration via OpenAI-compatible endpoints (`gemini-2.0-flash` on `generativelanguage.googleapis.com/v1beta/openai`).
-- **Reliability Guarantee**: Production default mode remains 100% cached and offline for hackathon presentation stability.
+- Built end-to-end with Google Antigravity (agentic IDE).
+- The deployed demo runs in cached mode for reproducible, offline-safe evaluation.
+
+---
+
+## Honest v1 Scope
+
+- Engagement metadata (liked/saved/watched) is captured; strength-weighting by interaction type is future work.
+- The identity/skill graph is hand-authored v1 domain knowledge. The identity is inferred from evidence; the adjacency edges are encoded, not learned.
+- "Engaging" is modeled via content format preference (humor, lifestyle, gameplay), not a live engagement model.
 
 ---
 

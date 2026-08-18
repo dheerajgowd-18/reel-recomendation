@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (b) b.disabled = isLoading;
     });
     if (isLoading) {
-      outputBlockText.textContent = "Executing ScrollSense recommendation engine...";
+      outputBlockText.textContent = "Running ScrollSense recommendation pipeline...";
     }
   }
 
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="reel-item">
             <div><strong>${r.reel_id}</strong>: ${r.title}</div>
             <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">
-              Type: <span class="badge badge-tag">${r.content_type}</span> Topic: <span class="badge badge-tag">${r.topic}</span>
+              Format: <span class="badge badge-tag">${r.content_type || "reel"}</span>${r.topic ? ` | Topic: <span class="badge badge-tag">${r.topic}</span>` : ""}
             </div>
           </div>
         `
@@ -208,8 +208,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 6. AI Status
     if (ss.ai) {
-      aiEvidenceMode.textContent = ss.ai.llm_status === "cached" ? "Cached Nemotron Signals" : (ss.ai.llm_status === "live" ? "Live NVIDIA API" : "Deterministic Fallback");
-      aiFallbackStatus.textContent = ss.ai.fallback_used ? "AI fallback triggered (Rules used)" : "Verified Safe (No Fallback Needed)";
+      aiEvidenceMode.textContent = ss.ai.llm_status === "cached" ? "Reads each Reel & writes structured evidence" : (ss.ai.llm_status === "live" ? "Live NVIDIA API evidence extraction" : "Rule-based signal extractor");
+      aiFallbackStatus.textContent = ss.ai.fallback_used ? "AI fallback triggered (Rules used)" : "Yes (pre-checked AI signals)";
       aiFallbackStatus.style.color = ss.ai.fallback_used ? "var(--warning)" : "var(--success)";
     }
 
