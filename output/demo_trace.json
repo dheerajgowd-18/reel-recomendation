@@ -1,0 +1,599 @@
+{
+  "phase": "phase_7_demo",
+  "generated_at": "2026-08-18T00:00:00Z",
+  "cases": {
+    "trap_after_R1": {
+      "reel_ids": [
+        "R1"
+      ],
+      "watched_reels": [
+        {
+          "reel_id": "R1",
+          "title": "When you miss a semicolon in Java after 4 hours of debugging",
+          "topic": "",
+          "content_type": "meme"
+        }
+      ],
+      "baselines": {
+        "topic_only": {
+          "baseline_name": "topic_only",
+          "case": "trap_after_R1",
+          "reel_ids": [
+            "R1"
+          ],
+          "interest_detected": "Java",
+          "recommended_candidate_id": "T96",
+          "recommended_title": "Learn Java in 60 seconds",
+          "category": "Java",
+          "difficulty": "Beginner",
+          "confidence": "Low",
+          "failure_mode": "Collapses to literal surface topic (Java) from R1 meme instead of inferring software engineering."
+        },
+        "keyword_similarity": {
+          "baseline_name": "keyword_similarity",
+          "case": "trap_after_R1",
+          "reel_ids": [
+            "R1"
+          ],
+          "interest_detected": "Literal keyword match (after, codinghumor, compiler)",
+          "recommended_candidate_id": "T96",
+          "recommended_title": "Learn Java in 60 seconds",
+          "category": "Java",
+          "difficulty": "Beginner",
+          "confidence": "Low",
+          "failure_mode": "Overfits to superficial keyword frequency without latent identity inference."
+        }
+      },
+      "scrollsense": {
+        "output_block": "CURRENT REEL: R1\nINTEREST DETECTED: Programming humor and early technology curiosity\nWHY: Java meme shows programming humor and light interest in coding topics, but does not provide strong evidence of software engineering career intent.\nRECOMMENDED TECH REEL: Beginner programming concepts explained with memes\nCATEGORY: Other\nWHY THIS RECOMMENDATION: Matches the lighthearted programming humor and beginner curiosity from the Java meme without jumping to advanced career topics.\nDIFFICULTY: Beginner\nCONFIDENCE: Low",
+        "interest_detected": "Programming humor and early technology curiosity",
+        "recommended_candidate_id": "T22",
+        "recommended_title": "Beginner programming concepts explained with memes",
+        "category": "Other",
+        "confidence": "Low",
+        "top_identity": "software_engineer",
+        "top_domains": [
+          "java"
+        ],
+        "top_goals": [],
+        "graph_activations": [
+          "software_engineer",
+          "git",
+          "system_design",
+          "debugging",
+          "dsa",
+          "career",
+          "cloud"
+        ],
+        "gate_rejections": [
+          {
+            "candidate_id": "T99",
+            "title": "10 AI tools that will get you a job",
+            "rejection_reason": "Hard denylist match: 'get you a job'"
+          },
+          {
+            "candidate_id": "T100",
+            "title": "Become a software engineer in 30 days",
+            "rejection_reason": "Hard denylist match: 'become a software engineer in'"
+          },
+          {
+            "candidate_id": "T102",
+            "title": "Top 5 coding hacks to get hired fast",
+            "rejection_reason": "Hard denylist match: 'get hired fast'"
+          },
+          {
+            "candidate_id": "T103",
+            "title": "Guaranteed tech job roadmap",
+            "rejection_reason": "Hard denylist match: 'guaranteed_job'"
+          }
+        ],
+        "ranking_summary": {
+          "top_candidate_id": "T22",
+          "top_candidate_title": "Beginner programming concepts explained with memes",
+          "final_score": 0.767,
+          "score_breakdown": {
+            "identity_graph_fit": 1.0,
+            "goal_stage_fit": 1.0,
+            "difficulty_match": 1.0,
+            "career_relevance": 0.5,
+            "quality_score": 0.0,
+            "retrieval_score": 0.457,
+            "novelty": 0.5,
+            "hype_penalty": 0.0,
+            "overgeneralization_penalty": 0.0
+          }
+        }
+      },
+      "trap_defeated": true,
+      "hype_rejected": true
+    },
+    "trap_after_R1_R2": {
+      "reel_ids": [
+        "R1",
+        "R2"
+      ],
+      "watched_reels": [
+        {
+          "reel_id": "R1",
+          "title": "When you miss a semicolon in Java after 4 hours of debugging",
+          "topic": "",
+          "content_type": "meme"
+        },
+        {
+          "reel_id": "R2",
+          "title": "Day in the life of a Junior Software Engineer in Austin",
+          "topic": "",
+          "content_type": "lifestyle"
+        }
+      ],
+      "baselines": {
+        "topic_only": {
+          "baseline_name": "topic_only",
+          "case": "trap_after_R1_R2",
+          "reel_ids": [
+            "R1",
+            "R2"
+          ],
+          "interest_detected": "Java",
+          "recommended_candidate_id": "T96",
+          "recommended_title": "Learn Java in 60 seconds",
+          "category": "Java",
+          "difficulty": "Beginner",
+          "confidence": "Low",
+          "failure_mode": "Collapses to literal surface topic (Java) from R1 meme instead of inferring software engineering."
+        },
+        "keyword_similarity": {
+          "baseline_name": "keyword_similarity",
+          "case": "trap_after_R1_R2",
+          "reel_ids": [
+            "R1",
+            "R2"
+          ],
+          "interest_detected": "Literal keyword match (10am, after, at)",
+          "recommended_candidate_id": "T1",
+          "recommended_title": "How a junior software engineer ships a small feature",
+          "category": "Career",
+          "difficulty": "Beginner",
+          "confidence": "Low",
+          "failure_mode": "Overfits to superficial keyword frequency without latent identity inference."
+        }
+      },
+      "scrollsense": {
+        "output_block": "CURRENT REEL: session: R1, R2\nINTEREST DETECTED: Software technology curiosity and developer lifestyle interest\nWHY: Java meme shows programming humor; software-engineer lifestyle Reel shows emerging role curiosity and daily workflow interest.\nRECOMMENDED TECH REEL: What software engineers actually do all day\nCATEGORY: Career\nWHY THIS RECOMMENDATION: Directly addresses the emerging curiosity about day-to-day software engineering lifestyle and workflows, rather than overfitting to programming syntax.\nDIFFICULTY: Beginner\nCONFIDENCE: Medium",
+        "interest_detected": "Software technology curiosity and developer lifestyle interest",
+        "recommended_candidate_id": "T23",
+        "recommended_title": "What software engineers actually do all day",
+        "category": "Career",
+        "confidence": "Medium",
+        "top_identity": "software_engineer",
+        "top_domains": [
+          "software_engineering",
+          "career",
+          "java"
+        ],
+        "top_goals": [
+          "career_curiosity"
+        ],
+        "graph_activations": [
+          "git",
+          "system_design",
+          "debugging",
+          "dsa",
+          "career",
+          "cloud"
+        ],
+        "gate_rejections": [
+          {
+            "candidate_id": "T99",
+            "title": "10 AI tools that will get you a job",
+            "rejection_reason": "Hard denylist match: 'get you a job'"
+          },
+          {
+            "candidate_id": "T100",
+            "title": "Become a software engineer in 30 days",
+            "rejection_reason": "Hard denylist match: 'become a software engineer in'"
+          },
+          {
+            "candidate_id": "T102",
+            "title": "Top 5 coding hacks to get hired fast",
+            "rejection_reason": "Hard denylist match: 'get hired fast'"
+          },
+          {
+            "candidate_id": "T103",
+            "title": "Guaranteed tech job roadmap",
+            "rejection_reason": "Hard denylist match: 'guaranteed_job'"
+          }
+        ],
+        "ranking_summary": {
+          "top_candidate_id": "T23",
+          "top_candidate_title": "What software engineers actually do all day",
+          "final_score": 0.94,
+          "score_breakdown": {
+            "identity_graph_fit": 1.0,
+            "goal_stage_fit": 1.0,
+            "difficulty_match": 1.0,
+            "career_relevance": 1.0,
+            "quality_score": 0.75,
+            "retrieval_score": 0.814,
+            "novelty": 0.5,
+            "hype_penalty": 0.0,
+            "overgeneralization_penalty": 0.0
+          }
+        }
+      },
+      "trap_defeated": true,
+      "hype_rejected": true
+    },
+    "trap_after_R1_R2_R3": {
+      "reel_ids": [
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "watched_reels": [
+        {
+          "reel_id": "R1",
+          "title": "When you miss a semicolon in Java after 4 hours of debugging",
+          "topic": "",
+          "content_type": "meme"
+        },
+        {
+          "reel_id": "R2",
+          "title": "Day in the life of a Junior Software Engineer in Austin",
+          "topic": "",
+          "content_type": "lifestyle"
+        },
+        {
+          "reel_id": "R3",
+          "title": "Interviewer: Invert a binary tree on this whiteboard right now",
+          "topic": "",
+          "content_type": "humor"
+        }
+      ],
+      "baselines": {
+        "topic_only": {
+          "baseline_name": "topic_only",
+          "case": "trap_after_R1_R2_R3",
+          "reel_ids": [
+            "R1",
+            "R2",
+            "R3"
+          ],
+          "interest_detected": "Java",
+          "recommended_candidate_id": "T96",
+          "recommended_title": "Learn Java in 60 seconds",
+          "category": "Java",
+          "difficulty": "Beginner",
+          "confidence": "Low",
+          "failure_mode": "Collapses to literal surface topic (Java) from R1 meme instead of inferring software engineering."
+        },
+        "keyword_similarity": {
+          "baseline_name": "keyword_similarity",
+          "case": "trap_after_R1_R2_R3",
+          "reel_ids": [
+            "R1",
+            "R2",
+            "R3"
+          ],
+          "interest_detected": "Literal keyword match (10am, after, asked)",
+          "recommended_candidate_id": "T96",
+          "recommended_title": "Learn Java in 60 seconds",
+          "category": "Java",
+          "difficulty": "Beginner",
+          "confidence": "Low",
+          "failure_mode": "Overfits to superficial keyword frequency without latent identity inference."
+        }
+      },
+      "scrollsense": {
+        "output_block": "CURRENT REEL: session: R1, R2, R3\nINTEREST DETECTED: Software engineering culture and early career preparation\nWHY: Java meme shows programming humor; software-engineer lifestyle Reel shows role curiosity; coding interview joke shows career-preparation interest and interview candidate mindset.\nRECOMMENDED TECH REEL: What a coding interview is really testing\nCATEGORY: Career\nWHY THIS RECOMMENDATION: Aligns with the inferred interview candidate stage and career preparation interest, explaining what coding interviews evaluate beyond rote memorization.\nDIFFICULTY: Beginner\nCONFIDENCE: High",
+        "interest_detected": "Software engineering culture and early career preparation",
+        "recommended_candidate_id": "T5",
+        "recommended_title": "What a coding interview is really testing",
+        "category": "Career",
+        "confidence": "High",
+        "top_identity": "software_engineer",
+        "top_domains": [
+          "career",
+          "software_engineering",
+          "java"
+        ],
+        "top_goals": [
+          "career_prep",
+          "career_curiosity"
+        ],
+        "graph_activations": [
+          "git",
+          "system_design",
+          "debugging",
+          "dsa",
+          "career",
+          "cloud"
+        ],
+        "gate_rejections": [
+          {
+            "candidate_id": "T99",
+            "title": "10 AI tools that will get you a job",
+            "rejection_reason": "Hard denylist match: 'get you a job'"
+          },
+          {
+            "candidate_id": "T100",
+            "title": "Become a software engineer in 30 days",
+            "rejection_reason": "Hard denylist match: 'become a software engineer in'"
+          },
+          {
+            "candidate_id": "T102",
+            "title": "Top 5 coding hacks to get hired fast",
+            "rejection_reason": "Hard denylist match: 'get hired fast'"
+          },
+          {
+            "candidate_id": "T103",
+            "title": "Guaranteed tech job roadmap",
+            "rejection_reason": "Hard denylist match: 'guaranteed_job'"
+          }
+        ],
+        "ranking_summary": {
+          "top_candidate_id": "T5",
+          "top_candidate_title": "What a coding interview is really testing",
+          "final_score": 0.98,
+          "score_breakdown": {
+            "identity_graph_fit": 1.0,
+            "goal_stage_fit": 1.0,
+            "difficulty_match": 1.0,
+            "career_relevance": 1.0,
+            "quality_score": 1.0,
+            "retrieval_score": 1.0,
+            "novelty": 0.5,
+            "hype_penalty": 0.0,
+            "overgeneralization_penalty": 0.0
+          }
+        }
+      },
+      "trap_defeated": true,
+      "hype_rejected": true
+    },
+    "trap_java_to_swe": {
+      "reel_ids": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "watched_reels": [
+        {
+          "reel_id": "R1",
+          "title": "When you miss a semicolon in Java after 4 hours of debugging",
+          "topic": "",
+          "content_type": "meme"
+        },
+        {
+          "reel_id": "R2",
+          "title": "Day in the life of a Junior Software Engineer in Austin",
+          "topic": "",
+          "content_type": "lifestyle"
+        },
+        {
+          "reel_id": "R3",
+          "title": "Interviewer: Invert a binary tree on this whiteboard right now",
+          "topic": "",
+          "content_type": "humor"
+        },
+        {
+          "reel_id": "R4",
+          "title": "M3 Pro vs ThinkPad X1 Carbon for CS Undergrads & Devs",
+          "topic": "",
+          "content_type": "comparison"
+        }
+      ],
+      "baselines": {
+        "topic_only": {
+          "baseline_name": "topic_only",
+          "case": "trap_java_to_swe",
+          "reel_ids": [
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ],
+          "interest_detected": "Java",
+          "recommended_candidate_id": "T96",
+          "recommended_title": "Learn Java in 60 seconds",
+          "category": "Java",
+          "difficulty": "Beginner",
+          "confidence": "Low",
+          "failure_mode": "Collapses to literal surface topic (Java) from R1 meme instead of inferring software engineering."
+        },
+        "keyword_similarity": {
+          "baseline_name": "keyword_similarity",
+          "case": "trap_java_to_swe",
+          "reel_ids": [
+            "R1",
+            "R2",
+            "R3",
+            "R4"
+          ],
+          "interest_detected": "Literal keyword match (10am, actually, after)",
+          "recommended_candidate_id": "T96",
+          "recommended_title": "Learn Java in 60 seconds",
+          "category": "Java",
+          "difficulty": "Beginner",
+          "confidence": "Low",
+          "failure_mode": "Overfits to superficial keyword frequency without latent identity inference."
+        }
+      },
+      "scrollsense": {
+        "output_block": "CURRENT REEL: session: R1, R2, R3, R4\nINTEREST DETECTED: Software engineering culture and early career preparation\nWHY: Java meme shows programming humor; software-engineer lifestyle Reel shows role curiosity; coding interview joke shows career-preparation interest; laptop comparison shows interest in developer tooling.\nRECOMMENDED TECH REEL: How a junior software engineer ships a small feature\nCATEGORY: Career\nWHY THIS RECOMMENDATION: It matches the inferred software-engineering identity and career curiosity, rather than overfitting to the Java keyword from the meme.\nDIFFICULTY: Beginner\nCONFIDENCE: High",
+        "interest_detected": "Software engineering culture and early career preparation",
+        "recommended_candidate_id": "T1",
+        "recommended_title": "How a junior software engineer ships a small feature",
+        "category": "Career",
+        "confidence": "High",
+        "top_identity": "software_engineer",
+        "top_domains": [
+          "software_engineering",
+          "career",
+          "java"
+        ],
+        "top_goals": [
+          "career_prep",
+          "career_curiosity"
+        ],
+        "graph_activations": [
+          "git",
+          "system_design",
+          "debugging",
+          "dsa",
+          "career",
+          "cloud",
+          "software_engineer"
+        ],
+        "gate_rejections": [
+          {
+            "candidate_id": "T99",
+            "title": "10 AI tools that will get you a job",
+            "rejection_reason": "Hard denylist match: 'get you a job'"
+          },
+          {
+            "candidate_id": "T100",
+            "title": "Become a software engineer in 30 days",
+            "rejection_reason": "Hard denylist match: 'become a software engineer in'"
+          },
+          {
+            "candidate_id": "T102",
+            "title": "Top 5 coding hacks to get hired fast",
+            "rejection_reason": "Hard denylist match: 'get hired fast'"
+          },
+          {
+            "candidate_id": "T103",
+            "title": "Guaranteed tech job roadmap",
+            "rejection_reason": "Hard denylist match: 'guaranteed_job'"
+          }
+        ],
+        "ranking_summary": {
+          "top_candidate_id": "T1",
+          "top_candidate_title": "How a junior software engineer ships a small feature",
+          "final_score": 0.98,
+          "score_breakdown": {
+            "identity_graph_fit": 1.0,
+            "goal_stage_fit": 1.0,
+            "difficulty_match": 1.0,
+            "career_relevance": 1.0,
+            "quality_score": 1.0,
+            "retrieval_score": 1.0,
+            "novelty": 0.5,
+            "hype_penalty": 0.0,
+            "overgeneralization_penalty": 0.0
+          }
+        }
+      },
+      "trap_defeated": true,
+      "hype_rejected": true
+    },
+    "non_trap_gaming_only": {
+      "reel_ids": [
+        "R5",
+        "R6",
+        "R7"
+      ],
+      "watched_reels": [
+        {
+          "reel_id": "R5",
+          "title": "Insane 1v5 clutch in ranked",
+          "topic": "",
+          "content_type": "gaming"
+        },
+        {
+          "reel_id": "R6",
+          "title": "How game AI predicts your next move",
+          "topic": "",
+          "content_type": "news"
+        },
+        {
+          "reel_id": "R7",
+          "title": "Best gaming laptop specs explained",
+          "topic": "",
+          "content_type": "comparison"
+        }
+      ],
+      "baselines": {
+        "topic_only": {
+          "baseline_name": "topic_only",
+          "case": "non_trap_gaming_only",
+          "reel_ids": [
+            "R5",
+            "R6",
+            "R7"
+          ],
+          "interest_detected": "Gaming",
+          "recommended_candidate_id": "T24",
+          "recommended_title": "How game AI decides enemy behavior",
+          "category": "AI",
+          "difficulty": "Beginner",
+          "confidence": "Low",
+          "failure_mode": "Shallow topic selection without skill graph or quality gating."
+        },
+        "keyword_similarity": {
+          "baseline_name": "keyword_similarity",
+          "case": "non_trap_gaming_only",
+          "reel_ids": [
+            "R5",
+            "R6",
+            "R7"
+          ],
+          "interest_detected": "Literal keyword match (1v5, ai, behavior)",
+          "recommended_candidate_id": "T26",
+          "recommended_title": "Gaming laptop specs that actually matter",
+          "category": "Hardware",
+          "difficulty": "Beginner",
+          "confidence": "Low",
+          "failure_mode": "Naive token overlap without latent interest synthesis or quality gating."
+        }
+      },
+      "scrollsense": {
+        "output_block": "CURRENT REEL: session: R5, R6, R7\nINTEREST DETECTED: Gaming systems, game AI, and gaming hardware curiosity\nWHY: Esports gameplay shows high-level mechanics; game AI Reel shows curiosity about decision-making systems; gaming laptop review shows interest in graphics hardware and thermals.\nRECOMMENDED TECH REEL: How game AI decides enemy behavior\nCATEGORY: AI\nWHY THIS RECOMMENDATION: Explores the algorithmic logic and enemy behaviors underlying gameplay mechanics, connecting gaming excitement to real game intelligence engineering.\nDIFFICULTY: Beginner\nCONFIDENCE: Medium",
+        "interest_detected": "Gaming systems, game AI, and gaming hardware curiosity",
+        "recommended_candidate_id": "T24",
+        "recommended_title": "How game AI decides enemy behavior",
+        "category": "AI",
+        "confidence": "Medium",
+        "top_identity": "",
+        "top_domains": [
+          "gaming",
+          "hardware",
+          "ai"
+        ],
+        "top_goals": [],
+        "graph_activations": [
+          "game_development",
+          "graphics",
+          "game_ai",
+          "game_developer"
+        ],
+        "gate_rejections": [
+          {
+            "candidate_id": "T99",
+            "title": "10 AI tools that will get you a job",
+            "rejection_reason": "Hard denylist match: 'get you a job'"
+          }
+        ],
+        "ranking_summary": {
+          "top_candidate_id": "T24",
+          "top_candidate_title": "How game AI decides enemy behavior",
+          "final_score": 0.907,
+          "score_breakdown": {
+            "identity_graph_fit": 1.0,
+            "goal_stage_fit": 1.0,
+            "difficulty_match": 1.0,
+            "career_relevance": 0.7,
+            "quality_score": 0.75,
+            "retrieval_score": 0.925,
+            "novelty": 0.5,
+            "hype_penalty": 0.0,
+            "overgeneralization_penalty": 0.0
+          }
+        }
+      },
+      "trap_defeated": true,
+      "hype_rejected": true
+    }
+  }
+}

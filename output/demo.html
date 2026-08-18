@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScrollSense - AI Recommendation Agent Demo</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --danger: #f87171;
+      --success: #4ade80;
+      --warning: #fbbf24;
+      --code-bg: #090d16;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header { margin-bottom: 2rem; border-bottom: 1px solid var(--card-border); padding-bottom: 1.5rem; }
+    h1 { font-size: 2rem; color: var(--accent); margin-bottom: 0.5rem; }
+    .subtitle { color: var(--text-muted); font-size: 1.1rem; }
+    .pitch-box {
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin: 1.5rem 0 2.5rem 0;
+      font-size: 1.05rem;
+    }
+    .section-title { font-size: 1.5rem; margin: 2rem 0 1rem 0; color: var(--text); }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-header { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--card-border); }
+    .card-header.danger { color: var(--danger); }
+    .card-header.success { color: var(--success); }
+    .card-header.accent { color: var(--accent); }
+    .reel-item {
+      background: rgba(0,0,0,0.2);
+      padding: 0.75rem;
+      border-radius: 6px;
+      margin-bottom: 0.75rem;
+      border-left: 3px solid var(--accent);
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .badge-meme { background: #475569; color: #fff; }
+    .badge-danger { background: rgba(248, 113, 113, 0.2); color: var(--danger); border: 1px solid var(--danger); }
+    .badge-success { background: rgba(74, 222, 128, 0.2); color: var(--success); border: 1px solid var(--success); }
+    pre {
+      background: var(--code-bg);
+      color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      border: 1px solid var(--card-border);
+      margin-top: 0.5rem;
+    }
+    .highlight { color: var(--accent); font-weight: 600; }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+    .tag { background: #334155; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>ScrollSense: Recommendation Agent Demo</h1>
+      <p class="subtitle">Deterministic signal extraction, identity graph traversal & anti-hype gating.</p>
+    </header>
+
+    <div class="pitch-box">
+      <strong>Core Breakthrough:</strong> This is the trap in the problem statement. A shallow system sees Java and recommends another Java Reel. ScrollSense infers the latent professional identity — software engineering — from heterogeneous signals: a meme, a lifestyle Reel, an interview joke, and a laptop comparison. It then retrieves useful adjacent tech content and explicitly rejects hype like “10 AI tools that will get you a job.”
+    </div>
+
+    <h2 class="section-title">The Trap Demonstration: <code>trap_java_to_swe</code></h2>
+    <div class="grid-3">
+      <!-- Panel 1 -->
+      <div class="card">
+        <div class="card-header accent">Panel 1: Watched Session Reels</div>
+        <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">Heterogeneous student watch sequence:</p>
+
+        <div class="reel-item">
+          <strong>R1</strong>: When you miss a semicolon in Java after 4 hours of debugging<br>
+          <span class="badge badge-meme">meme</span> <span style="font-size: 0.8rem; color: var(--text-muted);">Topic: </span>
+        </div>
+        <div class="reel-item">
+          <strong>R2</strong>: Day in the life of a Junior Software Engineer in Austin<br>
+          <span class="badge badge-meme">lifestyle</span> <span style="font-size: 0.8rem; color: var(--text-muted);">Topic: </span>
+        </div>
+        <div class="reel-item">
+          <strong>R3</strong>: Interviewer: Invert a binary tree on this whiteboard right now<br>
+          <span class="badge badge-meme">humor</span> <span style="font-size: 0.8rem; color: var(--text-muted);">Topic: </span>
+        </div>
+        <div class="reel-item">
+          <strong>R4</strong>: M3 Pro vs ThinkPad X1 Carbon for CS Undergrads & Devs<br>
+          <span class="badge badge-meme">comparison</span> <span style="font-size: 0.8rem; color: var(--text-muted);">Topic: </span>
+        </div>
+      </div>
+
+      <!-- Panel 2 -->
+      <div class="card">
+        <div class="card-header danger">Panel 2: Naive Baselines (Trap Failure)</div>
+        <p style="color: var(--text-muted); margin-bottom: 1rem; font-size: 0.9rem;">Shallow matching fails by overfitting to Java:</p>
+        
+        <div style="margin-bottom: 1.25rem;">
+          <span class="badge badge-danger">Baseline 1 (Topic-Only)</span>
+          <p style="margin-top: 0.5rem;"><strong>Recommends:</strong> Learn Java in 60 seconds (<code>T96</code>)</p>
+          <p style="font-size: 0.85rem; color: var(--danger); margin-top: 0.25rem;"><em>Collapses to literal surface topic (Java) from R1 meme instead of inferring software engineering.</em></p>
+        </div>
+
+        <div>
+          <span class="badge badge-danger">Baseline 2 (Keyword Overlap)</span>
+          <p style="margin-top: 0.5rem;"><strong>Recommends:</strong> Learn Java in 60 seconds (<code>T96</code>)</p>
+          <p style="font-size: 0.85rem; color: var(--danger); margin-top: 0.25rem;"><em>Overfits to superficial keyword frequency without latent identity inference.</em></p>
+        </div>
+      </div>
+
+      <!-- Panel 3 -->
+      <div class="card">
+        <div class="card-header success">Panel 3: ScrollSense (Trap Escaped)</div>
+        <p style="color: var(--text-muted); margin-bottom: 0.5rem; font-size: 0.9rem;">Latent identity inference & graph reasoning:</p>
+        
+        <p><strong>Inferred Identity:</strong> <span class="highlight">software_engineer</span> (High Conf)</p>
+        <p style="margin-top: 0.25rem;"><strong>Graph Activations:</strong></p>
+        <div class="tag-cloud"><span class="tag">git</span><span class="tag">system_design</span><span class="tag">debugging</span><span class="tag">dsa</span><span class="tag">career</span><span class="tag">cloud</span><span class="tag">software_engineer</span>
+        </div>
+
+        <p style="margin-top: 0.75rem;"><strong>Anti-Hype Filtered:</strong></p>
+        <p style="font-size: 0.85rem; color: var(--danger);">Rejected <code>T99</code> (<em>10 AI tools that will get you a job</em>)</p>
+        
+        <p style="margin-top: 0.75rem;"><strong>Output Contract:</strong></p>
+        <pre>CURRENT REEL: session: R1, R2, R3, R4
+INTEREST DETECTED: Software engineering culture and early career preparation
+WHY: Java meme shows programming humor; software-engineer lifestyle Reel shows role curiosity; coding interview joke shows career-preparation interest; laptop comparison shows interest in developer tooling.
+RECOMMENDED TECH REEL: How a junior software engineer ships a small feature
+CATEGORY: Career
+WHY THIS RECOMMENDATION: It matches the inferred software-engineering identity and career curiosity, rather than overfitting to the Java keyword from the meme.
+DIFFICULTY: Beginner
+CONFIDENCE: High</pre>
+      </div>
+    </div>
+    <h2 class="section-title">Domain Boundary Isolation: <code>non_trap_gaming_only</code></h2>
+    <div class="card" style="margin-bottom: 2rem;">
+      <div class="card-header accent">Gaming Non-Trap Execution</div>
+      <p style="color: var(--text-muted); margin-bottom: 0.5rem;">Proves ScrollSense does not falsely project software-engineering identity onto pure gaming sessions:</p>
+      <p><strong>Detected Interest:</strong> <span class="highlight">Gaming systems, game AI, and gaming hardware curiosity</span></p>
+      <p><strong>Recommended:</strong> How game AI decides enemy behavior (<code>T24</code>, Category: AI)</p>
+      <p><strong>SWE Identity Leakage:</strong> <span class="badge badge-success">ZERO (Clean Isolation)</span></p>
+      <pre>CURRENT REEL: session: R5, R6, R7
+INTEREST DETECTED: Gaming systems, game AI, and gaming hardware curiosity
+WHY: Esports gameplay shows high-level mechanics; game AI Reel shows curiosity about decision-making systems; gaming laptop review shows interest in graphics hardware and thermals.
+RECOMMENDED TECH REEL: How game AI decides enemy behavior
+CATEGORY: AI
+WHY THIS RECOMMENDATION: Explores the algorithmic logic and enemy behaviors underlying gameplay mechanics, connecting gaming excitement to real game intelligence engineering.
+DIFFICULTY: Beginner
+CONFIDENCE: Medium</pre>
+    </div>
+  </div>
+</body>
+</html>

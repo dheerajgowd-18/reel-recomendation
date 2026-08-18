@@ -286,6 +286,22 @@
     "score_type": "reference_only"
   },
   {
+    "id": "T96",
+    "title": "Learn Java in 60 seconds",
+    "category": "Java",
+    "concept_tags": [
+      "java",
+      "syntax",
+      "programming",
+      "short_tutorial"
+    ],
+    "difficulty": "Beginner",
+    "quality_score": 0.55,
+    "hype_score": 0.45,
+    "utility_score": 0.45,
+    "score_type": "reference_only"
+  },
+  {
     "id": "T97",
     "title": "10 AI tools worth learning",
     "category": "AI",

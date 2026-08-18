@@ -22,7 +22,7 @@
     "confidence": "High"
   },
   "retrieval_summary": {
-    "retrieved_count": 24,
+    "retrieved_count": 25,
     "top_retrieved": [
       "T1",
       "T3",
@@ -32,7 +32,7 @@
     ]
   },
   "gate_summary": {
-    "passed_count": 20,
+    "passed_count": 21,
     "rejected_count": 4,
     "rejected_ids": [
       "T99",

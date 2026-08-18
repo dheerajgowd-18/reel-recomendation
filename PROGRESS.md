@@ -1,23 +1,20 @@
 # ScrollSense Progress
 
 ## Current Phase
-Phase 6 — Ranking, Explanation, and Exact Output Generation
+Phase 7 — Baselines, Demo Trace, and Final Presentation Harness
 
 ## Phase Status
 COMPLETE
 
 ## Completed
-- Completed Preflight Gate: clean git tree, clean JSON hygiene, zero test regressions across Phases 0 through 5.
-- Enriched stage-fit concept tags in `data/tech_reels.json` for candidates T1, T4, T5, T7, T8, T22, T23, T24, T25, T26.
-- Defined `RANKING_VERSION`, `WEIGHTS_VERSION`, and `HEURISTIC_WEIGHTS_V1` in `src/config.py`.
-- Implemented deterministic ranker in `src/rank.py` computing identity graph fit, goal-stage fit, difficulty match, career relevance, quality, retrieval score, novelty, hype penalty, and overgeneralization penalty.
-- Implemented explainability engine in `src/explain.py` generating deterministic `INTEREST DETECTED`, `WHY`, and `WHY THIS RECOMMENDATION` fields.
-- Implemented pipeline orchestrator in `src/pipeline.py` with `real`, `stub`, and `auto` fallback modes.
-- Updated `src/run.py` CLI supporting `--reels`, `--case`, `--all-checkpoints`, `--mode real|stub|auto`, writing `output/result.txt` and `output/pipeline_trace.json`.
-- Created `tools/validate_pipeline.py` testing 25 pipeline contract assertions without fallback.
-- Created `tests/test_phase6_pipeline.py` expanding test suite to 82 passing unit tests.
-- Verified exact recommendation targets: R1 -> T22, R1+R2 -> T23, R1+R2+R3 -> T5, R1+R2+R3+R4 -> T1, Gaming -> T24.
-- Verified Phase 1 stub mode regression remains completely intact.
+- Completed Preflight Gate: clean git tree, clean JSON hygiene, zero test regressions across Phases 0 through 6.
+- Added naive baseline candidate `T96` ("Learn Java in 60 seconds", category Java) to `data/tech_reels.json`.
+- Implemented `src/baselines.py` with `topic_only` and `keyword_similarity` naive recommenders demonstrating trap failure.
+- Implemented `src/demo.py` orchestrating baseline vs ScrollSense evaluation, generating `output/demo_trace.json`, `output/demo_report.md`, and `output/demo.html`.
+- Formatted judge-facing markdown report containing the mandatory pitch line and 3-panel offline-safe HTML presentation dashboard.
+- Created `tools/validate_demo.py` checking 20 assertions across baselines, ScrollSense trap escape, hype rejection, pitch line presence, and offline safety.
+- Created `tests/test_phase7_baselines.py` and `tests/test_phase7_demo.py`, expanding the unit test suite to 103 passing tests.
+- Verified deterministic offline execution without external CDNs, network calls, or LLM dependencies.
 
 ## In Progress
 - None.
@@ -26,7 +23,7 @@ COMPLETE
 - None.
 
 ## Next Phase
-Phase 7 — Baselines, demo trace, and final presentation harness
+Phase 8 — Hardening, offline demo freeze, and final audit
 
 ## Critical Artifacts
 - data/watched_reels.json
@@ -39,6 +36,9 @@ Phase 7 — Baselines, demo trace, and final presentation harness
 - output/result.txt
 - output/trace.json
 - output/pipeline_trace.json
+- output/demo_trace.json
+- output/demo_report.md
+- output/demo.html
 - output/inference.json
 - output/retrieval.json
 - output/gate.json
@@ -49,6 +49,7 @@ Phase 7 — Baselines, demo trace, and final presentation harness
 - tools/validate_retrieval.py
 - tools/validate_gate.py
 - tools/validate_pipeline.py
+- tools/validate_demo.py
 - src/config.py
 - src/loaders.py
 - src/formatter.py
@@ -62,6 +63,8 @@ Phase 7 — Baselines, demo trace, and final presentation harness
 - src/rank.py
 - src/explain.py
 - src/pipeline.py
+- src/baselines.py
+- src/demo.py
 - src/run.py
 - tests/test_phase1_stub.py
 - tests/test_phase2_signals.py
@@ -69,3 +72,5 @@ Phase 7 — Baselines, demo trace, and final presentation harness
 - tests/test_phase4_retrieval.py
 - tests/test_phase5_gate.py
 - tests/test_phase6_pipeline.py
+- tests/test_phase7_baselines.py
+- tests/test_phase7_demo.py

@@ -1,19 +1,24 @@
 # Changelog
 
+## [0.8.0] - Phase 7 (Baselines, Demo Trace, and Final Presentation Harness)
+### Added
+- `src/baselines.py` implementing naive `topic_only` and `keyword_similarity` recommenders demonstrating trap failure modes.
+- Naive baseline candidate `T96` ("Learn Java in 60 seconds", category Java) in `data/tech_reels.json`.
+- `src/demo.py` demo harness generating `output/demo_trace.json`, `output/demo_report.md`, and `output/demo.html`.
+- Self-contained, offline-safe 3-panel HTML presentation dashboard (`output/demo.html`) without external CSS, JS, or CDN dependencies.
+- `tools/validate_demo.py` validator script with 20 checks validating baselines, ScrollSense trap defeat, hype rejection, and pitch line presence.
+- `tests/test_phase7_baselines.py` and `tests/test_phase7_demo.py` unit test suites (expanding total test suite to 103 unit tests).
+- Updated `README.md` with Phase 7 instructions.
+
 ## [0.7.0] - Phase 6 (Ranking, Explanation, and Exact Output Generation)
 ### Added
 - `src/rank.py` implementing deterministic candidate ranking using heuristic weights (`HEURISTIC_WEIGHTS_V1`), graph fit, goal-stage fit, difficulty alignment, career relevance, and overgeneralization penalties.
 - `src/explain.py` generating deterministic, structured `INTEREST DETECTED`, `WHY`, and `WHY THIS RECOMMENDATION` fields synthesizing multi-reel evidence.
 - `src/pipeline.py` orchestrating end-to-end pipeline execution with `real`, `stub`, and `auto` fallback modes.
 - `output/pipeline_trace.json` recording structured execution trace from inference, retrieval, gating, ranking, and explanation.
-- `tools/validate_pipeline.py` validation script with 25 checks verifying exact output contract compliance, checkpoint targets, and offline execution.
-- `tests/test_phase6_pipeline.py` unit test suite with 18 tests (expanding total suite to 82 tests).
+- `tools/validate_pipeline.py` validation script with 25 checks.
+- `tests/test_phase6_pipeline.py` unit test suite with 18 tests.
 - Updated `src/run.py` CLI supporting `--mode real|stub|auto` and `--all-checkpoints`.
-- Enriched stage-fit tags in `data/tech_reels.json` for candidates T1, T4, T5, T7, T8, T22, T23, T24, T25, T26.
-
-### Changed
-- Configured versioning constants `RANKING_VERSION = "v1"` and `WEIGHTS_VERSION = "HEURISTIC_WEIGHTS_V1"`.
-- Set default execution mode in CLI to `auto` while supporting explicit `real` and `stub` paths.
 
 ## [0.6.0] - Phase 5 (Safety/Quality/Hype Gate)
 ### Added

@@ -19,7 +19,7 @@ CONFIDENCE: [High / Medium / Low]
 ```
 
 ## Running Data & Pipeline Validation
-To validate data contracts, fixtures, signal caches, hygiene, inference, retrieval, gating, and full end-to-end pipeline offline:
+To validate data contracts, fixtures, signal caches, hygiene, inference, retrieval, gating, full pipeline, and demo harness offline:
 ```bash
 python tools/check_json_hygiene.py
 python tools/validate_data.py
@@ -28,6 +28,7 @@ python tools/validate_inference.py
 python tools/validate_retrieval.py
 python tools/validate_gate.py
 python tools/validate_pipeline.py
+python tools/validate_demo.py
 python -m unittest discover -s tests -v
 ```
 
@@ -108,6 +109,16 @@ python -m src.run --all-checkpoints --mode real
 python -m src.run --case trap_java_to_swe --mode stub
 ```
 
+## Phase 7 — Baselines and Demo Harness
+Phase 7 produces deterministic baselines and a judge-facing demo harness. It evaluates naive surface topic-only and token keyword similarity baselines, proves that naive systems fail the trap, and generates structured demo traces, reports, and offline HTML presentation panels. It does not change the core recommendation logic.
+
+### Commands
+```bash
+python -m src.demo --all
+python -m src.demo --case trap_java_to_swe
+python -m src.demo --case non_trap_gaming_only
+```
+
 ## Current Phase Status
-- **Current Phase**: Phase 6 (Ranking, Explanation, and Exact Output Generation)
+- **Current Phase**: Phase 7 (Baselines, Demo Trace, and Final Presentation Harness)
 - **Status**: COMPLETE

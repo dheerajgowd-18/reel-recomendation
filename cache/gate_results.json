@@ -623,6 +623,30 @@
     "rejection_reason": "",
     "generated_at": "2026-08-18T00:00:00Z"
   },
+  "T96": {
+    "candidate_id": "T96",
+    "title": "Learn Java in 60 seconds",
+    "category": "Java",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.0,
+      "depth_score": 0.6
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
   "T97": {
     "candidate_id": "T97",
     "title": "10 AI tools worth learning",
