@@ -122,3 +122,7 @@ def generate_explanations(
         "why": why,
         "why_recommendation": why_rec,
     }
+
+
+generate_explanation_fields = generate_explanations
+

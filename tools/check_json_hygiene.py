@@ -34,7 +34,7 @@ def run_hygiene_check() -> bool:
     json_files: List[Path] = []
     for d in target_dirs:
         if d.is_dir():
-            json_files.extend(sorted(d.glob("*.json")))
+            json_files.extend(sorted(d.rglob("*.json")))
 
     if not json_files:
         print("[FAIL] No JSON files found to inspect.")

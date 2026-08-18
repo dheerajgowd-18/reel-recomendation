@@ -1,0 +1,280 @@
+{
+  "nvidia/nemotron-3.5-lightning-30b-a3b::signal_v1::R1": {
+    "reel_id": "R1",
+    "signal_version": "v1",
+    "ontology_version": "graph-v1",
+    "model_version": "deterministic-rules-v1",
+    "generated_at": "2026-08-18T00:00:00Z",
+    "topic": "Java programming humor and debugging frustration",
+    "format": "meme",
+    "tone": "humorous",
+    "depth": "surface",
+    "concept_tags": [
+      "java",
+      "syntax_errors",
+      "debugging",
+      "programming_humor"
+    ],
+    "interest_evidence": [
+      {
+        "evidence_type": "topic_exposure",
+        "value": "java",
+        "strength": 0.7,
+        "source_hint": "title_and_hashtags_mention_java"
+      },
+      {
+        "evidence_type": "professional_identity_signal",
+        "value": "software_engineer",
+        "strength": 0.35,
+        "source_hint": "programmerlife_hashtag_weak_signal"
+      },
+      {
+        "evidence_type": "content_preference_signal",
+        "value": "programming_humor",
+        "strength": 0.75,
+        "source_hint": "content_type_meme_and_codinghumor"
+      },
+      {
+        "evidence_type": "skill_signal",
+        "value": "debugging",
+        "strength": 0.4,
+        "source_hint": "debugging_keyword_in_title"
+      }
+    ]
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::signal_v1::R2": {
+    "reel_id": "R2",
+    "signal_version": "v1",
+    "ontology_version": "graph-v1",
+    "model_version": "deterministic-rules-v1",
+    "generated_at": "2026-08-18T00:00:00Z",
+    "topic": "Junior software engineer daily lifestyle and workflow",
+    "format": "lifestyle",
+    "tone": "aspirational",
+    "depth": "conceptual",
+    "concept_tags": [
+      "software_engineering",
+      "junior_developer",
+      "day_in_life",
+      "work_culture"
+    ],
+    "interest_evidence": [
+      {
+        "evidence_type": "professional_identity_signal",
+        "value": "software_engineer",
+        "strength": 0.85,
+        "source_hint": "title_and_hashtags_explicit_junior_swe"
+      },
+      {
+        "evidence_type": "domain_signal",
+        "value": "software_engineering",
+        "strength": 0.8,
+        "source_hint": "swe_work_culture_and_pipeline_debugging"
+      },
+      {
+        "evidence_type": "goal_signal",
+        "value": "career_curiosity",
+        "strength": 0.75,
+        "source_hint": "day_in_life_role_exploration"
+      },
+      {
+        "evidence_type": "skill_signal",
+        "value": "code_review",
+        "strength": 0.5,
+        "source_hint": "caption_mentions_code_reviews"
+      }
+    ]
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::signal_v1::R3": {
+    "reel_id": "R3",
+    "signal_version": "v1",
+    "ontology_version": "graph-v1",
+    "model_version": "deterministic-rules-v1",
+    "generated_at": "2026-08-18T00:00:00Z",
+    "topic": "Coding interview whiteboard algorithm expectations",
+    "format": "humor",
+    "tone": "humorous",
+    "depth": "technical",
+    "concept_tags": [
+      "coding_interview",
+      "binary_tree",
+      "leetcode",
+      "dsa"
+    ],
+    "interest_evidence": [
+      {
+        "evidence_type": "career_stage_signal",
+        "value": "candidate",
+        "strength": 0.85,
+        "source_hint": "leetcode_and_jobhunt_hashtags"
+      },
+      {
+        "evidence_type": "professional_identity_signal",
+        "value": "software_engineer",
+        "strength": 0.7,
+        "source_hint": "interview_humor_signals_swe_aspirations"
+      },
+      {
+        "evidence_type": "goal_signal",
+        "value": "career_prep",
+        "strength": 0.8,
+        "source_hint": "interview_preparation_context"
+      },
+      {
+        "evidence_type": "skill_signal",
+        "value": "dsa",
+        "strength": 0.65,
+        "source_hint": "binary_tree_and_dynamic_programming_reference"
+      }
+    ]
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::signal_v1::R4": {
+    "reel_id": "R4",
+    "signal_version": "v1",
+    "ontology_version": "graph-v1",
+    "model_version": "deterministic-rules-v1",
+    "generated_at": "2026-08-18T00:00:00Z",
+    "topic": "Developer workstation laptop comparison for CS students",
+    "format": "comparison",
+    "tone": "comparative",
+    "depth": "conceptual",
+    "concept_tags": [
+      "developer_hardware",
+      "laptop_comparison",
+      "dev_setup",
+      "docker",
+      "intellij"
+    ],
+    "interest_evidence": [
+      {
+        "evidence_type": "tooling_signal",
+        "value": "developer_hardware",
+        "strength": 0.8,
+        "source_hint": "comparison_of_coding_laptops"
+      },
+      {
+        "evidence_type": "professional_identity_signal",
+        "value": "developer",
+        "strength": 0.55,
+        "source_hint": "devsetup_and_cs_devs_target_audience"
+      },
+      {
+        "evidence_type": "domain_signal",
+        "value": "software_engineering",
+        "strength": 0.45,
+        "source_hint": "caption_mentions_docker_and_microservices"
+      },
+      {
+        "evidence_type": "tooling_signal",
+        "value": "ide_tooling",
+        "strength": 0.5,
+        "source_hint": "caption_mentions_intellij"
+      }
+    ]
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::signal_v1::R5": {
+    "reel_id": "R5",
+    "signal_version": "v1",
+    "ontology_version": "graph-v1",
+    "model_version": "deterministic-rules-v1",
+    "generated_at": "2026-08-18T00:00:00Z",
+    "topic": "Competitive esports gameplay clutch moments",
+    "format": "gaming",
+    "tone": "entertainment",
+    "depth": "surface",
+    "concept_tags": [
+      "gaming",
+      "esports",
+      "competitive_gameplay",
+      "fps"
+    ],
+    "interest_evidence": [
+      {
+        "evidence_type": "domain_signal",
+        "value": "gaming",
+        "strength": 0.9,
+        "source_hint": "hashtags_and_title_ranked_esports_gameplay"
+      },
+      {
+        "evidence_type": "content_preference_signal",
+        "value": "gameplay",
+        "strength": 0.75,
+        "source_hint": "high_level_clutch_video_format"
+      }
+    ]
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::signal_v1::R6": {
+    "reel_id": "R6",
+    "signal_version": "v1",
+    "ontology_version": "graph-v1",
+    "model_version": "deterministic-rules-v1",
+    "generated_at": "2026-08-18T00:00:00Z",
+    "topic": "Game AI decision making, pathfinding, and enemy behavior",
+    "format": "news",
+    "tone": "informational",
+    "depth": "conceptual",
+    "concept_tags": [
+      "game_ai",
+      "enemy_behavior",
+      "pathfinding",
+      "game_logic"
+    ],
+    "interest_evidence": [
+      {
+        "evidence_type": "domain_signal",
+        "value": "gaming",
+        "strength": 0.8,
+        "source_hint": "game_ai_mechanics_and_pathfinding"
+      },
+      {
+        "evidence_type": "skill_signal",
+        "value": "game_ai",
+        "strength": 0.85,
+        "source_hint": "enemy_behavior_and_decision_logic"
+      },
+      {
+        "evidence_type": "topic_exposure",
+        "value": "ai",
+        "strength": 0.4,
+        "source_hint": "hashtag_ai_in_gaming_context"
+      }
+    ]
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::signal_v1::R7": {
+    "reel_id": "R7",
+    "signal_version": "v1",
+    "ontology_version": "graph-v1",
+    "model_version": "deterministic-rules-v1",
+    "generated_at": "2026-08-18T00:00:00Z",
+    "topic": "Gaming laptop hardware specifications and thermal benchmarks",
+    "format": "comparison",
+    "tone": "comparative",
+    "depth": "conceptual",
+    "concept_tags": [
+      "gaming_hardware",
+      "gpu_specs",
+      "thermals",
+      "gaming_laptops"
+    ],
+    "interest_evidence": [
+      {
+        "evidence_type": "domain_signal",
+        "value": "gaming",
+        "strength": 0.85,
+        "source_hint": "gaminglaptop_hashtag_and_title"
+      },
+      {
+        "evidence_type": "tooling_signal",
+        "value": "gaming_hardware",
+        "strength": 0.85,
+        "source_hint": "gpu_cpu_refresh_rate_and_thermals"
+      },
+      {
+        "evidence_type": "domain_signal",
+        "value": "hardware",
+        "strength": 0.6,
+        "source_hint": "hardware_specifications_breakdown"
+      }
+    ]
+  }
+}

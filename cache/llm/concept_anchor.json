@@ -1,0 +1,266 @@
+{
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T1": {
+    "candidate_id": "T1",
+    "title": "How a junior software engineer ships a small feature",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T2": {
+    "candidate_id": "T2",
+    "title": "What actually happens after you push code",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T3": {
+    "candidate_id": "T3",
+    "title": "Git basics for your first team project",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T4": {
+    "candidate_id": "T4",
+    "title": "How to read a codebase as a student",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T5": {
+    "candidate_id": "T5",
+    "title": "What a coding interview is really testing",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T6": {
+    "candidate_id": "T6",
+    "title": "Build your first tiny web API",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T7": {
+    "candidate_id": "T7",
+    "title": "Beginner-friendly introduction to system design",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T8": {
+    "candidate_id": "T8",
+    "title": "Debugging basics for new developers",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T9": {
+    "candidate_id": "T9",
+    "title": "Cloud basics for students",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T10": {
+    "candidate_id": "T10",
+    "title": "Career advice for first-year tech students",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T11": {
+    "candidate_id": "T11",
+    "title": "Understanding HashMaps under the hood in Java",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T12": {
+    "candidate_id": "T12",
+    "title": "Java Virtual Machine (JVM) memory model explained visually",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T13": {
+    "candidate_id": "T13",
+    "title": "Two-pointer technique patterns for LeetCode problems",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T14": {
+    "candidate_id": "T14",
+    "title": "Binary search: Avoid off-by-one errors forever",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T15": {
+    "candidate_id": "T15",
+    "title": "SQL indexing explained with a library metaphor",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T16": {
+    "candidate_id": "T16",
+    "title": "How JWT authentication works between client and backend",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T17": {
+    "candidate_id": "T17",
+    "title": "SQL Injection in 60 seconds and how to prevent it",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T18": {
+    "candidate_id": "T18",
+    "title": "How CPU cache hierarchy affects software performance",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T19": {
+    "candidate_id": "T19",
+    "title": "ARM vs x86 architecture explained simply",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T20": {
+    "candidate_id": "T20",
+    "title": "Transformer attention mechanism animated with intuitive math",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T21": {
+    "candidate_id": "T21",
+    "title": "Linux command line survival guide for developers",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T22": {
+    "candidate_id": "T22",
+    "title": "Beginner programming concepts explained with memes",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T23": {
+    "candidate_id": "T23",
+    "title": "What software engineers actually do all day",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T24": {
+    "candidate_id": "T24",
+    "title": "How game AI decides enemy behavior",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T25": {
+    "candidate_id": "T25",
+    "title": "What a game engine actually does",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T26": {
+    "candidate_id": "T26",
+    "title": "Gaming laptop specs that actually matter",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T96": {
+    "candidate_id": "T96",
+    "title": "Learn Java in 60 seconds",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T97": {
+    "candidate_id": "T97",
+    "title": "10 AI tools worth learning",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T99": {
+    "candidate_id": "T99",
+    "title": "10 AI tools that will get you a job",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": false,
+    "reason": "Hard denylist match: 'get you a job'"
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T100": {
+    "candidate_id": "T100",
+    "title": "Become a software engineer in 30 days",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": false,
+    "reason": "Hard denylist match: 'become a software engineer in'"
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T101": {
+    "candidate_id": "T101",
+    "title": "Secret AI tools recruiters don\u2019t want you to know",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": true,
+    "reason": ""
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T102": {
+    "candidate_id": "T102",
+    "title": "Top 5 coding hacks to get hired fast",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": false,
+    "reason": "Hard denylist match: 'get hired fast'"
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::concept_v1::T103": {
+    "candidate_id": "T103",
+    "title": "Guaranteed tech job roadmap",
+    "concept_score": 0.0,
+    "hype_score": 0.0,
+    "passed": false,
+    "reason": "Hard denylist match: 'guaranteed_job'"
+  }
+}

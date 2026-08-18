@@ -443,5 +443,8 @@ def main() -> None:
         sys.exit(1)
 
 
+extract_signal_for_reel = extract_signal
+
+
 if __name__ == "__main__":
     main()

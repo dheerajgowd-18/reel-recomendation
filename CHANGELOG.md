@@ -1,15 +1,22 @@
 # Changelog
 
+## [1.1.0] - Phase 9A-NVIDIA (NVIDIA Nemotron Integration)
+### Added
+- Optional AI layer powered by **NVIDIA Nemotron 3.5 Lightning 30B A3B** (`nvidia/nemotron-3.5-lightning-30b-a3b`).
+- `src/llm_client.py` supporting `mock`, `cache`, and `openai_compatible` endpoints with retry logic and JSON fence stripping.
+- Structured system prompts: `prompts/nemotron_signal_extraction.md` and `prompts/nemotron_explanation.md`.
+- `src/ai_cache.py` managing offline persisted cache files (`cache/llm/signals.json`, `cache/llm/explanations.json`, `cache/llm/concept_anchor.json`).
+- `src/ai_signals.py` and `src/ai_explainer.py` implementing hybrid AI extraction/explanation with strict domain boundary checks and deterministic fallback.
+- AI telemetry logging in `output/pipeline_trace.json`.
+- `tests/test_phase9_nvidia.py` unit test suite (16 tests, expanding total to 119 tests).
+
 ## [1.0.0] - Phase 8 (Hardening, Offline Demo Freeze, and Final Audit)
 ### Added
 - `run_demo.py` master entrypoint for live judge presentations with baseline comparison, trap escape explanation, and HTML dashboard rendering.
 - `tools/final_audit.py` comprehensive audit tool executing all 9 validation and test suites.
-- `reports/FINAL_AUDIT_REPORT.md` audit certificate verifying 103 unit tests, 123+ assertions, and 100% offline compliance.
+- `reports/FINAL_AUDIT_REPORT.md` audit certificate verifying unit tests and 100% offline compliance.
 - `docs/LIVE_DEMO_SCRIPT.md` presentation script and judge talk track.
 - Final polished `README.md` submission document.
-
-### Changed
-- Project finalized, frozen, and verified ready for hackathon evaluation.
 
 ## [0.8.0] - Phase 7 (Baselines, Demo Trace, and Final Presentation Harness)
 ### Added
@@ -22,7 +29,7 @@
 ## [0.7.0] - Phase 6 (Ranking, Explanation, and Exact Output Generation)
 ### Added
 - `src/rank.py` implementing deterministic candidate ranking using heuristic weights (`HEURISTIC_WEIGHTS_V1`), graph fit, goal-stage fit, difficulty alignment, career relevance, and overgeneralization penalties.
-- `src/explain.py` generating deterministic, structured `INTEREST DETECTED`, `WHY`, and `WHY THIS RECOMMENDATION` fields synthesizing multi-reel evidence.
+- `src/explain.py` generating deterministic, structured `INTEREST DETECTED`, `WHY`, and `WHY THIS RECOMMENDATION` fields.
 - `src/pipeline.py` orchestrating end-to-end pipeline execution with `real`, `stub`, and `auto` fallback modes.
 - `output/pipeline_trace.json` recording structured execution trace.
 - `tools/validate_pipeline.py` validation script with 25 checks.

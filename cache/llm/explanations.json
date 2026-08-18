@@ -1,0 +1,57 @@
+{
+  "nvidia/nemotron-3.5-lightning-30b-a3b::explanation_v1::trap_after_R1": {
+    "interest_detected": "Programming humor and early technology curiosity",
+    "why": "Java meme shows programming humor and light interest in coding topics, but does not provide strong evidence of software engineering career intent.",
+    "why_recommendation": "Matches the lighthearted programming humor and beginner curiosity from the Java meme without jumping to advanced career topics."
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::explanation_v1::R1": {
+    "interest_detected": "Programming humor and early technology curiosity",
+    "why": "Java meme shows programming humor and light interest in coding topics, but does not provide strong evidence of software engineering career intent.",
+    "why_recommendation": "Matches the lighthearted programming humor and beginner curiosity from the Java meme without jumping to advanced career topics."
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::explanation_v1::trap_after_R1_R2": {
+    "interest_detected": "Software technology curiosity and developer lifestyle interest",
+    "why": "Java meme shows programming humor; software-engineer lifestyle Reel shows emerging role curiosity and daily workflow interest.",
+    "why_recommendation": "Directly addresses the emerging curiosity about day-to-day software engineering lifestyle and workflows, rather than overfitting to programming syntax."
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::explanation_v1::R1_R2": {
+    "interest_detected": "Software technology curiosity and developer lifestyle interest",
+    "why": "Java meme shows programming humor; software-engineer lifestyle Reel shows emerging role curiosity and daily workflow interest.",
+    "why_recommendation": "Directly addresses the emerging curiosity about day-to-day software engineering lifestyle and workflows, rather than overfitting to programming syntax."
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::explanation_v1::trap_after_R1_R2_R3": {
+    "interest_detected": "Software engineering culture and early career preparation",
+    "why": "Java meme shows programming humor; software-engineer lifestyle Reel shows role curiosity; coding interview joke shows career-preparation interest and interview candidate mindset.",
+    "why_recommendation": "Aligns with the inferred interview candidate stage and career preparation interest, explaining what coding interviews evaluate beyond rote memorization."
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::explanation_v1::R1_R2_R3": {
+    "interest_detected": "Software engineering culture and early career preparation",
+    "why": "Java meme shows programming humor; software-engineer lifestyle Reel shows role curiosity; coding interview joke shows career-preparation interest and interview candidate mindset.",
+    "why_recommendation": "Aligns with the inferred interview candidate stage and career preparation interest, explaining what coding interviews evaluate beyond rote memorization."
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::explanation_v1::trap_after_R1_R2_R3_R4": {
+    "interest_detected": "Software engineering culture and early career preparation",
+    "why": "Java meme shows programming humor; software-engineer lifestyle Reel shows role curiosity; coding interview joke shows career-preparation interest; laptop comparison shows interest in developer tooling.",
+    "why_recommendation": "It matches the inferred software-engineering identity and career curiosity, rather than overfitting to the Java keyword from the meme."
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::explanation_v1::trap_java_to_swe": {
+    "interest_detected": "Software engineering culture and early career preparation",
+    "why": "Java meme shows programming humor; software-engineer lifestyle Reel shows role curiosity; coding interview joke shows career-preparation interest; laptop comparison shows interest in developer tooling.",
+    "why_recommendation": "It matches the inferred software-engineering identity and career curiosity, rather than overfitting to the Java keyword from the meme."
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::explanation_v1::R1_R2_R3_R4": {
+    "interest_detected": "Software engineering culture and early career preparation",
+    "why": "Java meme shows programming humor; software-engineer lifestyle Reel shows role curiosity; coding interview joke shows career-preparation interest; laptop comparison shows interest in developer tooling.",
+    "why_recommendation": "It matches the inferred software-engineering identity and career curiosity, rather than overfitting to the Java keyword from the meme."
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::explanation_v1::non_trap_gaming_only": {
+    "interest_detected": "Gaming systems, game AI, and gaming hardware curiosity",
+    "why": "Esports gameplay shows high-level mechanics; game AI Reel shows curiosity about decision-making systems; gaming laptop review shows interest in graphics hardware and thermals.",
+    "why_recommendation": "Explores the algorithmic logic and enemy behaviors underlying gameplay mechanics, connecting gaming excitement to real game intelligence engineering."
+  },
+  "nvidia/nemotron-3.5-lightning-30b-a3b::explanation_v1::R5_R6_R7": {
+    "interest_detected": "Gaming systems, game AI, and gaming hardware curiosity",
+    "why": "Esports gameplay shows high-level mechanics; game AI Reel shows curiosity about decision-making systems; gaming laptop review shows interest in graphics hardware and thermals.",
+    "why_recommendation": "Explores the algorithmic logic and enemy behaviors underlying gameplay mechanics, connecting gaming excitement to real game intelligence engineering."
+  }
+}

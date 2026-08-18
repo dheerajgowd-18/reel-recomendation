@@ -62,6 +62,14 @@
     "why_source": "signal_evidence",
     "why_recommendation_source": "candidate_match"
   },
+  "ai": {
+    "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "extractor": "hybrid",
+    "explainer": "hybrid",
+    "llm_mode": "cache",
+    "llm_status": "cached",
+    "fallback_used": false
+  },
   "fallback_used": false,
   "generated_at": "2026-08-18T00:00:00Z"
 }

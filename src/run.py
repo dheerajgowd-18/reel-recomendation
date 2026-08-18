@@ -44,6 +44,20 @@ def main() -> None:
         help="Pipeline execution mode (default: auto).",
     )
     parser.add_argument(
+        "--extractor",
+        type=str,
+        choices=["deterministic", "ai", "hybrid"],
+        default="hybrid",
+        help="Signal extraction engine mode (default: hybrid).",
+    )
+    parser.add_argument(
+        "--explainer",
+        type=str,
+        choices=["deterministic", "ai", "hybrid"],
+        default="hybrid",
+        help="Explanation engine mode (default: hybrid).",
+    )
+    parser.add_argument(
         "--out",
         type=str,
         default=str(DEFAULT_RESULT_PATH),
@@ -65,7 +79,9 @@ def main() -> None:
 
     try:
         if args.all_checkpoints:
-            all_res = run_all_checkpoint_pipelines(mode=args.mode)
+            all_res = run_all_checkpoint_pipelines(
+                mode=args.mode, extractor=args.extractor, explainer=args.explainer
+            )
             for k, data in all_res.items():
                 print(f"=== CHECKPOINT: {k} ===")
                 print(data["output_text"])
@@ -74,7 +90,10 @@ def main() -> None:
                 json.dump(all_res, f, indent=2)
         elif args.case:
             formatted_block, trace_dict = run_pipeline_for_case(
-                args.case, mode=args.mode
+                args.case,
+                mode=args.mode,
+                extractor=args.extractor,
+                explainer=args.explainer,
             )
             print(formatted_block)
             with open(out_file, "w", encoding="utf-8") as f:
@@ -84,7 +103,10 @@ def main() -> None:
         elif args.reels:
             reels = [r.strip() for r in args.reels.split(",") if r.strip()]
             formatted_block, trace_dict = run_pipeline_for_reels(
-                reels, mode=args.mode
+                reels,
+                mode=args.mode,
+                extractor=args.extractor,
+                explainer=args.explainer,
             )
             print(formatted_block)
             with open(out_file, "w", encoding="utf-8") as f:

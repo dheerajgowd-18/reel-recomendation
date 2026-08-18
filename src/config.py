@@ -18,6 +18,23 @@ CACHE_DIR = PROJECT_ROOT / "cache"
 SIGNALS_CACHE_PATH = CACHE_DIR / "signals.json"
 GATE_CACHE_PATH = CACHE_DIR / "gate_results.json"
 
+# LLM Cache directory and files
+LLM_CACHE_DIR = CACHE_DIR / "llm"
+LLM_SIGNALS_CACHE_PATH = LLM_CACHE_DIR / "signals.json"
+LLM_EXPLANATIONS_CACHE_PATH = LLM_CACHE_DIR / "explanations.json"
+LLM_CONCEPT_ANCHOR_CACHE_PATH = LLM_CACHE_DIR / "concept_anchor.json"
+
+# LLM Default Configuration (NVIDIA Nemotron 3.5 Lightning 30B A3B)
+import os
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "cache")
+LLM_BASE_URL = os.getenv("LLM_BASE_URL", "https://integrate.api.nvidia.com/v1")
+LLM_MODEL = os.getenv("LLM_MODEL", "nvidia/nemotron-3.5-lightning-30b-a3b")
+LLM_API_KEY = os.getenv("LLM_API_KEY", "")
+LLM_MODE = os.getenv("LLM_MODE", "cache")
+LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.1"))
+LLM_MAX_TOKENS = int(os.getenv("LLM_MAX_TOKENS", "1024"))
+LLM_TIMEOUT_SECONDS = int(os.getenv("LLM_TIMEOUT_SECONDS", "25"))
+
 # Output directory and default files
 OUTPUT_DIR = PROJECT_ROOT / "output"
 DEFAULT_RESULT_PATH = OUTPUT_DIR / "result.txt"

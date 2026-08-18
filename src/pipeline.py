@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -12,7 +13,15 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.config import CASE_MAPPING, CHECKPOINT_MAPPING, DEFAULT_PIPELINE_TRACE_PATH, DEFAULT_RESULT_PATH
+from src.ai_explainer import generate_explanations_hybrid
+from src.config import (
+    CASE_MAPPING,
+    CHECKPOINT_MAPPING,
+    DEFAULT_PIPELINE_TRACE_PATH,
+    DEFAULT_RESULT_PATH,
+    LLM_MODEL,
+    LLM_MODE,
+)
 from src.explain import generate_explanations
 from src.formatter import format_output, validate_output_fields
 from src.gate import gate_retrieval_result
@@ -26,6 +35,8 @@ def run_pipeline_for_reels(
     reel_ids: List[str],
     mode: str = "real",
     case_name: Optional[str] = None,
+    extractor: str = "hybrid",
+    explainer: str = "hybrid",
 ) -> Tuple[str, Dict[str, Any]]:
     """Execute ScrollSense recommendation pipeline for a sequence of watched reels."""
     if not reel_ids:
@@ -59,8 +70,10 @@ def run_pipeline_for_reels(
         ranked_cands = rank_res.get("ranked_candidates", [])
         top_cand = ranked_cands[0] if ranked_cands else passed_cands[0]
 
-        # 5. Generate explanations
-        explanations = generate_explanations(inf_res, top_cand)
+        # 5. Generate explanations (via safe AI layer with deterministic fallback)
+        explanations, expl_fallback, expl_status = generate_explanations_hybrid(
+            inf_res, top_cand, case_name=case_name, explainer_mode=explainer
+        )
 
         # 6. Format exact output fields
         current_reel_label = (
@@ -112,7 +125,15 @@ def run_pipeline_for_reels(
                 "why_source": "signal_evidence",
                 "why_recommendation_source": "candidate_match",
             },
-            "fallback_used": False,
+            "ai": {
+                "model": LLM_MODEL,
+                "extractor": extractor,
+                "explainer": explainer,
+                "llm_mode": os.getenv("LLM_MODE", LLM_MODE),
+                "llm_status": expl_status,
+                "fallback_used": expl_fallback,
+            },
+            "fallback_used": expl_fallback,
             "generated_at": "2026-08-18T00:00:00Z",
         }
 
@@ -132,7 +153,10 @@ def run_pipeline_for_reels(
 
 
 def run_pipeline_for_case(
-    case_name: str, mode: str = "real"
+    case_name: str,
+    mode: str = "real",
+    extractor: str = "hybrid",
+    explainer: str = "hybrid",
 ) -> Tuple[str, Dict[str, Any]]:
     """Execute pipeline for a named regression case."""
     if case_name == "trap_java_to_swe":
@@ -143,10 +167,16 @@ def run_pipeline_for_case(
         raise ValueError(
             f"Unknown case name '{case_name}'. Supported cases: {sorted(CASE_MAPPING.keys())}"
         )
-    return run_pipeline_for_reels(reels, mode=mode, case_name=case_name)
+    return run_pipeline_for_reels(
+        reels, mode=mode, case_name=case_name, extractor=extractor, explainer=explainer
+    )
 
 
-def run_all_checkpoint_pipelines(mode: str = "real") -> Dict[str, Any]:
+def run_all_checkpoint_pipelines(
+    mode: str = "real",
+    extractor: str = "hybrid",
+    explainer: str = "hybrid",
+) -> Dict[str, Any]:
     """Run pipeline across all defined standard benchmarks."""
     checkpoint_suites = {
         "trap_after_R1": ["R1"],
@@ -158,11 +188,13 @@ def run_all_checkpoint_pipelines(mode: str = "real") -> Dict[str, Any]:
     all_results: Dict[str, Any] = {}
     for key, reels in checkpoint_suites.items():
         c_name = "trap_java_to_swe" if key == "trap_after_R1_R2_R3_R4" else (
-            "non_trap_gaming_only" if key == "non_trap_gaming_only" else key
+            "non_trap_gaming_only" if key == "non_trap_gaming_only" else None
         )
-        txt, trace = run_pipeline_for_reels(reels, mode=mode, case_name=c_name)
+        out_txt, trace = run_pipeline_for_reels(
+            reels, mode=mode, case_name=c_name, extractor=extractor, explainer=explainer
+        )
         all_results[key] = {
-            "output_text": txt,
+            "output_text": out_txt,
             "trace": trace,
         }
     return all_results

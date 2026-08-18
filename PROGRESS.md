@@ -1,19 +1,22 @@
 # ScrollSense Progress
 
 ## Current Phase
-Phase 8 — Hardening, Offline Demo Freeze, and Final Audit
+Phase 9A-NVIDIA — Wire NVIDIA Nemotron into ScrollSense
 
 ## Phase Status
-COMPLETE (ALL PHASES 0 THROUGH 8 COMPLETED)
+COMPLETE
 
 ## Completed
 - Completed Preflight Gate: clean git tree, clean JSON hygiene, zero test regressions across all previous phases.
-- Created `run_demo.py` master presentation entrypoint running baseline comparisons, real pipeline execution, anti-hype gate checks, and output generation.
-- Created `tools/final_audit.py` automated runner executing all 9 validation suites and generating `reports/FINAL_AUDIT_REPORT.md`.
-- Created `docs/LIVE_DEMO_SCRIPT.md` judge presentation guide and talk track.
-- Completely polished `README.md` into the final hackathon submission document.
-- Verified 100% offline reproducible execution with 103 passing unit tests and 123+ automated validation checks.
-- Codebase frozen and verified ready for judging.
+- Integrated **NVIDIA Nemotron 3.5 Lightning 30B A3B** (`nvidia/nemotron-3.5-lightning-30b-a3b`) as optional AI-assisted layer.
+- Updated `.env.example` with NVIDIA API parameters while defaulting to safe offline `cache` mode.
+- Created `src/llm_client.py` supporting `mock`, `cache`, and `openai_compatible` providers with auto-retries and timeout controls.
+- Created NVIDIA-specific structured prompts in `prompts/nemotron_signal_extraction.md` and `prompts/nemotron_explanation.md`.
+- Implemented `src/ai_cache.py` and generated pre-validated offline caches in `cache/llm/signals.json`, `cache/llm/explanations.json`, and `cache/llm/concept_anchor.json`.
+- Implemented `src/ai_signals.py` and `src/ai_explainer.py` with multi-tier validation, domain guardrails, and deterministic fallback.
+- Updated `src/pipeline.py` and `src/run.py` to record AI telemetry in pipeline traces and support `--extractor` and `--explainer` flags.
+- Created `tests/test_phase9_nvidia.py` containing 16 test cases verifying offline operation, mock responses, schema validation, gaming guardrails, and recommendation integrity.
+- Verified 119 unit tests passing and all 9 validation/audit suites passing.
 
 ## In Progress
 - None.
@@ -22,7 +25,7 @@ COMPLETE (ALL PHASES 0 THROUGH 8 COMPLETED)
 - None.
 
 ## Next Phase
-None — Project Complete & Ready for Final Submission.
+Ready for submission or subsequent optimization phases.
 
 ## Critical Artifacts
 - run_demo.py
@@ -30,53 +33,17 @@ None — Project Complete & Ready for Final Submission.
 - PROGRESS.md
 - CHANGELOG.md
 - docs/LIVE_DEMO_SCRIPT.md
+- prompts/nemotron_signal_extraction.md
+- prompts/nemotron_explanation.md
+- cache/llm/signals.json
+- cache/llm/explanations.json
+- cache/llm/concept_anchor.json
 - reports/FINAL_AUDIT_REPORT.md
-- data/watched_reels.json
-- data/tech_reels.json
-- data/identity_graph.json
-- data/trap_regression.json
-- data/expected_outputs.json
-- cache/signals.json
-- cache/gate_results.json
-- output/result.txt
-- output/trace.json
-- output/pipeline_trace.json
-- output/demo_trace.json
-- output/demo_report.md
-- output/demo.html
-- output/inference.json
-- output/retrieval.json
-- output/gate.json
-- tools/check_json_hygiene.py
-- tools/validate_data.py
-- tools/validate_signals.py
-- tools/validate_inference.py
-- tools/validate_retrieval.py
-- tools/validate_gate.py
-- tools/validate_pipeline.py
-- tools/validate_demo.py
-- tools/final_audit.py
-- src/config.py
-- src/loaders.py
-- src/formatter.py
-- src/stub_pipeline.py
-- src/signals.py
-- src/persona.py
-- src/graph.py
-- src/infer.py
-- src/retrieve.py
-- src/gate.py
-- src/rank.py
-- src/explain.py
+- reports/PHASE_9A_NVIDIA_REPORT.md
+- src/llm_client.py
+- src/ai_cache.py
+- src/ai_signals.py
+- src/ai_explainer.py
 - src/pipeline.py
-- src/baselines.py
-- src/demo.py
 - src/run.py
-- tests/test_phase1_stub.py
-- tests/test_phase2_signals.py
-- tests/test_phase3_inference.py
-- tests/test_phase4_retrieval.py
-- tests/test_phase5_gate.py
-- tests/test_phase6_pipeline.py
-- tests/test_phase7_baselines.py
-- tests/test_phase7_demo.py
+- tests/test_phase9_nvidia.py

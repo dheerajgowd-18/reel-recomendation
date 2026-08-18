@@ -53,7 +53,27 @@ Watched Reels Sequence (R1, R2, R3, R4)
                  ▼
  6. Explanation & Output Formatting (src/explain.py & src/formatter.py)
     └─ Exact contract generation with explainable WHY & WHY THIS RECOMMENDATION
+---
+
+## AI Model
+
+ScrollSense uses **NVIDIA Nemotron 3.5 Lightning 30B A3B** as an optional AI-assisted layer.
+
+```text
+LLM_MODEL=nvidia/nemotron-3.5-lightning-30b-a3b
 ```
+
+The model is utilized strictly for:
+- **Reel signal extraction** (synthesizing rich domain, tooling, and career cues into structured schema)
+- **Explanation refinement** (generating fluent multi-evidence rationales)
+- **Optional concept-anchor judgment** (evaluating technical substance in retrieved candidates)
+
+### AI Safety & Guardrails
+- **The model is NEVER allowed to directly choose the final recommendation.**
+- **The model is NEVER allowed to modify CATEGORY, DIFFICULTY, or CONFIDENCE.**
+- All AI outputs are schema-validated against strict contract rules.
+- Invalid, corrupted, or overgeneralized LLM outputs automatically trigger deterministic fallbacks (`fallback_used = True`).
+- All demo and regression modes operate 100% offline via persisted LLM cache fixtures (`cache/llm/`).
 
 ---
 
