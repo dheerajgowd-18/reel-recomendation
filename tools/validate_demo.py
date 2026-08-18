@@ -5,14 +5,19 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Set
 
 # Ensure project root is in sys.path when script is run directly
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.demo import DEMO_HTML_PATH, DEMO_REPORT_PATH, DEMO_TRACE_PATH, PITCH_LINE, run_demo
+from src.demo import (
+    DEMO_HTML_PATH,
+    DEMO_REPORT_PATH,
+    DEMO_TRACE_PATH,
+    PITCH_LINE,
+    run_demo,
+)
 
 
 def run_checks() -> bool:

@@ -1,7 +1,6 @@
 """Unit tests for ScrollSense Phase 6 pipeline, ranking, and exact output generation."""
 
 import unittest
-from pathlib import Path
 
 from src.formatter import validate_output_fields
 from src.pipeline import run_pipeline_for_case, run_pipeline_for_reels

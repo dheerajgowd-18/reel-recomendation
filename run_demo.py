@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import json
 import sys
 from pathlib import Path
 
@@ -38,11 +37,11 @@ def main() -> None:
     b1_res = run_topic_only_baseline(reels, case_name="trap_java_to_swe")
     b2_res = run_keyword_similarity_baseline(reels, case_name="trap_java_to_swe")
 
-    print(f"      - Baseline 1 (Surface Topic-Only):")
+    print("      - Baseline 1 (Surface Topic-Only):")
     print(f"        Recommended: [{b1_res['recommended_candidate_id']}] {b1_res['recommended_title']} (Category: {b1_res['category']})")
     print(f"        Status:      TRAP FAILURE ({b1_res['failure_mode']})")
 
-    print(f"      - Baseline 2 (Keyword Overlap):")
+    print("      - Baseline 2 (Keyword Overlap):")
     print(f"        Recommended: [{b2_res['recommended_candidate_id']}] {b2_res['recommended_title']} (Category: {b2_res['category']})")
     print(f"        Status:      TRAP FAILURE ({b2_res['failure_mode']})\n")
 
@@ -58,7 +57,7 @@ def main() -> None:
     print(f"      - Inferred Identity:    {top_id} (Confidence: {conf})")
     print(f"      - Selected Winner:      [{top_cand_id}] {top_title}")
     print(f"      - Ranking Score:        {top_score:.3f} (Ranked #1 across passed catalog)")
-    print(f"      - Status:               TRAP DEFEATED (Escaped keyword overfitting)\n")
+    print("      - Status:               TRAP DEFEATED (Escaped keyword overfitting)\n")
 
     # Step 5: Anti-Hype Gate Demonstration
     print("[4/5] Anti-Hype Quality Gate Filter Check...")

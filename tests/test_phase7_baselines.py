@@ -1,11 +1,8 @@
 """Unit tests for ScrollSense Phase 7 naive baselines."""
 
 import unittest
-from pathlib import Path
 
 from src.baselines import (
-    run_all_baselines_for_case,
-    run_all_baselines_for_reels,
     run_keyword_similarity_baseline,
     run_topic_only_baseline,
 )

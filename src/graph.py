@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any, Dict, List, Set, Tuple
+from typing import Any, Dict, List, Set
 
 from src.loaders import load_identity_graph
 

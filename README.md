@@ -198,6 +198,54 @@ python -m src.run --all-checkpoints --mode real
 
 ---
 
+## Google Services Usage
+
+- **Development Platform**: Built using the **Google Antigravity** advanced agentic coding environment.
+- **Google Gemini Provider**: Optional Google Gemini integration via OpenAI-compatible endpoints (`gemini-2.0-flash` on `generativelanguage.googleapis.com/v1beta/openai`).
+- **Reliability Guarantee**: Production default mode remains 100% cached and offline for hackathon presentation stability.
+
+---
+
+## Problem Statement Alignment
+
+| Problem Statement Requirement | Architecture Component | Verification & Evidence |
+|---|---|---|
+| *"Analyzes the Reels a student interacts with"* | `src/signals.py` structured multi-signal evidence extractor | `tools/validate_signals.py` (18 checks), `tests/test_phase2_signals.py` |
+| *"Infers their underlying interests"* | `src/persona.py` InterestState synthesizer + `src/graph.py` 1-hop traversal | `tools/validate_inference.py` (14 checks), `tests/test_phase3_inference.py` |
+| *"Recommends engaging technology-related Reels"* | `src/retrieve.py` dual-source retriever + `src/rank.py` stage-fit ranker | `tools/validate_retrieval.py`, `tools/validate_pipeline.py` |
+| *"Not rely on simple keyword matching"* | Latent identity-adjacent graph activation vs. failing naive baselines | `src/baselines.py`, `tests/test_phase7_baselines.py` |
+| *"Not to stop social media use"* | Non-intrusive recommendation-only agent (no blocking or detox gates) | Pure feed-enrichment design architecture |
+| *"Avoid blindly recommending hype content"* | `src/gate.py` hard predatory denylist + concrete concept-anchor substance floor | `tools/validate_gate.py`, `T99` rejection tests |
+| *"Required output contract schema"* | `src/formatter.py` strict 8-line schema validator | `tests/test_contract_pytest.py`, `tests/test_phase6_pipeline.py` |
+
+---
+
+## Efficiency and Caching
+
+- **ReelSignal Cache**: Pre-extracted signals indexed by `reel_id` (`cache/signals.json`), eliminating repetitive parsing.
+- **Live Gate Cache**: Substance evaluations and concept-anchor scores cached per candidate (`cache/gate_results.json`).
+- **LLM Evidence Cache**: Pre-validated prompt responses cached by model and version (`cache/llm/`).
+- **Linear Complexity**: Single-pass candidate retrieval and ranking runs in $\mathcal{O}(|\mathcal{C}|)$ time, taking $< 15\text{ms}$ per request.
+- **Offline Integrity**: 100% local standard library execution without network dependencies.
+
+---
+
+## Testing & Code Quality
+
+```bash
+# Run unit and regression tests with Pytest
+pip install -r requirements-dev.txt
+python -m pytest -q
+
+# Run coverage analysis
+python -m pytest --cov=src --cov-report=term-missing
+
+# Run code linter
+ruff check .
+```
+
+---
+
 ## Standard Contract Output Format
 All generated recommendations strictly adhere to the standard contract schema:
 ```text

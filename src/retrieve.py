@@ -6,7 +6,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set, Tuple
+from typing import Any, Dict, List, Optional
 
 # Ensure project root in sys.path when script is run directly
 PROJECT_ROOT = Path(__file__).resolve().parent.parent

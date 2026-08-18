@@ -1,16 +1,12 @@
 """Unit tests for ScrollSense Phase 2 signal extraction module."""
 
 import unittest
-from pathlib import Path
 
-from src.config import SIGNALS_CACHE_PATH
 from src.loaders import load_watched_reels
 from src.signals import (
     extract_signal,
     generate_signals,
-    load_or_generate_signal,
     load_signal_cache,
-    save_signal_cache,
     validate_reel_signal,
 )
 

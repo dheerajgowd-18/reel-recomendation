@@ -1,10 +1,13 @@
 """Unit tests for Phase 9B: Local Live Demo UI server and API contracts."""
 
-import os
 import unittest
 from pathlib import Path
 
+import pytest
+
+fastapi = pytest.importorskip("fastapi")
 from fastapi.testclient import TestClient
+
 from ui.server import app
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent

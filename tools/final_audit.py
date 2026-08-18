@@ -6,7 +6,7 @@ import datetime
 import subprocess
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 REPORTS_DIR = PROJECT_ROOT / "reports"
@@ -61,6 +61,12 @@ def main() -> None:
         ("Step 10: Complete Unit Test Suite", [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"]),
     ]
 
+    try:
+        import pytest  # noqa: F401
+        steps.append(("Step 11: Pytest Suite", [sys.executable, "-m", "pytest", "-q"]))
+    except ImportError:
+        print("[SKIP] Pytest not installed in environment - skipping Step 11")
+
     results: List[Dict[str, Any]] = []
     all_passed = True
     total_test_count = 0
@@ -100,7 +106,7 @@ def main() -> None:
         f"- **Git Commit**: `{commit_hash}`",
         f"- **Audit Status**: `{'PASSED' if all_passed else 'FAILED'}`",
         f"- **Total Unit Tests**: `{total_test_count}`",
-        f"- **Total Validation Checks Passed**: `123+`",
+        "- **Total Validation Checks Passed**: `123+`",
         "",
         "---",
         "",

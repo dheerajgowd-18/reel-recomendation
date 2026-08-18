@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 import os
 import sys
 from pathlib import Path
@@ -15,14 +14,9 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from src.ai_explainer import generate_explanations_hybrid
 from src.config import (
-    CASE_MAPPING,
-    CHECKPOINT_MAPPING,
-    DEFAULT_PIPELINE_TRACE_PATH,
-    DEFAULT_RESULT_PATH,
-    LLM_MODEL,
     LLM_MODE,
+    LLM_MODEL,
 )
-from src.explain import generate_explanations
 from src.formatter import format_output, validate_output_fields
 from src.gate import gate_retrieval_result
 from src.infer import infer_interests
@@ -158,14 +152,20 @@ def run_pipeline_for_case(
     extractor: str = "hybrid",
     explainer: str = "hybrid",
 ) -> Tuple[str, Dict[str, Any]]:
-    """Execute pipeline for a named regression case."""
-    if case_name == "trap_java_to_swe":
-        reels = ["R1", "R2", "R3", "R4"]
-    elif case_name == "non_trap_gaming_only":
-        reels = ["R5", "R6", "R7"]
+    """Execute pipeline for a named regression case or checkpoint."""
+    all_cases = {
+        "trap_java_to_swe": ["R1", "R2", "R3", "R4"],
+        "non_trap_gaming_only": ["R5", "R6", "R7"],
+        "trap_after_R1": ["R1"],
+        "trap_after_R1_R2": ["R1", "R2"],
+        "trap_after_R1_R2_R3": ["R1", "R2", "R3"],
+        "trap_after_R1_R2_R3_R4": ["R1", "R2", "R3", "R4"],
+    }
+    if case_name in all_cases:
+        reels = all_cases[case_name]
     else:
         raise ValueError(
-            f"Unknown case name '{case_name}'. Supported cases: {sorted(CASE_MAPPING.keys())}"
+            f"Unknown case name '{case_name}'. Supported cases: {sorted(all_cases.keys())}"
         )
     return run_pipeline_for_reels(
         reels, mode=mode, case_name=case_name, extractor=extractor, explainer=explainer

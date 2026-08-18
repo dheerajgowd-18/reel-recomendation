@@ -1,14 +1,11 @@
 """Unit tests for ScrollSense Phase 7 demo harness, baselines, and reports."""
 
 import unittest
-from pathlib import Path
 
 from src.demo import (
     DEMO_HTML_PATH,
     DEMO_REPORT_PATH,
-    DEMO_TRACE_PATH,
     PITCH_LINE,
-    build_demo_case_data,
     run_demo,
 )
 

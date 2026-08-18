@@ -1,8 +1,8 @@
-"""Validation script for ScrollSense Phase 9B UI server, static assets, and API contracts."""
+"""Validation script for ScrollSense Phase 9B/9C UI server, static assets, accessibility, and security contracts."""
 
 from __future__ import annotations
 
-import json
+import re
 import sys
 from pathlib import Path
 
@@ -12,6 +12,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from fastapi.testclient import TestClient
+
 from ui.server import app
 
 DEMO_TRACE_FILE = PROJECT_ROOT / "output" / "demo_trace.json"
@@ -19,7 +20,7 @@ DEMO_TRACE_FILE = PROJECT_ROOT / "output" / "demo_trace.json"
 
 def run_ui_checks() -> bool:
     checks_passed = 0
-    checks_total = 14
+    checks_total = 23
     all_success = True
 
     def report(num: int, name: str, success: bool, detail: str = ""):
@@ -95,6 +96,48 @@ def run_ui_checks() -> bool:
     rejs = t_data.get("scrollsense", {}).get("gate_rejections", [])
     has_t99 = any(r.get("candidate_id") == "T99" for r in rejs)
     report(14, "T99 rejection appears in final trap API response", has_t99, f"T99 Rejected: {has_t99}")
+
+    # Check 15: Security headers present in responses
+    headers_ok = (
+        resp_root.headers.get("x-content-type-options") == "nosniff"
+        and resp_root.headers.get("x-frame-options") == "DENY"
+        and resp_root.headers.get("referrer-policy") == "no-referrer"
+    )
+    report(15, "Security headers present in responses", headers_ok, "nosniff, DENY, no-referrer")
+
+    # Check 16: Invalid case returns 422
+    resp_bad_case = client.post("/api/run", json={"case": "invalid_hacked_case"})
+    report(16, "Invalid case name rejected with 422", resp_bad_case.status_code == 422, f"Status: {resp_bad_case.status_code}")
+
+    # Check 17: Invalid extractor returns 422
+    resp_bad_ext = client.post("/api/run", json={"case": "trap_java_to_swe", "extractor": "malicious_eval"})
+    report(17, "Invalid extractor rejected with 422", resp_bad_ext.status_code == 422, f"Status: {resp_bad_ext.status_code}")
+
+    # Check 18: index.html contains lang="en"
+    has_lang = 'lang="en"' in html_text
+    report(18, "index.html declares lang='en'", has_lang, "Accessibility language attribute")
+
+    # Check 19: index.html contains semantic <main> landmark
+    has_main = "<main" in html_text
+    report(19, "index.html contains semantic <main> landmark", has_main, "Semantic HTML landmark")
+
+    # Check 20: index.html contains aria-live
+    has_aria_live = "aria-live" in html_text
+    report(20, "index.html contains aria-live region", has_aria_live, "Screen reader dynamic updates")
+
+    # Check 21: index.html contains role="alert"
+    has_alert = 'role="alert"' in html_text
+    report(21, "index.html error banner has role='alert'", has_alert, "Accessible error notification")
+
+    # Check 22: index.html contains keyboard skip link
+    has_skip = "skip-link" in html_text
+    report(22, "index.html contains keyboard skip-to-content link", has_skip, "Keyboard navigation accessibility")
+
+    # Check 23: All <select> elements have associated <label>
+    select_ids = re.findall(r'<select[^>]*id="([^"]+)"', html_text)
+    labels_for = re.findall(r'<label[^>]*for="([^"]+)"', html_text)
+    all_labeled = bool(select_ids) and all(s_id in labels_for for s_id in select_ids)
+    report(23, "All <select> elements have associated <label>", all_labeled, f"Validated select IDs: {select_ids}")
 
     print("\n" + "=" * 50)
     print(f"UI Validation Summary: {checks_passed}/{checks_total} checks passed.")

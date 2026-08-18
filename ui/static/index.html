@@ -7,32 +7,35 @@
   <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
+  <!-- Skip to content link for keyboard accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <div class="app-layout">
-    <!-- Header -->
-    <header class="app-header">
+    <!-- Header Landmark -->
+    <header class="app-header" role="banner">
       <div class="header-brand">
         <h1>ScrollSense</h1>
         <span class="header-tagline">Identity-Gated Tech Recommendation Agent</span>
       </div>
       <div class="header-meta">
-        <span class="ai-badge" id="ai-model-badge">AI Model: nvidia/nemotron-3.5-lightning-30b-a3b</span>
-        <span class="badge badge-success" id="server-status-badge">Offline Safe</span>
+        <span class="ai-badge" id="ai-model-badge" aria-label="Active AI Model">AI Model: nvidia/nemotron-3.5-lightning-30b-a3b</span>
+        <span class="badge badge-success" id="server-status-badge">STATUS: OFFLINE SAFE</span>
       </div>
     </header>
 
-    <!-- Error / Safety Banner -->
-    <div id="safety-banner" class="banner banner-error hidden">
+    <!-- Error / Safety Banner with role="alert" -->
+    <div id="safety-banner" class="banner banner-error hidden" role="alert" aria-live="assertive">
       <div class="banner-content">
         <strong>⚠️ Execution Notice:</strong> <span id="banner-message">Pipeline notice</span>
       </div>
-      <button class="btn btn-warning" id="btn-load-cached">Load Cached Demo</button>
+      <button class="btn btn-warning" id="btn-load-cached" aria-label="Load Cached Demo Data">Load Cached Demo</button>
     </div>
 
     <!-- Controls Bar -->
-    <section class="controls-card">
+    <section class="controls-card" aria-label="Demo Controls and Configuration">
       <div class="control-group">
         <label for="case-select">Test Case / Scenario:</label>
-        <select id="case-select">
+        <select id="case-select" aria-label="Select Test Scenario">
           <option value="trap_java_to_swe" selected>The Trap: Java Meme to SWE (R1-R4)</option>
           <option value="non_trap_gaming_only">Non-Trap: Gaming Only (R5-R7)</option>
           <option value="trap_after_R1">Checkpoint: After R1 (1 Meme)</option>
@@ -43,7 +46,7 @@
 
       <div class="control-group">
         <label for="extractor-select">Signal Extractor:</label>
-        <select id="extractor-select">
+        <select id="extractor-select" aria-label="Select Signal Extractor Mode">
           <option value="hybrid" selected>Hybrid (Nemotron + Rules)</option>
           <option value="deterministic">Deterministic Only</option>
           <option value="ai">AI Only</option>
@@ -52,7 +55,7 @@
 
       <div class="control-group">
         <label for="explainer-select">Explanation Engine:</label>
-        <select id="explainer-select">
+        <select id="explainer-select" aria-label="Select Explanation Engine Mode">
           <option value="hybrid" selected>Hybrid (Nemotron + Rules)</option>
           <option value="deterministic">Deterministic Only</option>
           <option value="ai">AI Only</option>
@@ -61,33 +64,34 @@
 
       <div class="control-group">
         <label for="provider-select">LLM Provider:</label>
-        <select id="provider-select">
+        <select id="provider-select" aria-label="Select LLM Provider Endpoint">
           <option value="cache" selected>Cache (100% Offline Safe)</option>
           <option value="mock">Mock Synthetic</option>
+          <option value="gemini">Gemini 2.0 Flash</option>
           <option value="openai_compatible" id="opt-live-llm">Live NVIDIA API</option>
         </select>
       </div>
 
       <div class="button-group">
-        <button class="btn btn-primary" id="btn-run-full">Run Full Comparison</button>
-        <button class="btn btn-secondary" id="btn-run-scrollsense">Run ScrollSense</button>
-        <button class="btn btn-outline" id="btn-run-baselines">Run Baselines Only</button>
+        <button class="btn btn-primary" id="btn-run-full" aria-label="Run Full Pipeline and Baseline Comparison">Run Full Comparison</button>
+        <button class="btn btn-secondary" id="btn-run-scrollsense" aria-label="Run ScrollSense Pipeline Only">Run ScrollSense</button>
+        <button class="btn btn-outline" id="btn-run-baselines" aria-label="Run Naive Baselines Only">Run Baselines Only</button>
       </div>
     </section>
 
     <!-- Pitch Line Banner -->
-    <div class="pitch-container">
+    <section class="pitch-container" aria-label="Executive Thesis">
       <p class="pitch-quote">
         <strong>The Breakthrough:</strong> "A shallow system sees Java and recommends another Java Reel. ScrollSense infers the latent professional identity — software engineering — from heterogeneous signals: a meme, a lifestyle Reel, an interview joke, and a laptop comparison. It then retrieves useful adjacent tech content and explicitly rejects hype like '10 AI tools that will get you a job'."
       </p>
-    </div>
+    </section>
 
-    <!-- Main Comparison Grid -->
-    <main class="dashboard-grid">
+    <!-- Main Comparison Grid with id="main-content" and aria-live="polite" -->
+    <main class="dashboard-grid" id="main-content" aria-live="polite">
       <!-- Panel 1: Watched Session Reels -->
-      <section class="panel-card" id="panel-watched">
+      <section class="panel-card" id="panel-watched" aria-labelledby="heading-watched">
         <div class="panel-header">
-          <h2>1. Watched Session Reels</h2>
+          <h2 id="heading-watched">1. Watched Session Reels</h2>
           <span class="panel-subtitle">Multi-Reel Context</span>
         </div>
         <div class="panel-body" id="watched-list">
@@ -96,10 +100,10 @@
       </section>
 
       <!-- Panel 2: Naive Baselines (Trap Failure) -->
-      <section class="panel-card danger-card" id="panel-baselines">
+      <section class="panel-card danger-card" id="panel-baselines" aria-labelledby="heading-baselines">
         <div class="panel-header">
-          <h2>2. Naive Baselines (Trap Failure)</h2>
-          <span class="badge badge-danger">Overfitting</span>
+          <h2 id="heading-baselines">2. Naive Baselines (Trap Failure)</h2>
+          <span class="badge badge-danger">FAIL: OVERFITTING</span>
         </div>
         <div class="panel-body" id="baselines-content">
           <p class="placeholder-text">Baselines compare surface matching vs latent inference.</p>
@@ -107,10 +111,10 @@
       </section>
 
       <!-- Panel 3: ScrollSense Latent Inference -->
-      <section class="panel-card success-card" id="panel-scrollsense">
+      <section class="panel-card success-card" id="panel-scrollsense" aria-labelledby="heading-scrollsense">
         <div class="panel-header">
-          <h2>3. ScrollSense (Trap Escaped)</h2>
-          <span class="badge badge-success">Latent Identity Match</span>
+          <h2 id="heading-scrollsense">3. ScrollSense (Trap Escaped)</h2>
+          <span class="badge badge-success">PASS: LATENT MATCH</span>
         </div>
         <div class="panel-body" id="scrollsense-content">
           <p class="placeholder-text">ScrollSense results will render here.</p>
@@ -118,9 +122,9 @@
       </section>
 
       <!-- Panel 4: Identity Graph Activations -->
-      <section class="panel-card" id="panel-graph">
+      <section class="panel-card" id="panel-graph" aria-labelledby="heading-graph">
         <div class="panel-header">
-          <h2>4. Identity Graph Traversal</h2>
+          <h2 id="heading-graph">4. Identity Graph Traversal</h2>
           <span class="panel-subtitle">1-Hop Competency Expansion</span>
         </div>
         <div class="panel-body" id="graph-content">
@@ -129,9 +133,9 @@
       </section>
 
       <!-- Panel 5: Anti-Hype Gate -->
-      <section class="panel-card" id="panel-gate">
+      <section class="panel-card" id="panel-gate" aria-labelledby="heading-gate">
         <div class="panel-header">
-          <h2>5. Anti-Hype Quality Gate</h2>
+          <h2 id="heading-gate">5. Anti-Hype Quality Gate</h2>
           <span class="panel-subtitle">Predatory Clickbait Filter</span>
         </div>
         <div class="panel-body" id="gate-content">
@@ -140,9 +144,9 @@
       </section>
 
       <!-- Panel 6: AI / Nemotron Status -->
-      <section class="panel-card" id="panel-ai">
+      <section class="panel-card" id="panel-ai" aria-labelledby="heading-ai">
         <div class="panel-header">
-          <h2>6. AI / Nemotron Layer Status</h2>
+          <h2 id="heading-ai">6. AI / Nemotron Layer Status</h2>
           <span class="panel-subtitle">Guardrails & Caching</span>
         </div>
         <div class="panel-body" id="ai-status-content">
@@ -163,19 +167,19 @@
     </main>
 
     <!-- Panel 7: Final Contract Output Block -->
-    <section class="output-panel">
+    <section class="output-panel" aria-labelledby="heading-contract">
       <div class="panel-header">
-        <h2>7. Final Required Contract Output Block</h2>
-        <button class="btn btn-small" id="btn-copy-output">Copy Text Block</button>
+        <h2 id="heading-contract">7. Final Required Contract Output Block</h2>
+        <button class="btn btn-small" id="btn-copy-output" aria-label="Copy exact output text block">Copy Text Block</button>
       </div>
-      <pre id="output-block-text">Click 'Run Full Comparison' to generate standard recommendation output...</pre>
+      <pre id="output-block-text" tabindex="0" aria-label="Formatted output block">Click 'Run Full Comparison' to generate standard recommendation output...</pre>
     </section>
 
     <!-- Panel 8: Trace Telemetry Viewer -->
-    <section class="trace-panel">
+    <section class="trace-panel" aria-label="Trace Telemetry">
       <details>
         <summary><strong>8. Telemetry & Execution Trace Viewer (JSON)</strong></summary>
-        <pre id="trace-json-text">{}</pre>
+        <pre id="trace-json-text" tabindex="0" aria-label="Pipeline trace JSON output">{}</pre>
       </details>
     </section>
   </div>

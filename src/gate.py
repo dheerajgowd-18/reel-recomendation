@@ -24,7 +24,7 @@ from src.config import (
     OUTPUT_DIR,
 )
 from src.loaders import load_tech_reels
-from src.retrieve import map_tag, run_all_checkpoints_retrieval, run_retrieval_pipeline
+from src.retrieve import map_tag, run_retrieval_pipeline
 
 
 def evaluate_safety(candidate: Dict[str, Any]) -> Dict[str, Any]:

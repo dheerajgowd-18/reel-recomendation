@@ -1,10 +1,11 @@
 """Unit tests for ScrollSense Phase 3 inference, InterestState aggregation, and graph traversal."""
 
 import unittest
-from pathlib import Path
 
-from src.graph import select_seed_nodes, traverse_identity_graph
-from src.infer import determine_confidence, generate_inferred_interest_label, infer_interests, run_all_checkpoints
+from src.infer import (
+    infer_interests,
+    run_all_checkpoints,
+)
 from src.persona import aggregate_interest_state
 from src.signals import generate_signals
 

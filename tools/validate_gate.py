@@ -5,14 +5,18 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Set
 
 # Ensure project root is in sys.path when script is run directly
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.gate import load_or_generate_gate_cache, run_all_checkpoint_gates, run_gate_for_case, run_gate_for_reels
+from src.gate import (
+    load_or_generate_gate_cache,
+    run_all_checkpoint_gates,
+    run_gate_for_case,
+    run_gate_for_reels,
+)
 
 
 def run_checks() -> bool:
@@ -154,11 +158,6 @@ def run_checks() -> bool:
     report(12, "T24 passes the gaming case", "T24" in gaming_passed_ids, f"T24 in passed: {'T24' in gaming_passed_ids}")
 
     # Check 13: T97 passes if retrieved
-    all_passed_everywhere = {
-        c["candidate_id"]
-        for r in all_cp.values()
-        for c in r["passed_candidates"]
-    }
     all_rejected_everywhere = {
         c["candidate_id"]
         for r in all_cp.values()

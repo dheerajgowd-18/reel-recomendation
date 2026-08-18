@@ -1,22 +1,40 @@
 # ScrollSense Progress
 
 ## Current Phase
-Phase 9B — Live Demo UI for ScrollSense
+Phase 9C — Platform Scoring Optimization + Final Freeze
 
 ## Phase Status
-COMPLETE
+COMPLETE (HARD FROZEN)
 
 ## Completed
-- Completed Preflight Gate: clean git tree, clean JSON hygiene, zero test regressions across all previous phases.
-- Created `ui/` package with `ui/server.py` (FastAPI backend), `ui/static/index.html`, `ui/static/styles.css`, and `ui/static/app.js`.
-- Implemented `/api/health`, `/api/cases`, `/api/run`, and `/api/cached-demo` endpoints for interactive web dashboard control.
-- Designed projector-ready 8-panel dashboard showcasing Watched Reels, Naive Baselines (trap failure), ScrollSense Latent Inference (trap victory), Identity Graph Traversal, Anti-Hype Gate Rejections, AI/Nemotron Status, Final 8-line Contract Output, and JSON Trace Telemetry.
-- Built emergency demo safety fallback mode (`Load Cached Demo`) guaranteeing 100% offline uptime on stage.
-- Created `requirements-ui.txt` pinning lightweight UI server dependencies.
-- Created `tools/validate_ui.py` checking 14 UI assertions.
-- Created `tests/test_phase9_ui.py` adding 14 automated unit tests for web server endpoints and contracts (total test suite: 133 passing unit tests).
-- Updated `docs/LIVE_DEMO_SCRIPT.md` with step-by-step judge talk track.
-- Updated `README.md` with Live Demo UI instructions.
+- Completed Preflight Gate: clean git tree, clean JSON hygiene, zero test regressions.
+- **Task 1 (Testing / Pytest Hardening)**:
+  - Created `requirements-dev.txt` with pinned `pytest`, `pytest-cov`, and `ruff`.
+  - Created `pytest.ini`.
+  - Added `pytest.importorskip("fastapi")` to UI test module for safe fallback.
+  - Created `tests/test_contract_pytest.py` with parametrized contract regression suite (all 148 tests passing).
+  - Integrated optional Pytest step into master audit runner `tools/final_audit.py`.
+- **Task 2 (Code Quality Pass)**:
+  - Added module docstrings, type annotations, and cleaned dead code across all modules.
+  - Created `ruff.toml` and verified 0 linter errors with `ruff check .`.
+- **Task 3 (Security Pass)**:
+  - Created `SECURITY.md` establishing zero-secrets, environment-only API key handling, and fail-safe deterministic fallbacks.
+  - Added HTTP defense headers (`X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Referrer-Policy: no-referrer`) to `ui/server.py`.
+  - Added strict Pydantic model validation rejecting unknown keys and malformed arguments with HTTP 422.
+- **Task 4 (Accessibility Pass)**:
+  - Updated UI HTML with semantic landmarks, skip-to-content links, `role="alert"`, `aria-live="polite"`, and visible `<label>` tags.
+  - Updated CSS with high-contrast `:focus-visible` outlines and explicit status badges (PASS/FAIL/REJECTED).
+  - Added accessibility and security checks to `tools/validate_ui.py` (23/23 checks passing).
+- **Task 5 (Google Services Usage)**:
+  - Integrated OpenAI-compatible Google Gemini endpoint (`gemini-2.0-flash`) in `src/llm_client.py` via `LLM_PROVIDER=gemini`.
+  - Documented Gemini in `.env.example` and `README.md`.
+- **Task 6 & 7 (Problem Alignment & Efficiency)**:
+  - Added comprehensive Problem Statement Alignment mapping table to `README.md` and `SUBMISSION.md`.
+  - Added Efficiency and Caching documentation ($< 15\text{ms}$ execution, linear $\mathcal{O}(|\mathcal{C}|)$ complexity).
+- **Task 8 (Final Freeze)**:
+  - Verified `ruff check .`, `python -m pytest -q`, and `python tools/final_audit.py` pass with 100% success.
+  - Created `SUBMISSION.md`, `reports/PHASE_9C_REPORT.md`, and `reports/FINAL_FREEZE_REPORT.md`.
+  - Tagged `v1.1.0`.
 
 ## In Progress
 - None.
@@ -25,20 +43,27 @@ COMPLETE
 - None.
 
 ## Next Phase
-Phase 9C — Final freeze with AI/UI
+SUBMISSION COMPLETED & REPOSITORY FROZEN.
 
 ## Critical Artifacts
-- run_demo.py
+- SUBMISSION.md
 - README.md
 - PROGRESS.md
 - CHANGELOG.md
-- docs/LIVE_DEMO_SCRIPT.md
+- SECURITY.md
+- run_demo.py
 - requirements-ui.txt
+- requirements-dev.txt
+- pytest.ini
+- ruff.toml
+- docs/LIVE_DEMO_SCRIPT.md
 - ui/server.py
 - ui/static/index.html
 - ui/static/styles.css
 - ui/static/app.js
+- tools/final_audit.py
 - tools/validate_ui.py
-- tests/test_phase9_ui.py
+- tests/test_contract_pytest.py
 - reports/FINAL_AUDIT_REPORT.md
-- reports/PHASE_9B_REPORT.md
+- reports/PHASE_9C_REPORT.md
+- reports/FINAL_FREEZE_REPORT.md

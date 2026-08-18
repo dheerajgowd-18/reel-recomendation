@@ -13,9 +13,9 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.baselines import get_watched_reels_by_ids, run_all_baselines_for_case, run_all_baselines_for_reels
+from src.baselines import get_watched_reels_by_ids, run_all_baselines_for_reels
 from src.config import CASE_MAPPING, OUTPUT_DIR
-from src.pipeline import run_pipeline_for_case, run_pipeline_for_reels
+from src.pipeline import run_pipeline_for_reels
 
 DEMO_TRACE_PATH = OUTPUT_DIR / "demo_trace.json"
 DEMO_REPORT_PATH = OUTPUT_DIR / "demo_report.md"
@@ -155,7 +155,7 @@ def generate_demo_report_markdown(cases_data: Dict[str, Any]) -> str:
             "```",
             "",
             "### 8. Demo Pitch",
-            f"> **Judge Pitch Line**:",
+            "> **Judge Pitch Line**:",
             f"> {PITCH_LINE}",
         ])
 

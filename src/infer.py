@@ -6,7 +6,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import Any, Dict, List, Optional
 
 from src.config import CASE_MAPPING, CHECKPOINT_MAPPING, OUTPUT_DIR
 from src.graph import traverse_identity_graph
@@ -22,7 +22,6 @@ def determine_confidence(
     identities = interest_state.get("professional_identity", {})
     stages = interest_state.get("career_stage", {})
     goals = interest_state.get("goals", {})
-    domains = interest_state.get("domains", {})
 
     has_strong_swe = identities.get("software_engineer", 0.0) >= 0.70
     has_strong_candidate = stages.get("candidate", 0.0) >= 0.70
@@ -42,7 +41,6 @@ def generate_inferred_interest_label(
 ) -> str:
     """Generate human-readable explainable interest label deterministically from state."""
     domains = interest_state.get("domains", {})
-    identities = interest_state.get("professional_identity", {})
     stages = interest_state.get("career_stage", {})
     goals = interest_state.get("goals", {})
 

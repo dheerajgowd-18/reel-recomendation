@@ -1,12 +1,10 @@
 """Unit tests for ScrollSense Phase 5 safety/quality/hype gate."""
 
 import unittest
-from pathlib import Path
 
 from src.gate import (
     gate_candidate,
     load_or_generate_gate_cache,
-    run_all_checkpoint_gates,
     run_gate_for_case,
     run_gate_for_reels,
 )

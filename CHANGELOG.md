@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0] - Phase 9C (Platform Scoring Optimization & Hard Freeze)
+### Added
+- Pytest-native test suite `tests/test_contract_pytest.py` with parametrized contract regression tests.
+- `requirements-dev.txt` pinning pytest, pytest-cov, and ruff.
+- `pytest.ini` and `ruff.toml` configurations.
+- `SECURITY.md` detailing defense-in-depth architecture, zero-secrets policy, and HTTP security headers.
+- Google Gemini provider alias (`gemini-2.0-flash`) in `src/llm_client.py` via OpenAI-compatible API.
+- Security response headers (`X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Referrer-Policy: no-referrer`) and strict Pydantic HTTP 422 input validation in `ui/server.py`.
+- WCAG AA accessibility improvements: skip-to-content links, `role="alert"`, `aria-live="polite"`, `:focus-visible` styling, and explicit text badges.
+- `SUBMISSION.md` comprehensive hackathon submission briefing.
+- `reports/PHASE_9C_REPORT.md` and `reports/FINAL_FREEZE_REPORT.md`.
+
 ## [1.2.0] - Phase 9B (Live Demo UI for ScrollSense)
 ### Added
 - `ui/server.py` FastAPI local live demo server running on port 8000.
@@ -7,9 +19,8 @@
 - REST API endpoints: `GET /api/health`, `GET /api/cases`, `POST /api/run`, `GET /api/cached-demo`.
 - AI/Nemotron status panel and emergency demo fallback button.
 - `requirements-ui.txt` with UI dependencies.
-- `tools/validate_ui.py` automated validator (14 checks).
-- `tests/test_phase9_ui.py` unit test suite (14 tests, expanding total to 133 unit tests).
-- Updated `docs/LIVE_DEMO_SCRIPT.md` and `README.md`.
+- `tools/validate_ui.py` automated validator (23 checks).
+- `tests/test_phase9_ui.py` unit test suite.
 
 ## [1.1.0] - Phase 9A-NVIDIA (NVIDIA Nemotron Integration)
 ### Added
@@ -44,7 +55,7 @@
 - `src/pipeline.py` orchestrating end-to-end pipeline execution with `real`, `stub`, and `auto` fallback modes.
 - `output/pipeline_trace.json` recording structured execution trace.
 - `tools/validate_pipeline.py` validation script with 25 checks.
-- `tests/test_phase6_pipeline.py` unit test suite with 18 tests.
+- `tests/test_phase6_pipeline.py` unit test suite.
 
 ## [0.6.0] - Phase 5 (Safety/Quality/Hype Gate)
 ### Added

@@ -4,12 +4,11 @@ from __future__ import annotations
 
 import json
 import os
-import re
 import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, List, Optional, Tuple
 
 # Ensure project root is in sys.path when script is run directly
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -43,7 +42,7 @@ def strip_markdown_json_fences(content: str) -> str:
 
 
 class LLMClient:
-    """Safe, schema-constrained LLM client supporting cache, mock, and openai_compatible providers."""
+    """Safe, schema-constrained LLM client supporting cache, mock, gemini, and openai_compatible providers."""
 
     def __init__(
         self,
@@ -55,9 +54,16 @@ class LLMClient:
         temperature: Optional[float] = None,
         max_tokens: Optional[int] = None,
     ):
-        self.provider = provider or os.getenv("LLM_PROVIDER", LLM_PROVIDER)
-        self.base_url = (base_url or os.getenv("LLM_BASE_URL", LLM_BASE_URL)).rstrip("/")
-        self.model = model or os.getenv("LLM_MODEL", LLM_MODEL)
+        raw_provider = (provider or os.getenv("LLM_PROVIDER", LLM_PROVIDER)).lower()
+        if raw_provider == "gemini":
+            self.provider = "gemini"
+            self.base_url = (base_url or os.getenv("LLM_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai")).rstrip("/")
+            self.model = model or os.getenv("LLM_MODEL", "gemini-2.0-flash")
+        else:
+            self.provider = raw_provider
+            self.base_url = (base_url or os.getenv("LLM_BASE_URL", LLM_BASE_URL)).rstrip("/")
+            self.model = model or os.getenv("LLM_MODEL", LLM_MODEL)
+
         self.api_key = api_key or os.getenv("LLM_API_KEY", LLM_API_KEY)
         self.timeout = timeout if timeout is not None else int(os.getenv("LLM_TIMEOUT_SECONDS", LLM_TIMEOUT_SECONDS))
         self.temperature = temperature if temperature is not None else float(os.getenv("LLM_TEMPERATURE", LLM_TEMPERATURE))
@@ -115,7 +121,7 @@ class LLMClient:
         if self.provider in ("cache", "offline"):
             return mock_response or None
 
-        if self.provider == "openai_compatible":
+        if self.provider in ("openai_compatible", "gemini"):
             if not self.api_key:
                 return mock_response or None
 

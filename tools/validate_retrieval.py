@@ -5,7 +5,6 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Set
 
 # Ensure project root is in sys.path when script is run directly
 PROJECT_ROOT = Path(__file__).resolve().parent.parent

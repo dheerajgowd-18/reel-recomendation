@@ -5,16 +5,24 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Set
+from typing import Dict
 
 # Ensure project root is in sys.path when script is run directly
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.config import ALLOWED_CATEGORIES, ALLOWED_CONFIDENCES, ALLOWED_DIFFICULTIES, REQUIRED_OUTPUT_FIELDS
+from src.config import (
+    ALLOWED_CATEGORIES,
+    ALLOWED_CONFIDENCES,
+    ALLOWED_DIFFICULTIES,
+    REQUIRED_OUTPUT_FIELDS,
+)
 from src.loaders import load_expected_outputs
-from src.pipeline import run_all_checkpoint_pipelines, run_pipeline_for_case, run_pipeline_for_reels
+from src.pipeline import (
+    run_pipeline_for_case,
+    run_pipeline_for_reels,
+)
 
 
 def parse_output_block(text: str) -> Dict[str, str]:
@@ -49,7 +57,6 @@ def run_checks() -> bool:
         txt_r1_r2_r3, trace_r1_r2_r3 = run_pipeline_for_reels(["R1", "R2", "R3"], mode="real")
         txt_trap, trace_trap = run_pipeline_for_case("trap_java_to_swe", mode="real")
         txt_gaming, trace_gaming = run_pipeline_for_case("non_trap_gaming_only", mode="real")
-        all_cp = run_all_checkpoint_pipelines(mode="real")
 
         out_res_path = PROJECT_ROOT / "output" / "result.txt"
         out_trace_path = PROJECT_ROOT / "output" / "pipeline_trace.json"

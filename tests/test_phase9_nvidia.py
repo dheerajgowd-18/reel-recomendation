@@ -2,17 +2,12 @@
 
 import os
 import unittest
-from pathlib import Path
 
 from src.ai_cache import (
-    PROMPT_VERSION_EXPLANATION,
-    PROMPT_VERSION_SIGNAL,
-    make_cache_key,
     validate_ai_signal,
 )
 from src.ai_explainer import generate_explanations_hybrid
 from src.ai_signals import extract_signal_hybrid
-from src.config import LLM_MODEL
 from src.llm_client import LLMClient
 from src.loaders import load_watched_reels
 from src.pipeline import run_pipeline_for_case

@@ -5,29 +5,19 @@ from __future__ import annotations
 import datetime
 import json
 import os
-import sys
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Literal
 
-# Ensure project root is in sys.path
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
-
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from src.baselines import get_watched_reels_by_ids, run_all_baselines_for_reels
 from src.config import (
-    CASE_MAPPING,
-    CHECKPOINT_MAPPING,
-    DEFAULT_PIPELINE_TRACE_PATH,
     LLM_API_KEY,
     LLM_MODEL,
-    LLM_MODE,
     LLM_PROVIDER,
     OUTPUT_DIR,
 )
@@ -45,15 +35,37 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+@app.middleware("http")
+async def add_security_headers(request: Request, call_next) -> Response:
+    """Inject strict security headers into all HTTP responses."""
+    response = await call_next(request)
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["Referrer-Policy"] = "no-referrer"
+    return response
+
+
 STATIC_DIR = Path(__file__).resolve().parent / "static"
 DEMO_TRACE_FILE = OUTPUT_DIR / "demo_trace.json"
 
+ALLOWED_CASES = Literal[
+    "trap_java_to_swe",
+    "non_trap_gaming_only",
+    "trap_after_R1",
+    "trap_after_R1_R2",
+    "trap_after_R1_R2_R3",
+    "trap_after_R1_R2_R3_R4",
+]
+
 
 class RunRequest(BaseModel):
-    case: str = Field(default="trap_java_to_swe", description="Named test case or checkpoint")
-    extractor: str = Field(default="hybrid", description="deterministic | ai | hybrid")
-    explainer: str = Field(default="hybrid", description="deterministic | ai | hybrid")
-    llm_provider: str = Field(default="cache", description="cache | mock | openai_compatible")
+    model_config = {"extra": "forbid"}
+
+    case: ALLOWED_CASES = Field(default="trap_java_to_swe", description="Named test case or checkpoint")
+    extractor: Literal["deterministic", "ai", "hybrid"] = Field(default="hybrid", description="deterministic | ai | hybrid")
+    explainer: Literal["deterministic", "ai", "hybrid"] = Field(default="hybrid", description="deterministic | ai | hybrid")
+    llm_provider: Literal["cache", "mock", "gemini", "openai_compatible"] = Field(default="cache", description="cache | mock | gemini | openai_compatible")
     run_baselines: bool = Field(default=True, description="Whether to include naive baselines")
 
 

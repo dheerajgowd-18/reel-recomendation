@@ -12,8 +12,12 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.config import CASE_MAPPING, DEFAULT_PIPELINE_TRACE_PATH, DEFAULT_RESULT_PATH
-from src.pipeline import run_all_checkpoint_pipelines, run_pipeline_for_case, run_pipeline_for_reels
+from src.config import DEFAULT_PIPELINE_TRACE_PATH, DEFAULT_RESULT_PATH
+from src.pipeline import (
+    run_all_checkpoint_pipelines,
+    run_pipeline_for_case,
+    run_pipeline_for_reels,
+)
 
 
 def main() -> None:

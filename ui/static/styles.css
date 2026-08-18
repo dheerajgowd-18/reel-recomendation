@@ -378,3 +378,33 @@ pre {
   padding: 0.5rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
+
+/* Accessibility: Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary);
+  color: #030712;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 700;
+  z-index: 1000;
+  border-radius: 0 0 6px 0;
+  transition: top 0.2s ease-in-out;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #ffffff;
+}
+
+/* Accessibility: High contrast keyboard focus indicators */
+*:focus-visible {
+  outline: 2px solid var(--primary) !important;
+  outline-offset: 2px !important;
+}
+
+select:focus-visible, button:focus-visible, pre:focus-visible, summary:focus-visible {
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35);
+}

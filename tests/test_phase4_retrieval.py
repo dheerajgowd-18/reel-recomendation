@@ -1,9 +1,8 @@
 """Unit tests for ScrollSense Phase 4 candidate retrieval."""
 
 import unittest
-from pathlib import Path
 
-from src.retrieve import run_all_checkpoints_retrieval, run_retrieval_pipeline
+from src.retrieve import run_retrieval_pipeline
 
 
 class TestPhase4Retrieval(unittest.TestCase):

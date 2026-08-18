@@ -6,7 +6,7 @@ import json
 import os
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, Optional, Tuple
 
 # Ensure project root is in sys.path when script is run directly
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -17,8 +17,8 @@ from src.ai_cache import PROMPT_VERSION_EXPLANATION, make_cache_key
 from src.config import (
     LLM_CACHE_DIR,
     LLM_EXPLANATIONS_CACHE_PATH,
-    LLM_MODEL,
     LLM_MODE,
+    LLM_MODEL,
     LLM_PROVIDER,
 )
 from src.explain import generate_explanations

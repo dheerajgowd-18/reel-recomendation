@@ -1,7 +1,6 @@
 """Unit tests for ScrollSense Phase 1 stub pipeline."""
 
 import unittest
-from pathlib import Path
 
 from src.config import REQUIRED_OUTPUT_FIELDS
 from src.formatter import format_recommendation_block, validate_recommendation

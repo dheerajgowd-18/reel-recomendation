@@ -26,6 +26,7 @@ LLM_CONCEPT_ANCHOR_CACHE_PATH = LLM_CACHE_DIR / "concept_anchor.json"
 
 # LLM Default Configuration (NVIDIA Nemotron 3.5 Lightning 30B A3B)
 import os
+
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "cache")
 LLM_BASE_URL = os.getenv("LLM_BASE_URL", "https://integrate.api.nvidia.com/v1")
 LLM_MODEL = os.getenv("LLM_MODEL", "nvidia/nemotron-3.5-lightning-30b-a3b")

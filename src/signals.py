@@ -5,9 +5,8 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Union
+from typing import Any, Dict, List, Optional
 
 from src.config import (
     ALLOWED_DEPTHS,
@@ -80,10 +79,8 @@ def extract_signal(reel: Dict[str, Any]) -> Dict[str, Any]:
 
     reel_id = reel.get("reel_id", "")
     title = reel.get("title", "")
-    caption = reel.get("caption", "")
     hashtags = reel.get("hashtags", [])
     content_type = reel.get("content_type", "")
-    text_content = f"{title} {caption} {' '.join(hashtags)}".lower()
 
     # Fixed timestamp for reproducible offline deterministic execution
     generated_at = "2026-08-18T00:00:00Z"

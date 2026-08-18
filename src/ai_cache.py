@@ -6,7 +6,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, Tuple
 
 # Ensure project root is in sys.path when script is run directly
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -14,16 +14,14 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.config import (
-    CASE_MAPPING,
     LLM_CACHE_DIR,
     LLM_CONCEPT_ANCHOR_CACHE_PATH,
     LLM_EXPLANATIONS_CACHE_PATH,
     LLM_MODEL,
     LLM_SIGNALS_CACHE_PATH,
 )
-from src.explain import generate_explanation_fields
 from src.infer import infer_interests
-from src.loaders import load_expected_outputs, load_tech_reels, load_watched_reels
+from src.loaders import load_tech_reels, load_watched_reels
 from src.signals import extract_signal_for_reel
 
 PROMPT_VERSION_SIGNAL = "signal_v1"
@@ -47,7 +45,11 @@ def validate_ai_signal(signal: Dict[str, Any], reel_id: str) -> Tuple[bool, str]
         return False, "Signal must not contain recommendation fields"
 
     # Check top-level required fields
-    from src.config import ALLOWED_EVIDENCE_TYPES, REQUIRED_EVIDENCE_FIELDS, REQUIRED_SIGNAL_FIELDS
+    from src.config import (
+        ALLOWED_EVIDENCE_TYPES,
+        REQUIRED_EVIDENCE_FIELDS,
+        REQUIRED_SIGNAL_FIELDS,
+    )
     missing = [f for f in REQUIRED_SIGNAL_FIELDS if f not in signal]
     if missing:
         return False, f"Missing required field(s): {missing}"
@@ -79,7 +81,7 @@ def validate_ai_signal(signal: Dict[str, Any], reel_id: str) -> Tuple[bool, str]
                 return False, f"Gaming reel {reel_id} emitted software_engineer signal > 0.2"
         if reel_id == "R1":
             if "software_engineer" in value and float(strength) > 0.45:
-                return False, f"R1 meme emitted software_engineer signal > 0.45"
+                return False, "R1 meme emitted software_engineer signal > 0.45"
 
     return True, "Valid"
 
@@ -113,7 +115,6 @@ def generate_cached_signals(model: str = LLM_MODEL) -> Dict[str, Any]:
 def generate_cached_explanations(model: str = LLM_MODEL) -> Dict[str, Any]:
     """Generate and persist validated explanations for standard checkpoints."""
     LLM_CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    expected_data = load_expected_outputs()
     cached_exps: Dict[str, Any] = {}
 
     cases = {
@@ -126,7 +127,6 @@ def generate_cached_explanations(model: str = LLM_MODEL) -> Dict[str, Any]:
 
     from src.explain import generate_explanations
     from src.gate import gate_retrieval_result
-    from src.infer import infer_interests
     from src.rank import rank_candidates
     from src.retrieve import retrieve_candidates
 

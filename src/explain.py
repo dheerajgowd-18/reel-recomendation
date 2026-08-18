@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 
-import json
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
 # Ensure project root is in sys.path when script is run directly
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -24,8 +23,6 @@ def generate_explanations(
     domains = interest_state.get("domains", {})
     identities = interest_state.get("professional_identity", {})
     stages = interest_state.get("career_stage", {})
-    goals = interest_state.get("goals", {})
-    confidence = inference_result.get("confidence", "Low")
     num_reels = len(reel_ids)
 
     # 1. INTEREST DETECTED

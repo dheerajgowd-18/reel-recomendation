@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 
-import json
 import sys
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set, Tuple
+from typing import Any, Dict, List, Optional
 
 # Ensure project root is in sys.path when script is run directly
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -13,7 +12,6 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.config import HEURISTIC_WEIGHTS_V1, RANKING_VERSION, WEIGHTS_VERSION
-from src.gate import run_gate_for_case, run_gate_for_reels
 from src.retrieve import map_tag
 
 
@@ -56,7 +54,6 @@ def compute_goal_stage_fit(
     stages = interest_state.get("career_stage", {})
     goals = interest_state.get("goals", {})
     domains = interest_state.get("domains", {})
-    prefs = interest_state.get("content_preference", {})
     confidence = inference_result.get("confidence", "Low")
     num_reels = len(inference_result.get("reel_ids", []))
 
