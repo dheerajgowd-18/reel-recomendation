@@ -19,12 +19,13 @@ CONFIDENCE: [High / Medium / Low]
 ```
 
 ## Running Data & Pipeline Validation
-To validate data contracts, fixtures, signal caches, hygiene, and inference offline:
+To validate data contracts, fixtures, signal caches, hygiene, inference, and candidate retrieval offline:
 ```bash
 python tools/check_json_hygiene.py
 python tools/validate_data.py
 python tools/validate_signals.py
 python tools/validate_inference.py
+python tools/validate_retrieval.py
 python -m unittest discover -s tests -v
 ```
 
@@ -68,6 +69,21 @@ python -m src.infer --case non_trap_gaming_only
 python -m src.infer --all-checkpoints
 ```
 
+## Phase 4 — Candidate Retrieval
+Phase 4 retrieves candidate Reels using topical and identity-adjacent graph signals. It combines Source A (topical matching) and Source B (graph identity-adjacent activation) into a unified shortlisted candidate catalog. It does not yet apply the hype gate or final ranking.
+
+### Commands
+```bash
+python -m src.retrieve --reels R1
+python -m src.retrieve --reels R1,R2
+python -m src.retrieve --reels R1,R2,R3
+python -m src.retrieve --reels R1,R2,R3,R4
+python -m src.retrieve --reels R5,R6,R7
+python -m src.retrieve --case trap_java_to_swe
+python -m src.retrieve --case non_trap_gaming_only
+python -m src.retrieve --all-checkpoints
+```
+
 ## Current Phase Status
-- **Current Phase**: Phase 3 (InterestState Aggregation and Graph Traversal)
+- **Current Phase**: Phase 4 (Candidate Retrieval)
 - **Status**: COMPLETE

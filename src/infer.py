@@ -76,6 +76,13 @@ def infer_interests(
     if not reel_ids:
         raise ValueError("Reel IDs list cannot be empty.")
 
+    if case_name:
+        valid_cases = set(CASE_MAPPING.keys()).union(set(CHECKPOINT_MAPPING.values()))
+        if case_name not in valid_cases:
+            raise ValueError(
+                f"Unknown case name '{case_name}'. Supported cases: {sorted(valid_cases)}"
+            )
+
     # 1. Load or extract signals
     signals_map = generate_signals(reel_ids=reel_ids)
     ordered_signals = [signals_map[r_id] for r_id in reel_ids]

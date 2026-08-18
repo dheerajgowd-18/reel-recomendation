@@ -1,23 +1,34 @@
 # Changelog
 
+## [0.5.0] - Phase 4 (Candidate Retrieval)
+### Added
+- `CONCEPT_ALIAS_MAP` in `src/config.py` unifying synonyms across candidate tags, graph nodes, and domain signals.
+- `src/retrieve.py` implementing dual-source candidate retrieval:
+  - Source A: Topical matching from `InterestState.domains` and `InterestState.goals`.
+  - Source B: Identity-adjacent graph matching from `InferenceResult.graph_traversal.activated_nodes`.
+  - Weighted retrieval scoring (`0.45 * topical + 0.55 * identity_adjacent`) prioritizing identity over literal keyword matches.
+- Retrieval CLI supporting `--reels`, `--case`, `--all-checkpoints`, and `--out` writing to `output/retrieval.json`.
+- `tools/validate_retrieval.py` validating 18 retrieval rules including T1 retrieval, Career inclusion, and gaming isolation.
+- `tests/test_phase4_retrieval.py` unit test suite with 15 test cases (bringing total suite to 49 unit tests).
+- Updated `README.md` with Phase 4 retrieval execution details.
+
+### Changed
+- Enriched concept tags in `data/tech_reels.json` for key candidate benchmark reels (T1, T5, T22, T23, T24, T25, T26) to enable natural discovery while maintaining `score_type: "reference_only"`.
+
+### Fixed
+- Verified `case_name` validation in `src/infer.py` and `src/retrieve.py` raises standard `ValueError` for unknown named cases.
+
+### Risks / Notes
+- Phase 4 generates the un-gated candidate shortlist. Quality/anti-hype filtering, ranking, and explanation generation will be implemented in subsequent phases.
+
 ## [0.4.0] - Phase 3 (InterestState Aggregation & Graph Traversal)
 ### Added
 - `tools/check_json_hygiene.py` verifying zero whitespace corruption across all data, cache, and output JSON artifacts.
-- `src/persona.py` implementing multi-reel evidence synthesis into structured `InterestState` (identity, career stage, domain, goal, depth, preferences).
+- `src/persona.py` implementing multi-reel evidence synthesis into structured `InterestState`.
 - `src/graph.py` implementing seed selection and one-hop deterministic activation scoring over `data/identity_graph.json`.
-- `src/infer.py` coordinating inference, non-decreasing confidence bucketing, explainable label synthesis, and CLI runner (`--reels`, `--case`, `--all-checkpoints`, `--out`).
-- `tools/validate_inference.py` validating 14 inference contract rules, state schema compliance, and anti-leakage constraints.
-- `tests/test_phase3_inference.py` with 12 unit tests (bringing test suite to 34 tests total).
-- Updated `README.md` with Phase 3 instructions.
-
-### Changed
-- Configured default inference output path to `output/inference.json`.
-
-### Fixed
-- Ensured `tools/validate_inference.py` includes project root in `sys.path` for standalone invocation.
-
-### Risks / Notes
-- Phase 3 produces internal inference states and graph activations. Candidate catalog retrieval, anti-hype gating, ranking, and explanation formatting will be connected in subsequent phases.
+- `src/infer.py` coordinating inference, non-decreasing confidence bucketing, explainable label synthesis, and CLI runner.
+- `tools/validate_inference.py` validating 14 inference contract rules.
+- `tests/test_phase3_inference.py` with 12 unit tests.
 
 ## [0.3.0] - Phase 2 (Signal Extraction Module)
 ### Added

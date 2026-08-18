@@ -1,20 +1,23 @@
 # ScrollSense Progress
 
 ## Current Phase
-Phase 3 — InterestState Aggregation and Graph Traversal
+Phase 4 — Candidate Retrieval
 
 ## Phase Status
 COMPLETE
 
 ## Completed
-- Completed Preflight Gate: verified clean git working tree, implemented `tools/check_json_hygiene.py`, and verified zero regressions across Phase 0, 0.1, 1, and 2 test suites.
-- Implemented `src/persona.py` to aggregate multi-reel evidence into structured `InterestState` with professional identity, career stage, domain, goal, depth, and content preference dimensions.
-- Implemented `src/graph.py` to select high-confidence seed nodes from `InterestState` and perform deterministic activation traversal across `data/identity_graph.json`.
-- Implemented `src/infer.py` coordinating the complete inference stage, deterministic confidence bucketing (`Low` -> `Medium` -> `High`), and domain-boundary-respecting interest labels.
-- Implemented Inference CLI supporting `--reels`, `--case`, `--all-checkpoints`, and `--out` options with structured output to `output/inference.json`.
-- Created `tools/validate_inference.py` verifying all 14 inference checks, state schema constraints, activation boundaries, and non-trap isolation.
-- Created `tests/test_phase3_inference.py` expanding test suite to 34 passing unittest test cases.
-- Verified Phase 1 CLI regression stability and complete JSON whitespace hygiene.
+- Completed Preflight Gate: verified clean git working tree, verified JSON hygiene across all fixtures and outputs, and verified zero regressions across Phases 0, 0.1, 1, 2, and 3.
+- Implemented `CONCEPT_ALIAS_MAP` in `src/config.py` providing canonical ontology mapping between candidate concept tags, graph nodes, and domain interests.
+- Enhanced concept tags in `data/tech_reels.json` for natural retrieval across T1, T5, T22, T23, T24, T25, T26 while maintaining `score_type: "reference_only"`.
+- Implemented `src/retrieve.py` supporting dual-source retrieval:
+  - Source A: Topical matching from InterestState domains and goals.
+  - Source B: Identity-adjacent graph matching from active nodes.
+  - Combined retrieval weighting: `0.45 * topical + 0.55 * identity_adjacent`.
+- Implemented retrieval CLI supporting `--reels`, `--case`, `--all-checkpoints`, and `--out` options with structured output to `output/retrieval.json`.
+- Created `tools/validate_retrieval.py` validating all 18 retrieval checks, candidate schema, sorting, and anti-leakage isolation.
+- Created `tests/test_phase4_retrieval.py` expanding test suite to 49 passing unit tests.
+- Verified Phase 1, Phase 2, and Phase 3 CLI regressions remain fully stable.
 
 ## In Progress
 - None.
@@ -23,7 +26,7 @@ COMPLETE
 - None.
 
 ## Next Phase
-Phase 4 — Candidate retrieval and expansion of catalog
+Phase 5 — Safety/quality/hype gate
 
 ## Critical Artifacts
 - data/watched_reels.json
@@ -35,10 +38,12 @@ Phase 4 — Candidate retrieval and expansion of catalog
 - output/result.txt
 - output/trace.json
 - output/inference.json
+- output/retrieval.json
 - tools/check_json_hygiene.py
 - tools/validate_data.py
 - tools/validate_signals.py
 - tools/validate_inference.py
+- tools/validate_retrieval.py
 - src/config.py
 - src/loaders.py
 - src/formatter.py
@@ -47,7 +52,9 @@ Phase 4 — Candidate retrieval and expansion of catalog
 - src/persona.py
 - src/graph.py
 - src/infer.py
+- src/retrieve.py
 - src/run.py
 - tests/test_phase1_stub.py
 - tests/test_phase2_signals.py
 - tests/test_phase3_inference.py
+- tests/test_phase4_retrieval.py

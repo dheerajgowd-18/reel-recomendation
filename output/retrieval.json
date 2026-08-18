@@ -1,0 +1,245 @@
+{
+  "phase": "phase_4_retrieval",
+  "case": "non_trap_gaming_only",
+  "reel_ids": [
+    "R5",
+    "R6",
+    "R7"
+  ],
+  "interest_summary": {
+    "top_professional_identity": "",
+    "top_domains": [
+      "gaming",
+      "hardware",
+      "ai"
+    ],
+    "top_goals": [],
+    "top_career_stage": "",
+    "confidence": "Medium"
+  },
+  "sources": {
+    "topical": [
+      {
+        "candidate_id": "T24",
+        "title": "How game AI decides enemy behavior",
+        "category": "AI",
+        "score": 0.834,
+        "matched_terms": [
+          "ai",
+          "gaming"
+        ]
+      },
+      {
+        "candidate_id": "T18",
+        "title": "How CPU cache hierarchy affects software performance",
+        "category": "Hardware",
+        "score": 0.52,
+        "matched_terms": [
+          "hardware"
+        ]
+      },
+      {
+        "candidate_id": "T19",
+        "title": "ARM vs x86 architecture explained simply",
+        "category": "Hardware",
+        "score": 0.52,
+        "matched_terms": [
+          "hardware"
+        ]
+      },
+      {
+        "candidate_id": "T26",
+        "title": "Gaming laptop specs that actually matter",
+        "category": "Hardware",
+        "score": 0.52,
+        "matched_terms": [
+          "hardware"
+        ]
+      },
+      {
+        "candidate_id": "T20",
+        "title": "Transformer attention mechanism animated with intuitive math",
+        "category": "AI",
+        "score": 0.296,
+        "matched_terms": [
+          "ai"
+        ]
+      },
+      {
+        "candidate_id": "T99",
+        "title": "10 AI tools that will get you a job",
+        "category": "AI",
+        "score": 0.296,
+        "matched_terms": [
+          "ai"
+        ]
+      }
+    ],
+    "identity_adjacent": [
+      {
+        "candidate_id": "T24",
+        "title": "How game AI decides enemy behavior",
+        "category": "AI",
+        "score": 1.0,
+        "matched_nodes": [
+          "game_ai",
+          "gaming"
+        ]
+      },
+      {
+        "candidate_id": "T25",
+        "title": "What a game engine actually does",
+        "category": "Other",
+        "score": 0.863,
+        "matched_nodes": [
+          "game_development",
+          "graphics"
+        ]
+      },
+      {
+        "candidate_id": "T18",
+        "title": "How CPU cache hierarchy affects software performance",
+        "category": "Hardware",
+        "score": 0.55,
+        "matched_nodes": [
+          "hardware"
+        ]
+      },
+      {
+        "candidate_id": "T19",
+        "title": "ARM vs x86 architecture explained simply",
+        "category": "Hardware",
+        "score": 0.55,
+        "matched_nodes": [
+          "hardware"
+        ]
+      },
+      {
+        "candidate_id": "T26",
+        "title": "Gaming laptop specs that actually matter",
+        "category": "Hardware",
+        "score": 0.55,
+        "matched_nodes": [
+          "hardware"
+        ]
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "candidate_id": "T24",
+      "title": "How game AI decides enemy behavior",
+      "category": "AI",
+      "difficulty": "Beginner",
+      "retrieval_score": 0.925,
+      "sources": [
+        "topical",
+        "identity_adjacent"
+      ],
+      "matched_terms": [
+        "ai",
+        "gaming"
+      ],
+      "matched_nodes": [
+        "game_ai",
+        "gaming"
+      ]
+    },
+    {
+      "candidate_id": "T18",
+      "title": "How CPU cache hierarchy affects software performance",
+      "category": "Hardware",
+      "difficulty": "Advanced",
+      "retrieval_score": 0.537,
+      "sources": [
+        "topical",
+        "identity_adjacent"
+      ],
+      "matched_terms": [
+        "hardware"
+      ],
+      "matched_nodes": [
+        "hardware"
+      ]
+    },
+    {
+      "candidate_id": "T19",
+      "title": "ARM vs x86 architecture explained simply",
+      "category": "Hardware",
+      "difficulty": "Beginner",
+      "retrieval_score": 0.537,
+      "sources": [
+        "topical",
+        "identity_adjacent"
+      ],
+      "matched_terms": [
+        "hardware"
+      ],
+      "matched_nodes": [
+        "hardware"
+      ]
+    },
+    {
+      "candidate_id": "T26",
+      "title": "Gaming laptop specs that actually matter",
+      "category": "Hardware",
+      "difficulty": "Beginner",
+      "retrieval_score": 0.537,
+      "sources": [
+        "topical",
+        "identity_adjacent"
+      ],
+      "matched_terms": [
+        "hardware"
+      ],
+      "matched_nodes": [
+        "hardware"
+      ]
+    },
+    {
+      "candidate_id": "T25",
+      "title": "What a game engine actually does",
+      "category": "Other",
+      "difficulty": "Beginner",
+      "retrieval_score": 0.475,
+      "sources": [
+        "identity_adjacent"
+      ],
+      "matched_terms": [],
+      "matched_nodes": [
+        "game_development",
+        "graphics"
+      ]
+    },
+    {
+      "candidate_id": "T20",
+      "title": "Transformer attention mechanism animated with intuitive math",
+      "category": "AI",
+      "difficulty": "Intermediate",
+      "retrieval_score": 0.133,
+      "sources": [
+        "topical"
+      ],
+      "matched_terms": [
+        "ai"
+      ],
+      "matched_nodes": []
+    },
+    {
+      "candidate_id": "T99",
+      "title": "10 AI tools that will get you a job",
+      "category": "AI",
+      "difficulty": "Beginner",
+      "retrieval_score": 0.133,
+      "sources": [
+        "topical"
+      ],
+      "matched_terms": [
+        "ai"
+      ],
+      "matched_nodes": []
+    }
+  ],
+  "candidate_count": 7,
+  "generated_at": "2026-08-18T00:00:00Z"
+}
