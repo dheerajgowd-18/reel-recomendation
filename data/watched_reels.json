@@ -1,0 +1,58 @@
+[
+  {
+    "reel_id": "R1",
+    "title": "When you miss a semicolon in Java after 4 hours of debugging",
+    "caption": "Why does Java compiler hate me so much? NullPointerException everywhere #javamemes #codinghumor",
+    "hashtags": ["javamemes", "codinghumor", "programmerlife", "debugging"],
+    "content_type": "meme",
+    "engagement": "liked"
+  },
+  {
+    "reel_id": "R2",
+    "title": "Day in the life of a Junior Software Engineer in Austin",
+    "caption": "Standup at 10am, debugging production pipelines, free matcha latte, and code reviews. #swe #dayinthelife #techcareer",
+    "hashtags": ["swe", "dayinthelife", "techcareer", "softwareengineer", "coding"],
+    "content_type": "lifestyle",
+    "engagement": "watched_full"
+  },
+  {
+    "reel_id": "R3",
+    "title": "Interviewer: Invert a binary tree on this whiteboard right now",
+    "caption": "POV: You studied dynamic programming for 3 months and get asked tree traversal. #leetcode #codinginterview #techhumor",
+    "hashtags": ["leetcode", "codinginterview", "techhumor", "computerscience", "jobhunt"],
+    "content_type": "humor",
+    "engagement": "saved"
+  },
+  {
+    "reel_id": "R4",
+    "title": "M3 Pro vs ThinkPad X1 Carbon for CS Undergrads & Devs",
+    "caption": "Which machine actually handles Docker, IntelliJ, and multiple local microservices? #laptops #devsetup #programming",
+    "hashtags": ["laptops", "devsetup", "programming", "hardware", "techcomparison"],
+    "content_type": "comparison",
+    "engagement": "liked"
+  },
+  {
+    "reel_id": "R5",
+    "title": "Insane 1v5 clutch in ranked",
+    "caption": "High-level gameplay moment with quick decision making",
+    "hashtags": ["gaming", "esports", "gameplay"],
+    "content_type": "gaming",
+    "engagement": "liked"
+  },
+  {
+    "reel_id": "R6",
+    "title": "How game AI predicts your next move",
+    "caption": "Enemy behavior, pathfinding, and decision logic in games",
+    "hashtags": ["gaming", "gameai", "ai"],
+    "content_type": "news",
+    "engagement": "watched_full"
+  },
+  {
+    "reel_id": "R7",
+    "title": "Best gaming laptop specs explained",
+    "caption": "GPU, CPU, refresh rate, thermals, and display quality",
+    "hashtags": ["gaming", "hardware", "gaminglaptop"],
+    "content_type": "comparison",
+    "engagement": "saved"
+  }
+]

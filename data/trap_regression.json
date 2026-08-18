@@ -1,0 +1,69 @@
+{
+  "cases": [
+    {
+      "case_id": "trap_java_to_swe",
+      "watched_reel_ids": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "expected": {
+        "final_interest_must_include": [
+          "software engineering",
+          "software_engineer",
+          "tech career",
+          "career preparation"
+        ],
+        "final_interest_must_not_be_only": [
+          "Java",
+          "Java tutorial",
+          "Java syntax"
+        ],
+        "preferred_categories": [
+          "Career",
+          "HLD",
+          "Cloud",
+          "DSA"
+        ],
+        "must_reject_titles": [
+          "10 AI tools that will get you a job"
+        ],
+        "minimum_confidence": "High"
+      }
+    },
+    {
+      "case_id": "non_trap_gaming_only",
+      "watched_reel_ids": [
+        "R5",
+        "R6",
+        "R7"
+      ],
+      "expected": {
+        "final_interest_must_not_be_only": [
+          "software_engineer",
+          "software engineering",
+          "Career"
+        ],
+        "forbidden_top_interests": [
+          "software_engineer",
+          "software engineering",
+          "tech career"
+        ],
+        "final_interest_should_include_any": [
+          "gaming",
+          "game development",
+          "graphics",
+          "hardware",
+          "AI in games"
+        ],
+        "maximum_identity_weights": {
+          "software_engineer": 0.35
+        },
+        "must_reject_titles": [
+          "10 AI tools that will get you a job"
+        ]
+      }
+    }
+  ]
+}

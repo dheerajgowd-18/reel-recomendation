@@ -1,0 +1,225 @@
+{
+  "version": "v1",
+  "nodes": [
+    {
+      "id": "java",
+      "type": "topic"
+    },
+    {
+      "id": "swe_lifestyle",
+      "type": "topic"
+    },
+    {
+      "id": "interview_humor",
+      "type": "topic"
+    },
+    {
+      "id": "laptop_comparison",
+      "type": "topic"
+    },
+    {
+      "id": "developer",
+      "type": "professional_identity"
+    },
+    {
+      "id": "candidate",
+      "type": "career_stage"
+    },
+    {
+      "id": "software_engineer",
+      "type": "professional_identity"
+    },
+    {
+      "id": "system_design",
+      "type": "domain"
+    },
+    {
+      "id": "dsa",
+      "type": "skill"
+    },
+    {
+      "id": "cloud",
+      "type": "domain"
+    },
+    {
+      "id": "git",
+      "type": "skill"
+    },
+    {
+      "id": "debugging",
+      "type": "skill"
+    },
+    {
+      "id": "career",
+      "type": "career_stage"
+    },
+    {
+      "id": "gaming",
+      "type": "domain"
+    },
+    {
+      "id": "game_development",
+      "type": "domain"
+    },
+    {
+      "id": "game_developer",
+      "type": "professional_identity"
+    },
+    {
+      "id": "game_ai",
+      "type": "skill"
+    },
+    {
+      "id": "graphics",
+      "type": "skill"
+    },
+    {
+      "id": "gaming_hardware",
+      "type": "skill"
+    },
+    {
+      "id": "hardware",
+      "type": "domain"
+    },
+    {
+      "id": "gameplay_highlight",
+      "type": "topic"
+    },
+    {
+      "id": "game_ai_content",
+      "type": "topic"
+    },
+    {
+      "id": "gaming_laptop",
+      "type": "topic"
+    }
+  ],
+  "edges": [
+    {
+      "from": "java",
+      "to": "software_engineer",
+      "relation": "signals_identity",
+      "weight": 0.65
+    },
+    {
+      "from": "swe_lifestyle",
+      "to": "software_engineer",
+      "relation": "signals_identity",
+      "weight": 0.85
+    },
+    {
+      "from": "interview_humor",
+      "to": "candidate",
+      "relation": "signals_career_stage",
+      "weight": 0.80
+    },
+    {
+      "from": "interview_humor",
+      "to": "software_engineer",
+      "relation": "signals_identity",
+      "weight": 0.75
+    },
+    {
+      "from": "laptop_comparison",
+      "to": "developer",
+      "relation": "signals_tooling_interest",
+      "weight": 0.70
+    },
+    {
+      "from": "developer",
+      "to": "software_engineer",
+      "relation": "subsumed_by",
+      "weight": 0.90
+    },
+    {
+      "from": "software_engineer",
+      "to": "system_design",
+      "relation": "core_competency",
+      "weight": 0.85
+    },
+    {
+      "from": "software_engineer",
+      "to": "dsa",
+      "relation": "interview_foundation",
+      "weight": 0.80
+    },
+    {
+      "from": "software_engineer",
+      "to": "cloud",
+      "relation": "modern_infrastructure",
+      "weight": 0.75
+    },
+    {
+      "from": "software_engineer",
+      "to": "git",
+      "relation": "essential_tooling",
+      "weight": 0.90
+    },
+    {
+      "from": "software_engineer",
+      "to": "debugging",
+      "relation": "daily_craft",
+      "weight": 0.85
+    },
+    {
+      "from": "software_engineer",
+      "to": "career",
+      "relation": "professional_pathway",
+      "weight": 0.80
+    },
+    {
+      "from": "gameplay_highlight",
+      "to": "gaming",
+      "relation": "topic_implies_domain",
+      "weight": 0.80
+    },
+    {
+      "from": "game_ai_content",
+      "to": "game_ai",
+      "relation": "topic_implies_skill",
+      "weight": 0.80
+    },
+    {
+      "from": "game_ai_content",
+      "to": "gaming",
+      "relation": "topic_implies_domain",
+      "weight": 0.70
+    },
+    {
+      "from": "gaming_laptop",
+      "to": "gaming_hardware",
+      "relation": "professional_identity_signal",
+      "weight": 0.70
+    },
+    {
+      "from": "gaming",
+      "to": "game_development",
+      "relation": "domain_adjacent_skill",
+      "weight": 0.65
+    },
+    {
+      "from": "gaming",
+      "to": "graphics",
+      "relation": "domain_adjacent_skill",
+      "weight": 0.60
+    },
+    {
+      "from": "gaming",
+      "to": "game_ai",
+      "relation": "domain_adjacent_skill",
+      "weight": 0.60
+    },
+    {
+      "from": "gaming",
+      "to": "game_developer",
+      "relation": "domain_implies_identity",
+      "weight": 0.50
+    },
+    {
+      "from": "gaming_hardware",
+      "to": "hardware",
+      "relation": "skill_alias",
+      "weight": 0.70
+    }
+  ]
+}
