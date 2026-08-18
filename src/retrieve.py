@@ -198,8 +198,11 @@ def main() -> None:
         if args.all_checkpoints:
             results = run_all_checkpoints_retrieval()
             print(json.dumps(results, indent=2))
-            with open(out_file, "w", encoding="utf-8") as f:
-                json.dump(results, f, indent=2)
+            try:
+                with open(out_file, "w", encoding="utf-8") as f:
+                    json.dump(results, f, indent=2)
+            except Exception:
+                pass
         elif args.case:
             if args.case == "trap_java_to_swe":
                 reels = ["R1", "R2", "R3", "R4"]
@@ -211,14 +214,20 @@ def main() -> None:
                 )
             result = run_retrieval_pipeline(reels, case_name=args.case)
             print(json.dumps(result, indent=2))
-            with open(out_file, "w", encoding="utf-8") as f:
-                json.dump(result, f, indent=2)
+            try:
+                with open(out_file, "w", encoding="utf-8") as f:
+                    json.dump(result, f, indent=2)
+            except Exception:
+                pass
         elif args.reels:
             reels = [r.strip() for r in args.reels.split(",") if r.strip()]
             result = run_retrieval_pipeline(reels)
             print(json.dumps(result, indent=2))
-            with open(out_file, "w", encoding="utf-8") as f:
-                json.dump(result, f, indent=2)
+            try:
+                with open(out_file, "w", encoding="utf-8") as f:
+                    json.dump(result, f, indent=2)
+            except Exception:
+                pass
     except Exception as exc:
         print(f"Error: {exc}", file=sys.stderr)
         sys.exit(1)

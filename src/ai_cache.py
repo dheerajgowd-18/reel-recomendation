@@ -105,10 +105,12 @@ def generate_cached_signals(model: str = LLM_MODEL) -> Dict[str, Any]:
         cache_key = make_cache_key(model, PROMPT_VERSION_SIGNAL, rid)
         cached_signals[cache_key] = base_signal
 
-    with open(LLM_SIGNALS_CACHE_PATH, "w", encoding="utf-8") as f:
-        json.dump(cached_signals, f, indent=2)
-
-    print(f"[PASS] Cached {len(cached_signals)} signals to {LLM_SIGNALS_CACHE_PATH.relative_to(PROJECT_ROOT)}")
+    try:
+        with open(LLM_SIGNALS_CACHE_PATH, "w", encoding="utf-8") as f:
+            json.dump(cached_signals, f, indent=2)
+        print(f"[PASS] Cached {len(cached_signals)} signals to {LLM_SIGNALS_CACHE_PATH.relative_to(PROJECT_ROOT)}")
+    except Exception:
+        pass
     return cached_signals
 
 
@@ -144,10 +146,12 @@ def generate_cached_explanations(model: str = LLM_MODEL) -> Dict[str, Any]:
             cached_exps[make_cache_key(model, PROMPT_VERSION_EXPLANATION, "trap_java_to_swe")] = expl
         cached_exps[make_cache_key(model, PROMPT_VERSION_EXPLANATION, "_".join(reel_ids))] = expl
 
-    with open(LLM_EXPLANATIONS_CACHE_PATH, "w", encoding="utf-8") as f:
-        json.dump(cached_exps, f, indent=2)
-
-    print(f"[PASS] Cached {len(cached_exps)} explanations to {LLM_EXPLANATIONS_CACHE_PATH.relative_to(PROJECT_ROOT)}")
+    try:
+        with open(LLM_EXPLANATIONS_CACHE_PATH, "w", encoding="utf-8") as f:
+            json.dump(cached_exps, f, indent=2)
+        print(f"[PASS] Cached {len(cached_exps)} explanations to {LLM_EXPLANATIONS_CACHE_PATH.relative_to(PROJECT_ROOT)}")
+    except Exception:
+        pass
     return cached_exps
 
 
@@ -171,10 +175,12 @@ def generate_cached_concept_anchors(model: str = LLM_MODEL) -> Dict[str, Any]:
             "reason": gr.get("rejection_reason", ""),
         }
 
-    with open(LLM_CONCEPT_ANCHOR_CACHE_PATH, "w", encoding="utf-8") as f:
-        json.dump(cached_anchors, f, indent=2)
-
-    print(f"[PASS] Cached {len(cached_anchors)} concept anchors to {LLM_CONCEPT_ANCHOR_CACHE_PATH.relative_to(PROJECT_ROOT)}")
+    try:
+        with open(LLM_CONCEPT_ANCHOR_CACHE_PATH, "w", encoding="utf-8") as f:
+            json.dump(cached_anchors, f, indent=2)
+        print(f"[PASS] Cached {len(cached_anchors)} concept anchors to {LLM_CONCEPT_ANCHOR_CACHE_PATH.relative_to(PROJECT_ROOT)}")
+    except Exception:
+        pass
     return cached_anchors
 
 

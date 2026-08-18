@@ -113,9 +113,11 @@ def api_cached_demo() -> Dict[str, Any]:
         try:
             with open(DEMO_TRACE_FILE, "r", encoding="utf-8") as f:
                 return json.load(f)
-        except Exception as exc:
-            raise HTTPException(status_code=500, detail=f"Failed loading cached demo: {exc}")
-    raise HTTPException(status_code=404, detail="demo_trace.json not found")
+        except Exception:
+            pass
+    # In-memory fallback if file is missing on ephemeral disk
+    from src.demo import run_demo
+    return run_demo(all_cases=True)
 
 
 @app.post("/api/run")
@@ -227,8 +229,8 @@ if STATIC_DIR.is_dir():
 def main() -> None:
     """Run server with uvicorn."""
     import uvicorn
-    port = int(os.getenv("PORT", 8000))
-    host = os.getenv("HOST", "127.0.0.1")
+    port = int(os.environ.get("PORT", "8000"))
+    host = os.environ.get("HOST", "0.0.0.0")
     print(f"Starting ScrollSense UI Server on http://{host}:{port}")
     uvicorn.run("ui.server:app", host=host, port=port, reload=False)
 

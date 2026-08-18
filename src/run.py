@@ -90,8 +90,11 @@ def main() -> None:
                 print(f"=== CHECKPOINT: {k} ===")
                 print(data["output_text"])
                 print()
-            with open(trace_file, "w", encoding="utf-8") as f:
-                json.dump(all_res, f, indent=2)
+            try:
+                with open(trace_file, "w", encoding="utf-8") as f:
+                    json.dump(all_res, f, indent=2)
+            except Exception:
+                pass
         elif args.case:
             formatted_block, trace_dict = run_pipeline_for_case(
                 args.case,
@@ -100,10 +103,13 @@ def main() -> None:
                 explainer=args.explainer,
             )
             print(formatted_block)
-            with open(out_file, "w", encoding="utf-8") as f:
-                f.write(formatted_block + "\n")
-            with open(trace_file, "w", encoding="utf-8") as f:
-                json.dump(trace_dict, f, indent=2)
+            try:
+                with open(out_file, "w", encoding="utf-8") as f:
+                    f.write(formatted_block + "\n")
+                with open(trace_file, "w", encoding="utf-8") as f:
+                    json.dump(trace_dict, f, indent=2)
+            except Exception:
+                pass
         elif args.reels:
             reels = [r.strip() for r in args.reels.split(",") if r.strip()]
             formatted_block, trace_dict = run_pipeline_for_reels(
@@ -113,10 +119,13 @@ def main() -> None:
                 explainer=args.explainer,
             )
             print(formatted_block)
-            with open(out_file, "w", encoding="utf-8") as f:
-                f.write(formatted_block + "\n")
-            with open(trace_file, "w", encoding="utf-8") as f:
-                json.dump(trace_dict, f, indent=2)
+            try:
+                with open(out_file, "w", encoding="utf-8") as f:
+                    f.write(formatted_block + "\n")
+                with open(trace_file, "w", encoding="utf-8") as f:
+                    json.dump(trace_dict, f, indent=2)
+            except Exception:
+                pass
     except Exception as exc:
         print(f"Error: {exc}", file=sys.stderr)
         sys.exit(1)

@@ -338,9 +338,12 @@ def save_signal_cache(
     signals_cache: Dict[str, Dict[str, Any]], path: Path = SIGNALS_CACHE_PATH
 ) -> None:
     """Save signal cache to disk."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(signals_cache, f, indent=2)
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(signals_cache, f, indent=2)
+    except Exception:
+        pass
 
 
 def is_cache_entry_valid(entry: Dict[str, Any]) -> bool:

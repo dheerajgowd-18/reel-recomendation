@@ -185,9 +185,12 @@ def load_or_generate_gate_cache(force_refresh: bool = False) -> Dict[str, Dict[s
         cid = cand["id"]
         new_cache[cid] = gate_candidate(cand)
 
-    GATE_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(GATE_CACHE_PATH, "w", encoding="utf-8") as f:
-        json.dump(new_cache, f, indent=2)
+    try:
+        GATE_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with open(GATE_CACHE_PATH, "w", encoding="utf-8") as f:
+            json.dump(new_cache, f, indent=2)
+    except Exception:
+        pass
 
     return new_cache
 
@@ -301,19 +304,28 @@ def main() -> None:
         if args.all_checkpoints:
             results = run_all_checkpoint_gates()
             print(json.dumps(results, indent=2))
-            with open(out_file, "w", encoding="utf-8") as f:
-                json.dump(results, f, indent=2)
+            try:
+                with open(out_file, "w", encoding="utf-8") as f:
+                    json.dump(results, f, indent=2)
+            except Exception:
+                pass
         elif args.case:
             result = run_gate_for_case(args.case)
             print(json.dumps(result, indent=2))
-            with open(out_file, "w", encoding="utf-8") as f:
-                json.dump(result, f, indent=2)
+            try:
+                with open(out_file, "w", encoding="utf-8") as f:
+                    json.dump(result, f, indent=2)
+            except Exception:
+                pass
         elif args.reels:
             reels = [r.strip() for r in args.reels.split(",") if r.strip()]
             result = run_gate_for_reels(reels)
             print(json.dumps(result, indent=2))
-            with open(out_file, "w", encoding="utf-8") as f:
-                json.dump(result, f, indent=2)
+            try:
+                with open(out_file, "w", encoding="utf-8") as f:
+                    json.dump(result, f, indent=2)
+            except Exception:
+                pass
     except Exception as exc:
         print(f"Error: {exc}", file=sys.stderr)
         sys.exit(1)

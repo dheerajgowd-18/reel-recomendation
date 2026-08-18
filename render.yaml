@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: scrollsense
+    runtime: python
+    plan: starter
+    buildCommand: pip install --no-cache-dir -r requirements.txt -r requirements-ui.txt
+    startCommand: python -m ui.server
+    healthCheckPath: /api/health
+    envVars:
+      - key: LLM_PROVIDER
+        value: cache
+      - key: PYTHONUNBUFFERED
+        value: "1"

@@ -415,21 +415,22 @@ def run_demo(case: Optional[str] = None, all_cases: bool = False) -> Dict[str, A
     }
 
     # Ensure output directory exists
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    try:
+        # 1. Write demo trace JSON
+        with open(DEMO_TRACE_PATH, "w", encoding="utf-8") as f:
+            json.dump(demo_trace, f, indent=2)
 
-    # 1. Write demo trace JSON
-    with open(DEMO_TRACE_PATH, "w", encoding="utf-8") as f:
-        json.dump(demo_trace, f, indent=2)
+        # 2. Write demo report Markdown
+        report_md = generate_demo_report_markdown(demo_cases_results)
+        with open(DEMO_REPORT_PATH, "w", encoding="utf-8") as f:
+            f.write(report_md + "\n")
 
-    # 2. Write demo report Markdown
-    report_md = generate_demo_report_markdown(demo_cases_results)
-    with open(DEMO_REPORT_PATH, "w", encoding="utf-8") as f:
-        f.write(report_md + "\n")
-
-    # 3. Write demo HTML
-    html_content = generate_demo_html(demo_cases_results)
-    with open(DEMO_HTML_PATH, "w", encoding="utf-8") as f:
-        f.write(html_content + "\n")
+        # 3. Write demo HTML
+        html_content = generate_demo_html(demo_cases_results)
+        with open(DEMO_HTML_PATH, "w", encoding="utf-8") as f:
+            f.write(html_content + "\n")
+    except Exception:
+        pass
 
     # Console summary
     print("=" * 60)

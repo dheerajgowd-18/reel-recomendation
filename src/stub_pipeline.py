@@ -178,16 +178,17 @@ def run_stub_pipeline(
         trace_file=str(tr_file),
     )
 
-    # Ensure output parent directory exists
-    out_file.parent.mkdir(parents=True, exist_ok=True)
-    tr_file.parent.mkdir(parents=True, exist_ok=True)
+    # Write output files if possible
+    try:
+        out_file.parent.mkdir(parents=True, exist_ok=True)
+        tr_file.parent.mkdir(parents=True, exist_ok=True)
+        with open(out_file, "w", encoding="utf-8") as f:
+            f.write(formatted_block + "\n")
 
-    # Write output files
-    with open(out_file, "w", encoding="utf-8") as f:
-        f.write(formatted_block + "\n")
-
-    import json
-    with open(tr_file, "w", encoding="utf-8") as f:
-        json.dump(trace_data, f, indent=2)
+        import json
+        with open(tr_file, "w", encoding="utf-8") as f:
+            json.dump(trace_data, f, indent=2)
+    except Exception:
+        pass
 
     return formatted_block, trace_data
