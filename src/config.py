@@ -16,6 +16,7 @@ TRAP_REGRESSION_PATH = DATA_DIR / "trap_regression.json"
 # Cache directory and files
 CACHE_DIR = PROJECT_ROOT / "cache"
 SIGNALS_CACHE_PATH = CACHE_DIR / "signals.json"
+GATE_CACHE_PATH = CACHE_DIR / "gate_results.json"
 
 # Output directory and default files
 OUTPUT_DIR = PROJECT_ROOT / "output"
@@ -26,6 +27,7 @@ DEFAULT_TRACE_PATH = OUTPUT_DIR / "trace.json"
 SIGNAL_VERSION = "v1"
 ONTOLOGY_VERSION = "graph-v1"
 MODEL_VERSION = "deterministic-rules-v1"
+GATE_VERSION = "v1"
 
 # Contract validation rules
 REQUIRED_OUTPUT_FIELDS: List[str] = [
@@ -233,6 +235,11 @@ CONCEPT_ALIAS_MAP: Dict[str, str] = {
     "self_attention": "ai",
     "deep_learning": "ai",
     "ai tools": "ai",
+    "docker": "cloud",
+    "kubernetes": "cloud",
+    "rag": "ai",
+    "vector databases": "ai",
+    "vector_databases": "ai",
     "hype": "hype",
     "bootcamp": "career",
     "guaranteed_job": "career",
@@ -249,4 +256,116 @@ CONCEPT_ALIAS_MAP: Dict[str, str] = {
     "sql_injection": "cybersecurity",
     "appsec": "cybersecurity",
     "owasp": "cybersecurity",
+}
+
+# Hard Denylist Patterns (case-insensitive substring match)
+HARD_DENYLIST_PATTERNS: List[str] = [
+    "get you a job",
+    "will get you a job",
+    "guaranteed job",
+    "become a developer in",
+    "become a software engineer in",
+    "secret tools",
+    "no one tells you",
+    "make money fast",
+    "six figures",
+    "without coding",
+    "hack your career",
+    "get hired fast",
+    "recruiting hacks",
+    "ai secrets",
+    "interview cheats",
+    "get_rich",
+    "guaranteed_job",
+]
+
+# Soft Hype Patterns for pattern penalty scoring
+HYPE_PATTERNS: List[str] = [
+    "10",
+    "5",
+    "top",
+    "tools",
+    "hacks",
+    "tips",
+    "tricks",
+    "secrets",
+    "ways",
+    "fast",
+    "instantly",
+    "guaranteed",
+    "roadmap",
+    "get hired",
+    "job",
+    "career hacks",
+    "speedrun",
+    "get rich",
+    "cheat",
+    "hype",
+]
+
+# Concrete Technical Concept Anchors for quality scoring
+CONCEPT_ANCHORS: Set[str] = {
+    "git",
+    "github",
+    "http",
+    "api",
+    "rest api",
+    "rest_api",
+    "debugging",
+    "code review",
+    "code_review",
+    "binary tree",
+    "binary_tree",
+    "dsa",
+    "system design",
+    "system_design",
+    "cloud",
+    "docker",
+    "kubernetes",
+    "rag",
+    "vector databases",
+    "vector_databases",
+    "gpu",
+    "cpu",
+    "cache hierarchy",
+    "cpu_cache",
+    "arm",
+    "x86",
+    "game engine",
+    "game_engine",
+    "game development",
+    "game_development",
+    "rendering",
+    "graphics",
+    "behavior trees",
+    "pathfinding",
+    "game loop",
+    "game_loop",
+    "linux",
+    "bash",
+    "sql",
+    "testing",
+    "compiler",
+    "memory_locality",
+    "hashmap",
+    "jvm",
+    "garbage_collection",
+    "binary_search",
+    "two_pointer",
+    "auth",
+    "jwt",
+    "owasp",
+    "sql_injection",
+    "software_engineering",
+    "developer_workflow",
+    "algorithms",
+    "load_balancer",
+    "caching",
+    "databases",
+    "database_indexing",
+    "b_tree",
+    "transformers",
+    "self_attention",
+    "deep_learning",
+    "game_ai",
 }

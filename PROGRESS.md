@@ -1,23 +1,23 @@
 # ScrollSense Progress
 
 ## Current Phase
-Phase 4 — Candidate Retrieval
+Phase 5 — Safety/Quality/Hype Gate
 
 ## Phase Status
 COMPLETE
 
 ## Completed
-- Completed Preflight Gate: verified clean git working tree, verified JSON hygiene across all fixtures and outputs, and verified zero regressions across Phases 0, 0.1, 1, 2, and 3.
-- Implemented `CONCEPT_ALIAS_MAP` in `src/config.py` providing canonical ontology mapping between candidate concept tags, graph nodes, and domain interests.
-- Enhanced concept tags in `data/tech_reels.json` for natural retrieval across T1, T5, T22, T23, T24, T25, T26 while maintaining `score_type: "reference_only"`.
-- Implemented `src/retrieve.py` supporting dual-source retrieval:
-  - Source A: Topical matching from InterestState domains and goals.
-  - Source B: Identity-adjacent graph matching from active nodes.
-  - Combined retrieval weighting: `0.45 * topical + 0.55 * identity_adjacent`.
-- Implemented retrieval CLI supporting `--reels`, `--case`, `--all-checkpoints`, and `--out` options with structured output to `output/retrieval.json`.
-- Created `tools/validate_retrieval.py` validating all 18 retrieval checks, candidate schema, sorting, and anti-leakage isolation.
-- Created `tests/test_phase4_retrieval.py` expanding test suite to 49 passing unit tests.
-- Verified Phase 1, Phase 2, and Phase 3 CLI regressions remain fully stable.
+- Completed Preflight Gate: clean git tree, clean JSON hygiene, zero test regressions across Phases 0 through 4.
+- Added borderline useful listicle candidate `T97` ("10 AI tools worth learning") in `data/tech_reels.json` to prove the gate distinguishes true hype from high-concept listicles.
+- Defined `HARD_DENYLIST_PATTERNS`, `HYPE_PATTERNS`, and `CONCEPT_ANCHORS` in `src/config.py`.
+- Implemented `src/gate.py` computing live live safety, concept anchor substance, depth, and hype penalty scores without reading candidate reference scores (`score_source: "computed"`).
+- Implemented effective rejection rule: `hard_denylist_match or (concept_anchor_score < 0.35 and hype_penalty > 0.65)`.
+- Verified `T99` is rejected across trap and gaming cases, `T1` and `T24` pass, and `T97` passes with anchor score 1.0.
+- Implemented gate cache management (`cache/gate_results.json`) and gate CLI with JSON output to `output/gate.json`.
+- Created `tools/validate_gate.py` validating all 18 gate checks.
+- Created `tests/test_phase5_gate.py` expanding test suite to 64 passing unit tests.
+- Updated `prompts/concept_anchor.md` with complete gate architecture and decision rules.
+- Verified Phase 1 through Phase 4 CLI regressions remain completely stable.
 
 ## In Progress
 - None.
@@ -26,7 +26,7 @@ COMPLETE
 - None.
 
 ## Next Phase
-Phase 5 — Safety/quality/hype gate
+Phase 6 — Ranking, explanation, and exact output generation
 
 ## Critical Artifacts
 - data/watched_reels.json
@@ -35,15 +35,18 @@ Phase 5 — Safety/quality/hype gate
 - data/trap_regression.json
 - data/expected_outputs.json
 - cache/signals.json
+- cache/gate_results.json
 - output/result.txt
 - output/trace.json
 - output/inference.json
 - output/retrieval.json
+- output/gate.json
 - tools/check_json_hygiene.py
 - tools/validate_data.py
 - tools/validate_signals.py
 - tools/validate_inference.py
 - tools/validate_retrieval.py
+- tools/validate_gate.py
 - src/config.py
 - src/loaders.py
 - src/formatter.py
@@ -53,8 +56,10 @@ Phase 5 — Safety/quality/hype gate
 - src/graph.py
 - src/infer.py
 - src/retrieve.py
+- src/gate.py
 - src/run.py
 - tests/test_phase1_stub.py
 - tests/test_phase2_signals.py
 - tests/test_phase3_inference.py
 - tests/test_phase4_retrieval.py
+- tests/test_phase5_gate.py

@@ -1,0 +1,800 @@
+{
+  "T1": {
+    "candidate_id": "T1",
+    "title": "How a junior software engineer ships a small feature",
+    "category": "Career",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 1.0,
+      "depth_score": 0.8
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T2": {
+    "candidate_id": "T2",
+    "title": "What actually happens after you push code",
+    "category": "Cloud",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.45,
+      "depth_score": 0.69
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T3": {
+    "candidate_id": "T3",
+    "title": "Git basics for your first team project",
+    "category": "Career",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.75,
+      "depth_score": 0.75
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T4": {
+    "candidate_id": "T4",
+    "title": "How to read a codebase as a student",
+    "category": "Career",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.75,
+      "depth_score": 0.75
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T5": {
+    "candidate_id": "T5",
+    "title": "What a coding interview is really testing",
+    "category": "Career",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 1.0,
+      "depth_score": 0.8
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T6": {
+    "candidate_id": "T6",
+    "title": "Build your first tiny web API",
+    "category": "HLD",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 1.0,
+      "depth_score": 0.8
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T7": {
+    "candidate_id": "T7",
+    "title": "Beginner-friendly introduction to system design",
+    "category": "HLD",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 1.0,
+      "depth_score": 0.8
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T8": {
+    "candidate_id": "T8",
+    "title": "Debugging basics for new developers",
+    "category": "Career",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 1.0,
+      "depth_score": 0.8
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T9": {
+    "candidate_id": "T9",
+    "title": "Cloud basics for students",
+    "category": "Cloud",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.45,
+      "depth_score": 0.69
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T10": {
+    "candidate_id": "T10",
+    "title": "Career advice for first-year tech students",
+    "category": "Career",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.0,
+      "depth_score": 0.6
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T11": {
+    "candidate_id": "T11",
+    "title": "Understanding HashMaps under the hood in Java",
+    "category": "Java",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.45,
+      "depth_score": 0.89
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T12": {
+    "candidate_id": "T12",
+    "title": "Java Virtual Machine (JVM) memory model explained visually",
+    "category": "Java",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.75,
+      "depth_score": 1.0
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T13": {
+    "candidate_id": "T13",
+    "title": "Two-pointer technique patterns for LeetCode problems",
+    "category": "DSA",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.75,
+      "depth_score": 0.95
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T14": {
+    "candidate_id": "T14",
+    "title": "Binary search: Avoid off-by-one errors forever",
+    "category": "DSA",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 1.0,
+      "depth_score": 0.8
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T15": {
+    "candidate_id": "T15",
+    "title": "SQL indexing explained with a library metaphor",
+    "category": "HLD",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 1.0,
+      "depth_score": 1.0
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T16": {
+    "candidate_id": "T16",
+    "title": "How JWT authentication works between client and backend",
+    "category": "Cybersecurity",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.75,
+      "depth_score": 0.95
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T17": {
+    "candidate_id": "T17",
+    "title": "SQL Injection in 60 seconds and how to prevent it",
+    "category": "Cybersecurity",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 1.0,
+      "depth_score": 0.8
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T18": {
+    "candidate_id": "T18",
+    "title": "How CPU cache hierarchy affects software performance",
+    "category": "Hardware",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 1.0,
+      "depth_score": 1.0
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T19": {
+    "candidate_id": "T19",
+    "title": "ARM vs x86 architecture explained simply",
+    "category": "Hardware",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.75,
+      "depth_score": 0.75
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T20": {
+    "candidate_id": "T20",
+    "title": "Transformer attention mechanism animated with intuitive math",
+    "category": "AI",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 1.0,
+      "depth_score": 1.0
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T21": {
+    "candidate_id": "T21",
+    "title": "Linux command line survival guide for developers",
+    "category": "Other",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 1.0,
+      "depth_score": 0.8
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T22": {
+    "candidate_id": "T22",
+    "title": "Beginner programming concepts explained with memes",
+    "category": "Other",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.0,
+      "depth_score": 0.6
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T23": {
+    "candidate_id": "T23",
+    "title": "What software engineers actually do all day",
+    "category": "Career",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.75,
+      "depth_score": 0.75
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T24": {
+    "candidate_id": "T24",
+    "title": "How game AI decides enemy behavior",
+    "category": "AI",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 1.0,
+      "depth_score": 0.8
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T25": {
+    "candidate_id": "T25",
+    "title": "What a game engine actually does",
+    "category": "Other",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 1.0,
+      "depth_score": 0.8
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T26": {
+    "candidate_id": "T26",
+    "title": "Gaming laptop specs that actually matter",
+    "category": "Hardware",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.75,
+      "depth_score": 0.75
+    },
+    "hype": {
+      "pattern_penalty": 0.0,
+      "promotional_language_score": 0.0,
+      "matched_patterns": []
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T97": {
+    "candidate_id": "T97",
+    "title": "10 AI tools worth learning",
+    "category": "AI",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 1.0,
+      "depth_score": 0.67
+    },
+    "hype": {
+      "pattern_penalty": 0.65,
+      "promotional_language_score": 0.6,
+      "matched_patterns": [
+        "10",
+        "tools"
+      ]
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T99": {
+    "candidate_id": "T99",
+    "title": "10 AI tools that will get you a job",
+    "category": "AI",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.0,
+      "depth_score": 0.4
+    },
+    "hype": {
+      "pattern_penalty": 1.0,
+      "promotional_language_score": 1.0,
+      "matched_patterns": [
+        "10",
+        "get you a job",
+        "hype",
+        "job",
+        "tools"
+      ]
+    },
+    "hard_denylist_match": true,
+    "effective_reject": true,
+    "rejection_reason": "Hard denylist match: 'get you a job'",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T100": {
+    "candidate_id": "T100",
+    "title": "Become a software engineer in 30 days",
+    "category": "Career",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.0,
+      "depth_score": 0.4
+    },
+    "hype": {
+      "pattern_penalty": 1.0,
+      "promotional_language_score": 1.0,
+      "matched_patterns": [
+        "become a software engineer in",
+        "hype",
+        "speedrun"
+      ]
+    },
+    "hard_denylist_match": true,
+    "effective_reject": true,
+    "rejection_reason": "Hard denylist match: 'become a software engineer in'",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T101": {
+    "candidate_id": "T101",
+    "title": "Secret AI tools recruiters don\u2019t want you to know",
+    "category": "AI",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.0,
+      "depth_score": 0.47
+    },
+    "hype": {
+      "pattern_penalty": 0.65,
+      "promotional_language_score": 0.6,
+      "matched_patterns": [
+        "hype",
+        "tools"
+      ]
+    },
+    "hard_denylist_match": false,
+    "effective_reject": false,
+    "rejection_reason": "",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T102": {
+    "candidate_id": "T102",
+    "title": "Top 5 coding hacks to get hired fast",
+    "category": "Career",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.0,
+      "depth_score": 0.4
+    },
+    "hype": {
+      "pattern_penalty": 1.0,
+      "promotional_language_score": 1.0,
+      "matched_patterns": [
+        "5",
+        "fast",
+        "get hired",
+        "get hired fast",
+        "hacks",
+        "hype",
+        "top"
+      ]
+    },
+    "hard_denylist_match": true,
+    "effective_reject": true,
+    "rejection_reason": "Hard denylist match: 'get hired fast'",
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "T103": {
+    "candidate_id": "T103",
+    "title": "Guaranteed tech job roadmap",
+    "category": "Career",
+    "gate_version": "v1",
+    "score_source": "computed",
+    "safety": {
+      "passed": true,
+      "reason": "no prohibited content"
+    },
+    "quality": {
+      "concept_anchor_score": 0.0,
+      "depth_score": 0.4
+    },
+    "hype": {
+      "pattern_penalty": 1.0,
+      "promotional_language_score": 1.0,
+      "matched_patterns": [
+        "guaranteed",
+        "guaranteed_job",
+        "hype",
+        "job",
+        "roadmap"
+      ]
+    },
+    "hard_denylist_match": true,
+    "effective_reject": true,
+    "rejection_reason": "Hard denylist match: 'guaranteed_job'",
+    "generated_at": "2026-08-18T00:00:00Z"
+  }
+}

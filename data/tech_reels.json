@@ -286,6 +286,22 @@
     "score_type": "reference_only"
   },
   {
+    "id": "T97",
+    "title": "10 AI tools worth learning",
+    "category": "AI",
+    "concept_tags": [
+      "docker",
+      "kubernetes",
+      "rag",
+      "vector databases"
+    ],
+    "difficulty": "Beginner",
+    "quality_score": 0.75,
+    "hype_score": 0.45,
+    "utility_score": 0.7,
+    "score_type": "reference_only"
+  },
+  {
     "id": "T99",
     "title": "10 AI tools that will get you a job",
     "category": "AI",

@@ -19,13 +19,14 @@ CONFIDENCE: [High / Medium / Low]
 ```
 
 ## Running Data & Pipeline Validation
-To validate data contracts, fixtures, signal caches, hygiene, inference, and candidate retrieval offline:
+To validate data contracts, fixtures, signal caches, hygiene, inference, retrieval, and gating offline:
 ```bash
 python tools/check_json_hygiene.py
 python tools/validate_data.py
 python tools/validate_signals.py
 python tools/validate_inference.py
 python tools/validate_retrieval.py
+python tools/validate_gate.py
 python -m unittest discover -s tests -v
 ```
 
@@ -70,7 +71,7 @@ python -m src.infer --all-checkpoints
 ```
 
 ## Phase 4 — Candidate Retrieval
-Phase 4 retrieves candidate Reels using topical and identity-adjacent graph signals. It combines Source A (topical matching) and Source B (graph identity-adjacent activation) into a unified shortlisted candidate catalog. It does not yet apply the hype gate or final ranking.
+Phase 4 retrieves candidate Reels using topical and identity-adjacent graph signals. It combines Source A (topical matching) and Source B (graph identity-adjacent activation) into a unified shortlisted candidate catalog.
 
 ### Commands
 ```bash
@@ -84,6 +85,18 @@ python -m src.retrieve --case non_trap_gaming_only
 python -m src.retrieve --all-checkpoints
 ```
 
+## Phase 5 — Safety/Quality/Hype Gate
+Phase 5 filters retrieved candidates using a deterministic safety/quality/hype gate. It rejects hype content before ranking and does not use candidate reference scores as live gate truth. It enforces hard denylists and concept-anchor thresholds while allowing legitimate educational listicles (`T97`) to pass.
+
+### Commands
+```bash
+python -m src.gate --reels R1,R2,R3,R4
+python -m src.gate --reels R5,R6,R7
+python -m src.gate --case trap_java_to_swe
+python -m src.gate --case non_trap_gaming_only
+python -m src.gate --all-checkpoints
+```
+
 ## Current Phase Status
-- **Current Phase**: Phase 4 (Candidate Retrieval)
+- **Current Phase**: Phase 5 (Safety/Quality/Hype Gate)
 - **Status**: COMPLETE

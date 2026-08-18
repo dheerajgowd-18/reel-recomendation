@@ -1,106 +1,3056 @@
 {
-  "phase": "phase_4_retrieval",
-  "case": "non_trap_gaming_only",
-  "reel_ids": [
-    "R5",
-    "R6",
-    "R7"
-  ],
-  "interest_summary": {
-    "top_professional_identity": "",
-    "top_domains": [
-      "gaming",
-      "hardware",
-      "ai"
+  "trap_after_R1": {
+    "phase": "phase_4_retrieval",
+    "case": "trap_after_R1",
+    "reel_ids": [
+      "R1"
     ],
-    "top_goals": [],
-    "top_career_stage": "",
-    "confidence": "Medium"
-  },
-  "sources": {
-    "topical": [
+    "interest_summary": {
+      "top_professional_identity": "software_engineer",
+      "top_domains": [
+        "java"
+      ],
+      "top_goals": [],
+      "top_career_stage": "",
+      "confidence": "Low"
+    },
+    "sources": {
+      "topical": [
+        {
+          "candidate_id": "T11",
+          "title": "Understanding HashMaps under the hood in Java",
+          "category": "Java",
+          "score": 0.443,
+          "matched_terms": [
+            "java"
+          ]
+        },
+        {
+          "candidate_id": "T12",
+          "title": "Java Virtual Machine (JVM) memory model explained visually",
+          "category": "Java",
+          "score": 0.443,
+          "matched_terms": [
+            "java"
+          ]
+        },
+        {
+          "candidate_id": "T22",
+          "title": "Beginner programming concepts explained with memes",
+          "category": "Other",
+          "score": 0.443,
+          "matched_terms": [
+            "java"
+          ]
+        }
+      ],
+      "identity_adjacent": [
+        {
+          "candidate_id": "T1",
+          "title": "How a junior software engineer ships a small feature",
+          "category": "Career",
+          "score": 0.686,
+          "matched_nodes": [
+            "career",
+            "debugging",
+            "git"
+          ]
+        },
+        {
+          "candidate_id": "T3",
+          "title": "Git basics for your first team project",
+          "category": "Career",
+          "score": 0.516,
+          "matched_nodes": [
+            "career",
+            "git"
+          ]
+        },
+        {
+          "candidate_id": "T4",
+          "title": "How to read a codebase as a student",
+          "category": "Career",
+          "score": 0.506,
+          "matched_nodes": [
+            "career",
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T5",
+          "title": "What a coding interview is really testing",
+          "category": "Career",
+          "score": 0.497,
+          "matched_nodes": [
+            "career",
+            "dsa"
+          ]
+        },
+        {
+          "candidate_id": "T11",
+          "title": "Understanding HashMaps under the hood in Java",
+          "category": "Java",
+          "score": 0.468,
+          "matched_nodes": [
+            "java"
+          ]
+        },
+        {
+          "candidate_id": "T12",
+          "title": "Java Virtual Machine (JVM) memory model explained visually",
+          "category": "Java",
+          "score": 0.468,
+          "matched_nodes": [
+            "java"
+          ]
+        },
+        {
+          "candidate_id": "T22",
+          "title": "Beginner programming concepts explained with memes",
+          "category": "Other",
+          "score": 0.468,
+          "matched_nodes": [
+            "java"
+          ]
+        },
+        {
+          "candidate_id": "T6",
+          "title": "Build your first tiny web API",
+          "category": "HLD",
+          "score": 0.323,
+          "matched_nodes": [
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T7",
+          "title": "Beginner-friendly introduction to system design",
+          "category": "HLD",
+          "score": 0.323,
+          "matched_nodes": [
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T8",
+          "title": "Debugging basics for new developers",
+          "category": "Career",
+          "score": 0.323,
+          "matched_nodes": [
+            "debugging"
+          ]
+        },
+        {
+          "candidate_id": "T15",
+          "title": "SQL indexing explained with a library metaphor",
+          "category": "HLD",
+          "score": 0.323,
+          "matched_nodes": [
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T10",
+          "title": "Career advice for first-year tech students",
+          "category": "Career",
+          "score": 0.31,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T13",
+          "title": "Two-pointer technique patterns for LeetCode problems",
+          "category": "DSA",
+          "score": 0.31,
+          "matched_nodes": [
+            "dsa"
+          ]
+        },
+        {
+          "candidate_id": "T14",
+          "title": "Binary search: Avoid off-by-one errors forever",
+          "category": "DSA",
+          "score": 0.31,
+          "matched_nodes": [
+            "dsa"
+          ]
+        },
+        {
+          "candidate_id": "T23",
+          "title": "What software engineers actually do all day",
+          "category": "Career",
+          "score": 0.31,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T99",
+          "title": "10 AI tools that will get you a job",
+          "category": "AI",
+          "score": 0.31,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T100",
+          "title": "Become a software engineer in 30 days",
+          "category": "Career",
+          "score": 0.31,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T101",
+          "title": "Secret AI tools recruiters don\u2019t want you to know",
+          "category": "AI",
+          "score": 0.31,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T102",
+          "title": "Top 5 coding hacks to get hired fast",
+          "category": "Career",
+          "score": 0.31,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T103",
+          "title": "Guaranteed tech job roadmap",
+          "category": "Career",
+          "score": 0.31,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T2",
+          "title": "What actually happens after you push code",
+          "category": "Cloud",
+          "score": 0.296,
+          "matched_nodes": [
+            "cloud"
+          ]
+        },
+        {
+          "candidate_id": "T9",
+          "title": "Cloud basics for students",
+          "category": "Cloud",
+          "score": 0.296,
+          "matched_nodes": [
+            "cloud"
+          ]
+        },
+        {
+          "candidate_id": "T97",
+          "title": "10 AI tools worth learning",
+          "category": "AI",
+          "score": 0.296,
+          "matched_nodes": [
+            "cloud"
+          ]
+        }
+      ]
+    },
+    "candidates": [
       {
-        "candidate_id": "T24",
-        "title": "How game AI decides enemy behavior",
-        "category": "AI",
-        "score": 0.834,
+        "candidate_id": "T11",
+        "title": "Understanding HashMaps under the hood in Java",
+        "category": "Java",
+        "difficulty": "Intermediate",
+        "retrieval_score": 0.457,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
         "matched_terms": [
-          "ai",
-          "gaming"
+          "java"
+        ],
+        "matched_nodes": [
+          "java"
         ]
       },
       {
-        "candidate_id": "T18",
-        "title": "How CPU cache hierarchy affects software performance",
-        "category": "Hardware",
-        "score": 0.52,
+        "candidate_id": "T12",
+        "title": "Java Virtual Machine (JVM) memory model explained visually",
+        "category": "Java",
+        "difficulty": "Advanced",
+        "retrieval_score": 0.457,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
         "matched_terms": [
-          "hardware"
+          "java"
+        ],
+        "matched_nodes": [
+          "java"
         ]
       },
       {
-        "candidate_id": "T19",
-        "title": "ARM vs x86 architecture explained simply",
-        "category": "Hardware",
-        "score": 0.52,
+        "candidate_id": "T22",
+        "title": "Beginner programming concepts explained with memes",
+        "category": "Other",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.457,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
         "matched_terms": [
-          "hardware"
+          "java"
+        ],
+        "matched_nodes": [
+          "java"
         ]
       },
       {
-        "candidate_id": "T26",
-        "title": "Gaming laptop specs that actually matter",
-        "category": "Hardware",
-        "score": 0.52,
-        "matched_terms": [
-          "hardware"
+        "candidate_id": "T1",
+        "title": "How a junior software engineer ships a small feature",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.377,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "career",
+          "debugging",
+          "git"
         ]
       },
       {
-        "candidate_id": "T20",
-        "title": "Transformer attention mechanism animated with intuitive math",
-        "category": "AI",
-        "score": 0.296,
-        "matched_terms": [
-          "ai"
+        "candidate_id": "T3",
+        "title": "Git basics for your first team project",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.284,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "career",
+          "git"
+        ]
+      },
+      {
+        "candidate_id": "T4",
+        "title": "How to read a codebase as a student",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.278,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "career",
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T5",
+        "title": "What a coding interview is really testing",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.273,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "career",
+          "dsa"
+        ]
+      },
+      {
+        "candidate_id": "T6",
+        "title": "Build your first tiny web API",
+        "category": "HLD",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.178,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T7",
+        "title": "Beginner-friendly introduction to system design",
+        "category": "HLD",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.178,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T8",
+        "title": "Debugging basics for new developers",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.178,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "debugging"
+        ]
+      },
+      {
+        "candidate_id": "T15",
+        "title": "SQL indexing explained with a library metaphor",
+        "category": "HLD",
+        "difficulty": "Intermediate",
+        "retrieval_score": 0.178,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T10",
+        "title": "Career advice for first-year tech students",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.171,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T13",
+        "title": "Two-pointer technique patterns for LeetCode problems",
+        "category": "DSA",
+        "difficulty": "Intermediate",
+        "retrieval_score": 0.171,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "dsa"
+        ]
+      },
+      {
+        "candidate_id": "T14",
+        "title": "Binary search: Avoid off-by-one errors forever",
+        "category": "DSA",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.171,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "dsa"
+        ]
+      },
+      {
+        "candidate_id": "T23",
+        "title": "What software engineers actually do all day",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.171,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "career"
         ]
       },
       {
         "candidate_id": "T99",
         "title": "10 AI tools that will get you a job",
         "category": "AI",
-        "score": 0.296,
-        "matched_terms": [
-          "ai"
+        "difficulty": "Beginner",
+        "retrieval_score": 0.171,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T100",
+        "title": "Become a software engineer in 30 days",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.171,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T101",
+        "title": "Secret AI tools recruiters don\u2019t want you to know",
+        "category": "AI",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.171,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T102",
+        "title": "Top 5 coding hacks to get hired fast",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.171,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T103",
+        "title": "Guaranteed tech job roadmap",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.171,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T2",
+        "title": "What actually happens after you push code",
+        "category": "Cloud",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.163,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "cloud"
+        ]
+      },
+      {
+        "candidate_id": "T9",
+        "title": "Cloud basics for students",
+        "category": "Cloud",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.163,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "cloud"
+        ]
+      },
+      {
+        "candidate_id": "T97",
+        "title": "10 AI tools worth learning",
+        "category": "AI",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.163,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "cloud"
         ]
       }
     ],
-    "identity_adjacent": [
+    "candidate_count": 23,
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "trap_after_R1_R2": {
+    "phase": "phase_4_retrieval",
+    "case": "trap_after_R1_R2",
+    "reel_ids": [
+      "R1",
+      "R2"
+    ],
+    "interest_summary": {
+      "top_professional_identity": "software_engineer",
+      "top_domains": [
+        "software_engineering",
+        "career",
+        "java"
+      ],
+      "top_goals": [
+        "career_curiosity"
+      ],
+      "top_career_stage": "",
+      "confidence": "Medium"
+    },
+    "sources": {
+      "topical": [
+        {
+          "candidate_id": "T1",
+          "title": "How a junior software engineer ships a small feature",
+          "category": "Career",
+          "score": 0.967,
+          "matched_terms": [
+            "career",
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T3",
+          "title": "Git basics for your first team project",
+          "category": "Career",
+          "score": 0.967,
+          "matched_terms": [
+            "career",
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T4",
+          "title": "How to read a codebase as a student",
+          "category": "Career",
+          "score": 0.967,
+          "matched_terms": [
+            "career",
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T5",
+          "title": "What a coding interview is really testing",
+          "category": "Career",
+          "score": 0.967,
+          "matched_terms": [
+            "career",
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T23",
+          "title": "What software engineers actually do all day",
+          "category": "Career",
+          "score": 0.967,
+          "matched_terms": [
+            "career",
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T7",
+          "title": "Beginner-friendly introduction to system design",
+          "category": "HLD",
+          "score": 0.66,
+          "matched_terms": [
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T8",
+          "title": "Debugging basics for new developers",
+          "category": "Career",
+          "score": 0.66,
+          "matched_terms": [
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T21",
+          "title": "Linux command line survival guide for developers",
+          "category": "Other",
+          "score": 0.66,
+          "matched_terms": [
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T10",
+          "title": "Career advice for first-year tech students",
+          "category": "Career",
+          "score": 0.625,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T99",
+          "title": "10 AI tools that will get you a job",
+          "category": "AI",
+          "score": 0.625,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T100",
+          "title": "Become a software engineer in 30 days",
+          "category": "Career",
+          "score": 0.625,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T101",
+          "title": "Secret AI tools recruiters don\u2019t want you to know",
+          "category": "AI",
+          "score": 0.625,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T102",
+          "title": "Top 5 coding hacks to get hired fast",
+          "category": "Career",
+          "score": 0.625,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T103",
+          "title": "Guaranteed tech job roadmap",
+          "category": "Career",
+          "score": 0.625,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T11",
+          "title": "Understanding HashMaps under the hood in Java",
+          "category": "Java",
+          "score": 0.443,
+          "matched_terms": [
+            "java"
+          ]
+        },
+        {
+          "candidate_id": "T12",
+          "title": "Java Virtual Machine (JVM) memory model explained visually",
+          "category": "Java",
+          "score": 0.443,
+          "matched_terms": [
+            "java"
+          ]
+        },
+        {
+          "candidate_id": "T22",
+          "title": "Beginner programming concepts explained with memes",
+          "category": "Other",
+          "score": 0.443,
+          "matched_terms": [
+            "java"
+          ]
+        }
+      ],
+      "identity_adjacent": [
+        {
+          "candidate_id": "T1",
+          "title": "How a junior software engineer ships a small feature",
+          "category": "Career",
+          "score": 1.0,
+          "matched_nodes": [
+            "career",
+            "debugging",
+            "git"
+          ]
+        },
+        {
+          "candidate_id": "T3",
+          "title": "Git basics for your first team project",
+          "category": "Career",
+          "score": 1.0,
+          "matched_nodes": [
+            "career",
+            "git"
+          ]
+        },
+        {
+          "candidate_id": "T4",
+          "title": "How to read a codebase as a student",
+          "category": "Career",
+          "score": 1.0,
+          "matched_nodes": [
+            "career",
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T5",
+          "title": "What a coding interview is really testing",
+          "category": "Career",
+          "score": 0.98,
+          "matched_nodes": [
+            "career",
+            "dsa"
+          ]
+        },
+        {
+          "candidate_id": "T6",
+          "title": "Build your first tiny web API",
+          "category": "HLD",
+          "score": 0.674,
+          "matched_nodes": [
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T7",
+          "title": "Beginner-friendly introduction to system design",
+          "category": "HLD",
+          "score": 0.674,
+          "matched_nodes": [
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T8",
+          "title": "Debugging basics for new developers",
+          "category": "Career",
+          "score": 0.674,
+          "matched_nodes": [
+            "debugging"
+          ]
+        },
+        {
+          "candidate_id": "T15",
+          "title": "SQL indexing explained with a library metaphor",
+          "category": "HLD",
+          "score": 0.674,
+          "matched_nodes": [
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T10",
+          "title": "Career advice for first-year tech students",
+          "category": "Career",
+          "score": 0.662,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T23",
+          "title": "What software engineers actually do all day",
+          "category": "Career",
+          "score": 0.662,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T99",
+          "title": "10 AI tools that will get you a job",
+          "category": "AI",
+          "score": 0.662,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T100",
+          "title": "Become a software engineer in 30 days",
+          "category": "Career",
+          "score": 0.662,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T101",
+          "title": "Secret AI tools recruiters don\u2019t want you to know",
+          "category": "AI",
+          "score": 0.662,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T102",
+          "title": "Top 5 coding hacks to get hired fast",
+          "category": "Career",
+          "score": 0.662,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T103",
+          "title": "Guaranteed tech job roadmap",
+          "category": "Career",
+          "score": 0.662,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T13",
+          "title": "Two-pointer technique patterns for LeetCode problems",
+          "category": "DSA",
+          "score": 0.64,
+          "matched_nodes": [
+            "dsa"
+          ]
+        },
+        {
+          "candidate_id": "T14",
+          "title": "Binary search: Avoid off-by-one errors forever",
+          "category": "DSA",
+          "score": 0.64,
+          "matched_nodes": [
+            "dsa"
+          ]
+        },
+        {
+          "candidate_id": "T2",
+          "title": "What actually happens after you push code",
+          "category": "Cloud",
+          "score": 0.606,
+          "matched_nodes": [
+            "cloud"
+          ]
+        },
+        {
+          "candidate_id": "T9",
+          "title": "Cloud basics for students",
+          "category": "Cloud",
+          "score": 0.606,
+          "matched_nodes": [
+            "cloud"
+          ]
+        },
+        {
+          "candidate_id": "T97",
+          "title": "10 AI tools worth learning",
+          "category": "AI",
+          "score": 0.606,
+          "matched_nodes": [
+            "cloud"
+          ]
+        }
+      ]
+    },
+    "candidates": [
+      {
+        "candidate_id": "T1",
+        "title": "How a junior software engineer ships a small feature",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.985,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career",
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "career",
+          "debugging",
+          "git"
+        ]
+      },
+      {
+        "candidate_id": "T3",
+        "title": "Git basics for your first team project",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.985,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career",
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "career",
+          "git"
+        ]
+      },
+      {
+        "candidate_id": "T4",
+        "title": "How to read a codebase as a student",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.985,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career",
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "career",
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T5",
+        "title": "What a coding interview is really testing",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.974,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career",
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "career",
+          "dsa"
+        ]
+      },
+      {
+        "candidate_id": "T23",
+        "title": "What software engineers actually do all day",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.799,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career",
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T7",
+        "title": "Beginner-friendly introduction to system design",
+        "category": "HLD",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.668,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T8",
+        "title": "Debugging basics for new developers",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.668,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "debugging"
+        ]
+      },
+      {
+        "candidate_id": "T10",
+        "title": "Career advice for first-year tech students",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.645,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T99",
+        "title": "10 AI tools that will get you a job",
+        "category": "AI",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.645,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T100",
+        "title": "Become a software engineer in 30 days",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.645,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T101",
+        "title": "Secret AI tools recruiters don\u2019t want you to know",
+        "category": "AI",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.645,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T102",
+        "title": "Top 5 coding hacks to get hired fast",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.645,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T103",
+        "title": "Guaranteed tech job roadmap",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.645,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T6",
+        "title": "Build your first tiny web API",
+        "category": "HLD",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.371,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T15",
+        "title": "SQL indexing explained with a library metaphor",
+        "category": "HLD",
+        "difficulty": "Intermediate",
+        "retrieval_score": 0.371,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T13",
+        "title": "Two-pointer technique patterns for LeetCode problems",
+        "category": "DSA",
+        "difficulty": "Intermediate",
+        "retrieval_score": 0.352,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "dsa"
+        ]
+      },
+      {
+        "candidate_id": "T14",
+        "title": "Binary search: Avoid off-by-one errors forever",
+        "category": "DSA",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.352,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "dsa"
+        ]
+      },
+      {
+        "candidate_id": "T2",
+        "title": "What actually happens after you push code",
+        "category": "Cloud",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.333,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "cloud"
+        ]
+      },
+      {
+        "candidate_id": "T9",
+        "title": "Cloud basics for students",
+        "category": "Cloud",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.333,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "cloud"
+        ]
+      },
+      {
+        "candidate_id": "T97",
+        "title": "10 AI tools worth learning",
+        "category": "AI",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.333,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "cloud"
+        ]
+      },
+      {
+        "candidate_id": "T21",
+        "title": "Linux command line survival guide for developers",
+        "category": "Other",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.297,
+        "sources": [
+          "topical"
+        ],
+        "matched_terms": [
+          "software_engineering"
+        ],
+        "matched_nodes": []
+      },
+      {
+        "candidate_id": "T11",
+        "title": "Understanding HashMaps under the hood in Java",
+        "category": "Java",
+        "difficulty": "Intermediate",
+        "retrieval_score": 0.199,
+        "sources": [
+          "topical"
+        ],
+        "matched_terms": [
+          "java"
+        ],
+        "matched_nodes": []
+      },
+      {
+        "candidate_id": "T12",
+        "title": "Java Virtual Machine (JVM) memory model explained visually",
+        "category": "Java",
+        "difficulty": "Advanced",
+        "retrieval_score": 0.199,
+        "sources": [
+          "topical"
+        ],
+        "matched_terms": [
+          "java"
+        ],
+        "matched_nodes": []
+      },
+      {
+        "candidate_id": "T22",
+        "title": "Beginner programming concepts explained with memes",
+        "category": "Other",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.199,
+        "sources": [
+          "topical"
+        ],
+        "matched_terms": [
+          "java"
+        ],
+        "matched_nodes": []
+      }
+    ],
+    "candidate_count": 24,
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "trap_after_R1_R2_R3": {
+    "phase": "phase_4_retrieval",
+    "case": "trap_after_R1_R2_R3",
+    "reel_ids": [
+      "R1",
+      "R2",
+      "R3"
+    ],
+    "interest_summary": {
+      "top_professional_identity": "software_engineer",
+      "top_domains": [
+        "career",
+        "software_engineering",
+        "java"
+      ],
+      "top_goals": [
+        "career_prep",
+        "career_curiosity"
+      ],
+      "top_career_stage": "candidate",
+      "confidence": "High"
+    },
+    "sources": {
+      "topical": [
+        {
+          "candidate_id": "T1",
+          "title": "How a junior software engineer ships a small feature",
+          "category": "Career",
+          "score": 1.0,
+          "matched_terms": [
+            "career",
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T3",
+          "title": "Git basics for your first team project",
+          "category": "Career",
+          "score": 1.0,
+          "matched_terms": [
+            "career",
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T4",
+          "title": "How to read a codebase as a student",
+          "category": "Career",
+          "score": 1.0,
+          "matched_terms": [
+            "career",
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T5",
+          "title": "What a coding interview is really testing",
+          "category": "Career",
+          "score": 1.0,
+          "matched_terms": [
+            "career",
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T23",
+          "title": "What software engineers actually do all day",
+          "category": "Career",
+          "score": 1.0,
+          "matched_terms": [
+            "career",
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T10",
+          "title": "Career advice for first-year tech students",
+          "category": "Career",
+          "score": 0.695,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T99",
+          "title": "10 AI tools that will get you a job",
+          "category": "AI",
+          "score": 0.695,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T100",
+          "title": "Become a software engineer in 30 days",
+          "category": "Career",
+          "score": 0.695,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T101",
+          "title": "Secret AI tools recruiters don\u2019t want you to know",
+          "category": "AI",
+          "score": 0.695,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T102",
+          "title": "Top 5 coding hacks to get hired fast",
+          "category": "Career",
+          "score": 0.695,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T103",
+          "title": "Guaranteed tech job roadmap",
+          "category": "Career",
+          "score": 0.695,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T7",
+          "title": "Beginner-friendly introduction to system design",
+          "category": "HLD",
+          "score": 0.66,
+          "matched_terms": [
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T8",
+          "title": "Debugging basics for new developers",
+          "category": "Career",
+          "score": 0.66,
+          "matched_terms": [
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T21",
+          "title": "Linux command line survival guide for developers",
+          "category": "Other",
+          "score": 0.66,
+          "matched_terms": [
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T11",
+          "title": "Understanding HashMaps under the hood in Java",
+          "category": "Java",
+          "score": 0.443,
+          "matched_terms": [
+            "java"
+          ]
+        },
+        {
+          "candidate_id": "T12",
+          "title": "Java Virtual Machine (JVM) memory model explained visually",
+          "category": "Java",
+          "score": 0.443,
+          "matched_terms": [
+            "java"
+          ]
+        },
+        {
+          "candidate_id": "T22",
+          "title": "Beginner programming concepts explained with memes",
+          "category": "Other",
+          "score": 0.443,
+          "matched_terms": [
+            "java"
+          ]
+        }
+      ],
+      "identity_adjacent": [
+        {
+          "candidate_id": "T1",
+          "title": "How a junior software engineer ships a small feature",
+          "category": "Career",
+          "score": 1.0,
+          "matched_nodes": [
+            "career",
+            "debugging",
+            "git"
+          ]
+        },
+        {
+          "candidate_id": "T3",
+          "title": "Git basics for your first team project",
+          "category": "Career",
+          "score": 1.0,
+          "matched_nodes": [
+            "career",
+            "git"
+          ]
+        },
+        {
+          "candidate_id": "T4",
+          "title": "How to read a codebase as a student",
+          "category": "Career",
+          "score": 1.0,
+          "matched_nodes": [
+            "career",
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T5",
+          "title": "What a coding interview is really testing",
+          "category": "Career",
+          "score": 1.0,
+          "matched_nodes": [
+            "career",
+            "dsa"
+          ]
+        },
+        {
+          "candidate_id": "T10",
+          "title": "Career advice for first-year tech students",
+          "category": "Career",
+          "score": 0.737,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T23",
+          "title": "What software engineers actually do all day",
+          "category": "Career",
+          "score": 0.737,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T99",
+          "title": "10 AI tools that will get you a job",
+          "category": "AI",
+          "score": 0.737,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T100",
+          "title": "Become a software engineer in 30 days",
+          "category": "Career",
+          "score": 0.737,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T101",
+          "title": "Secret AI tools recruiters don\u2019t want you to know",
+          "category": "AI",
+          "score": 0.737,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T102",
+          "title": "Top 5 coding hacks to get hired fast",
+          "category": "Career",
+          "score": 0.737,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T103",
+          "title": "Guaranteed tech job roadmap",
+          "category": "Career",
+          "score": 0.737,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T6",
+          "title": "Build your first tiny web API",
+          "category": "HLD",
+          "score": 0.705,
+          "matched_nodes": [
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T7",
+          "title": "Beginner-friendly introduction to system design",
+          "category": "HLD",
+          "score": 0.705,
+          "matched_nodes": [
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T8",
+          "title": "Debugging basics for new developers",
+          "category": "Career",
+          "score": 0.705,
+          "matched_nodes": [
+            "debugging"
+          ]
+        },
+        {
+          "candidate_id": "T15",
+          "title": "SQL indexing explained with a library metaphor",
+          "category": "HLD",
+          "score": 0.705,
+          "matched_nodes": [
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T13",
+          "title": "Two-pointer technique patterns for LeetCode problems",
+          "category": "DSA",
+          "score": 0.67,
+          "matched_nodes": [
+            "dsa"
+          ]
+        },
+        {
+          "candidate_id": "T14",
+          "title": "Binary search: Avoid off-by-one errors forever",
+          "category": "DSA",
+          "score": 0.67,
+          "matched_nodes": [
+            "dsa"
+          ]
+        },
+        {
+          "candidate_id": "T2",
+          "title": "What actually happens after you push code",
+          "category": "Cloud",
+          "score": 0.634,
+          "matched_nodes": [
+            "cloud"
+          ]
+        },
+        {
+          "candidate_id": "T9",
+          "title": "Cloud basics for students",
+          "category": "Cloud",
+          "score": 0.634,
+          "matched_nodes": [
+            "cloud"
+          ]
+        },
+        {
+          "candidate_id": "T97",
+          "title": "10 AI tools worth learning",
+          "category": "AI",
+          "score": 0.634,
+          "matched_nodes": [
+            "cloud"
+          ]
+        }
+      ]
+    },
+    "candidates": [
+      {
+        "candidate_id": "T1",
+        "title": "How a junior software engineer ships a small feature",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 1.0,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career",
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "career",
+          "debugging",
+          "git"
+        ]
+      },
+      {
+        "candidate_id": "T3",
+        "title": "Git basics for your first team project",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 1.0,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career",
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "career",
+          "git"
+        ]
+      },
+      {
+        "candidate_id": "T4",
+        "title": "How to read a codebase as a student",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 1.0,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career",
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "career",
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T5",
+        "title": "What a coding interview is really testing",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 1.0,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career",
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "career",
+          "dsa"
+        ]
+      },
+      {
+        "candidate_id": "T23",
+        "title": "What software engineers actually do all day",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.855,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career",
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T10",
+        "title": "Career advice for first-year tech students",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.718,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T99",
+        "title": "10 AI tools that will get you a job",
+        "category": "AI",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.718,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T100",
+        "title": "Become a software engineer in 30 days",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.718,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T101",
+        "title": "Secret AI tools recruiters don\u2019t want you to know",
+        "category": "AI",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.718,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T102",
+        "title": "Top 5 coding hacks to get hired fast",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.718,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T103",
+        "title": "Guaranteed tech job roadmap",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.718,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T7",
+        "title": "Beginner-friendly introduction to system design",
+        "category": "HLD",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.685,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T8",
+        "title": "Debugging basics for new developers",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.685,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "debugging"
+        ]
+      },
+      {
+        "candidate_id": "T6",
+        "title": "Build your first tiny web API",
+        "category": "HLD",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.388,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T15",
+        "title": "SQL indexing explained with a library metaphor",
+        "category": "HLD",
+        "difficulty": "Intermediate",
+        "retrieval_score": 0.388,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T13",
+        "title": "Two-pointer technique patterns for LeetCode problems",
+        "category": "DSA",
+        "difficulty": "Intermediate",
+        "retrieval_score": 0.369,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "dsa"
+        ]
+      },
+      {
+        "candidate_id": "T14",
+        "title": "Binary search: Avoid off-by-one errors forever",
+        "category": "DSA",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.369,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "dsa"
+        ]
+      },
+      {
+        "candidate_id": "T2",
+        "title": "What actually happens after you push code",
+        "category": "Cloud",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.349,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "cloud"
+        ]
+      },
+      {
+        "candidate_id": "T9",
+        "title": "Cloud basics for students",
+        "category": "Cloud",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.349,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "cloud"
+        ]
+      },
+      {
+        "candidate_id": "T97",
+        "title": "10 AI tools worth learning",
+        "category": "AI",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.349,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "cloud"
+        ]
+      },
+      {
+        "candidate_id": "T21",
+        "title": "Linux command line survival guide for developers",
+        "category": "Other",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.297,
+        "sources": [
+          "topical"
+        ],
+        "matched_terms": [
+          "software_engineering"
+        ],
+        "matched_nodes": []
+      },
+      {
+        "candidate_id": "T11",
+        "title": "Understanding HashMaps under the hood in Java",
+        "category": "Java",
+        "difficulty": "Intermediate",
+        "retrieval_score": 0.199,
+        "sources": [
+          "topical"
+        ],
+        "matched_terms": [
+          "java"
+        ],
+        "matched_nodes": []
+      },
+      {
+        "candidate_id": "T12",
+        "title": "Java Virtual Machine (JVM) memory model explained visually",
+        "category": "Java",
+        "difficulty": "Advanced",
+        "retrieval_score": 0.199,
+        "sources": [
+          "topical"
+        ],
+        "matched_terms": [
+          "java"
+        ],
+        "matched_nodes": []
+      },
+      {
+        "candidate_id": "T22",
+        "title": "Beginner programming concepts explained with memes",
+        "category": "Other",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.199,
+        "sources": [
+          "topical"
+        ],
+        "matched_terms": [
+          "java"
+        ],
+        "matched_nodes": []
+      }
+    ],
+    "candidate_count": 24,
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "trap_after_R1_R2_R3_R4": {
+    "phase": "phase_4_retrieval",
+    "case": "trap_java_to_swe",
+    "reel_ids": [
+      "R1",
+      "R2",
+      "R3",
+      "R4"
+    ],
+    "interest_summary": {
+      "top_professional_identity": "software_engineer",
+      "top_domains": [
+        "software_engineering",
+        "career",
+        "java"
+      ],
+      "top_goals": [
+        "career_prep",
+        "career_curiosity"
+      ],
+      "top_career_stage": "candidate",
+      "confidence": "High"
+    },
+    "sources": {
+      "topical": [
+        {
+          "candidate_id": "T1",
+          "title": "How a junior software engineer ships a small feature",
+          "category": "Career",
+          "score": 1.0,
+          "matched_terms": [
+            "career",
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T3",
+          "title": "Git basics for your first team project",
+          "category": "Career",
+          "score": 1.0,
+          "matched_terms": [
+            "career",
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T4",
+          "title": "How to read a codebase as a student",
+          "category": "Career",
+          "score": 1.0,
+          "matched_terms": [
+            "career",
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T5",
+          "title": "What a coding interview is really testing",
+          "category": "Career",
+          "score": 1.0,
+          "matched_terms": [
+            "career",
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T23",
+          "title": "What software engineers actually do all day",
+          "category": "Career",
+          "score": 1.0,
+          "matched_terms": [
+            "career",
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T7",
+          "title": "Beginner-friendly introduction to system design",
+          "category": "HLD",
+          "score": 0.73,
+          "matched_terms": [
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T8",
+          "title": "Debugging basics for new developers",
+          "category": "Career",
+          "score": 0.73,
+          "matched_terms": [
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T21",
+          "title": "Linux command line survival guide for developers",
+          "category": "Other",
+          "score": 0.73,
+          "matched_terms": [
+            "software_engineering"
+          ]
+        },
+        {
+          "candidate_id": "T10",
+          "title": "Career advice for first-year tech students",
+          "category": "Career",
+          "score": 0.695,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T99",
+          "title": "10 AI tools that will get you a job",
+          "category": "AI",
+          "score": 0.695,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T100",
+          "title": "Become a software engineer in 30 days",
+          "category": "Career",
+          "score": 0.695,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T101",
+          "title": "Secret AI tools recruiters don\u2019t want you to know",
+          "category": "AI",
+          "score": 0.695,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T102",
+          "title": "Top 5 coding hacks to get hired fast",
+          "category": "Career",
+          "score": 0.695,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T103",
+          "title": "Guaranteed tech job roadmap",
+          "category": "Career",
+          "score": 0.695,
+          "matched_terms": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T11",
+          "title": "Understanding HashMaps under the hood in Java",
+          "category": "Java",
+          "score": 0.443,
+          "matched_terms": [
+            "java"
+          ]
+        },
+        {
+          "candidate_id": "T12",
+          "title": "Java Virtual Machine (JVM) memory model explained visually",
+          "category": "Java",
+          "score": 0.443,
+          "matched_terms": [
+            "java"
+          ]
+        },
+        {
+          "candidate_id": "T22",
+          "title": "Beginner programming concepts explained with memes",
+          "category": "Other",
+          "score": 0.443,
+          "matched_terms": [
+            "java"
+          ]
+        }
+      ],
+      "identity_adjacent": [
+        {
+          "candidate_id": "T1",
+          "title": "How a junior software engineer ships a small feature",
+          "category": "Career",
+          "score": 1.0,
+          "matched_nodes": [
+            "career",
+            "debugging",
+            "git"
+          ]
+        },
+        {
+          "candidate_id": "T3",
+          "title": "Git basics for your first team project",
+          "category": "Career",
+          "score": 1.0,
+          "matched_nodes": [
+            "career",
+            "git"
+          ]
+        },
+        {
+          "candidate_id": "T4",
+          "title": "How to read a codebase as a student",
+          "category": "Career",
+          "score": 1.0,
+          "matched_nodes": [
+            "career",
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T5",
+          "title": "What a coding interview is really testing",
+          "category": "Career",
+          "score": 1.0,
+          "matched_nodes": [
+            "career",
+            "dsa"
+          ]
+        },
+        {
+          "candidate_id": "T10",
+          "title": "Career advice for first-year tech students",
+          "category": "Career",
+          "score": 0.737,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T23",
+          "title": "What software engineers actually do all day",
+          "category": "Career",
+          "score": 0.737,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T99",
+          "title": "10 AI tools that will get you a job",
+          "category": "AI",
+          "score": 0.737,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T100",
+          "title": "Become a software engineer in 30 days",
+          "category": "Career",
+          "score": 0.737,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T101",
+          "title": "Secret AI tools recruiters don\u2019t want you to know",
+          "category": "AI",
+          "score": 0.737,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T102",
+          "title": "Top 5 coding hacks to get hired fast",
+          "category": "Career",
+          "score": 0.737,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T103",
+          "title": "Guaranteed tech job roadmap",
+          "category": "Career",
+          "score": 0.737,
+          "matched_nodes": [
+            "career"
+          ]
+        },
+        {
+          "candidate_id": "T6",
+          "title": "Build your first tiny web API",
+          "category": "HLD",
+          "score": 0.705,
+          "matched_nodes": [
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T7",
+          "title": "Beginner-friendly introduction to system design",
+          "category": "HLD",
+          "score": 0.705,
+          "matched_nodes": [
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T8",
+          "title": "Debugging basics for new developers",
+          "category": "Career",
+          "score": 0.705,
+          "matched_nodes": [
+            "debugging"
+          ]
+        },
+        {
+          "candidate_id": "T15",
+          "title": "SQL indexing explained with a library metaphor",
+          "category": "HLD",
+          "score": 0.705,
+          "matched_nodes": [
+            "system_design"
+          ]
+        },
+        {
+          "candidate_id": "T13",
+          "title": "Two-pointer technique patterns for LeetCode problems",
+          "category": "DSA",
+          "score": 0.67,
+          "matched_nodes": [
+            "dsa"
+          ]
+        },
+        {
+          "candidate_id": "T14",
+          "title": "Binary search: Avoid off-by-one errors forever",
+          "category": "DSA",
+          "score": 0.67,
+          "matched_nodes": [
+            "dsa"
+          ]
+        },
+        {
+          "candidate_id": "T2",
+          "title": "What actually happens after you push code",
+          "category": "Cloud",
+          "score": 0.634,
+          "matched_nodes": [
+            "cloud"
+          ]
+        },
+        {
+          "candidate_id": "T9",
+          "title": "Cloud basics for students",
+          "category": "Cloud",
+          "score": 0.634,
+          "matched_nodes": [
+            "cloud"
+          ]
+        },
+        {
+          "candidate_id": "T97",
+          "title": "10 AI tools worth learning",
+          "category": "AI",
+          "score": 0.634,
+          "matched_nodes": [
+            "cloud"
+          ]
+        }
+      ]
+    },
+    "candidates": [
+      {
+        "candidate_id": "T1",
+        "title": "How a junior software engineer ships a small feature",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 1.0,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career",
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "career",
+          "debugging",
+          "git"
+        ]
+      },
+      {
+        "candidate_id": "T3",
+        "title": "Git basics for your first team project",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 1.0,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career",
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "career",
+          "git"
+        ]
+      },
+      {
+        "candidate_id": "T4",
+        "title": "How to read a codebase as a student",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 1.0,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career",
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "career",
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T5",
+        "title": "What a coding interview is really testing",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 1.0,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career",
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "career",
+          "dsa"
+        ]
+      },
+      {
+        "candidate_id": "T23",
+        "title": "What software engineers actually do all day",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.855,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career",
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T10",
+        "title": "Career advice for first-year tech students",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.718,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T99",
+        "title": "10 AI tools that will get you a job",
+        "category": "AI",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.718,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T100",
+        "title": "Become a software engineer in 30 days",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.718,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T101",
+        "title": "Secret AI tools recruiters don\u2019t want you to know",
+        "category": "AI",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.718,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T102",
+        "title": "Top 5 coding hacks to get hired fast",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.718,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T103",
+        "title": "Guaranteed tech job roadmap",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.718,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "career"
+        ],
+        "matched_nodes": [
+          "career"
+        ]
+      },
+      {
+        "candidate_id": "T7",
+        "title": "Beginner-friendly introduction to system design",
+        "category": "HLD",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.716,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T8",
+        "title": "Debugging basics for new developers",
+        "category": "Career",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.716,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "software_engineering"
+        ],
+        "matched_nodes": [
+          "debugging"
+        ]
+      },
+      {
+        "candidate_id": "T6",
+        "title": "Build your first tiny web API",
+        "category": "HLD",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.388,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T15",
+        "title": "SQL indexing explained with a library metaphor",
+        "category": "HLD",
+        "difficulty": "Intermediate",
+        "retrieval_score": 0.388,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "system_design"
+        ]
+      },
+      {
+        "candidate_id": "T13",
+        "title": "Two-pointer technique patterns for LeetCode problems",
+        "category": "DSA",
+        "difficulty": "Intermediate",
+        "retrieval_score": 0.369,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "dsa"
+        ]
+      },
+      {
+        "candidate_id": "T14",
+        "title": "Binary search: Avoid off-by-one errors forever",
+        "category": "DSA",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.369,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "dsa"
+        ]
+      },
+      {
+        "candidate_id": "T2",
+        "title": "What actually happens after you push code",
+        "category": "Cloud",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.349,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "cloud"
+        ]
+      },
+      {
+        "candidate_id": "T9",
+        "title": "Cloud basics for students",
+        "category": "Cloud",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.349,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "cloud"
+        ]
+      },
+      {
+        "candidate_id": "T97",
+        "title": "10 AI tools worth learning",
+        "category": "AI",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.349,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "cloud"
+        ]
+      },
+      {
+        "candidate_id": "T21",
+        "title": "Linux command line survival guide for developers",
+        "category": "Other",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.329,
+        "sources": [
+          "topical"
+        ],
+        "matched_terms": [
+          "software_engineering"
+        ],
+        "matched_nodes": []
+      },
+      {
+        "candidate_id": "T11",
+        "title": "Understanding HashMaps under the hood in Java",
+        "category": "Java",
+        "difficulty": "Intermediate",
+        "retrieval_score": 0.199,
+        "sources": [
+          "topical"
+        ],
+        "matched_terms": [
+          "java"
+        ],
+        "matched_nodes": []
+      },
+      {
+        "candidate_id": "T12",
+        "title": "Java Virtual Machine (JVM) memory model explained visually",
+        "category": "Java",
+        "difficulty": "Advanced",
+        "retrieval_score": 0.199,
+        "sources": [
+          "topical"
+        ],
+        "matched_terms": [
+          "java"
+        ],
+        "matched_nodes": []
+      },
+      {
+        "candidate_id": "T22",
+        "title": "Beginner programming concepts explained with memes",
+        "category": "Other",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.199,
+        "sources": [
+          "topical"
+        ],
+        "matched_terms": [
+          "java"
+        ],
+        "matched_nodes": []
+      }
+    ],
+    "candidate_count": 24,
+    "generated_at": "2026-08-18T00:00:00Z"
+  },
+  "non_trap_gaming_only": {
+    "phase": "phase_4_retrieval",
+    "case": "non_trap_gaming_only",
+    "reel_ids": [
+      "R5",
+      "R6",
+      "R7"
+    ],
+    "interest_summary": {
+      "top_professional_identity": "",
+      "top_domains": [
+        "gaming",
+        "hardware",
+        "ai"
+      ],
+      "top_goals": [],
+      "top_career_stage": "",
+      "confidence": "Medium"
+    },
+    "sources": {
+      "topical": [
+        {
+          "candidate_id": "T24",
+          "title": "How game AI decides enemy behavior",
+          "category": "AI",
+          "score": 0.834,
+          "matched_terms": [
+            "ai",
+            "gaming"
+          ]
+        },
+        {
+          "candidate_id": "T18",
+          "title": "How CPU cache hierarchy affects software performance",
+          "category": "Hardware",
+          "score": 0.52,
+          "matched_terms": [
+            "hardware"
+          ]
+        },
+        {
+          "candidate_id": "T19",
+          "title": "ARM vs x86 architecture explained simply",
+          "category": "Hardware",
+          "score": 0.52,
+          "matched_terms": [
+            "hardware"
+          ]
+        },
+        {
+          "candidate_id": "T26",
+          "title": "Gaming laptop specs that actually matter",
+          "category": "Hardware",
+          "score": 0.52,
+          "matched_terms": [
+            "hardware"
+          ]
+        },
+        {
+          "candidate_id": "T20",
+          "title": "Transformer attention mechanism animated with intuitive math",
+          "category": "AI",
+          "score": 0.296,
+          "matched_terms": [
+            "ai"
+          ]
+        },
+        {
+          "candidate_id": "T97",
+          "title": "10 AI tools worth learning",
+          "category": "AI",
+          "score": 0.296,
+          "matched_terms": [
+            "ai"
+          ]
+        },
+        {
+          "candidate_id": "T99",
+          "title": "10 AI tools that will get you a job",
+          "category": "AI",
+          "score": 0.296,
+          "matched_terms": [
+            "ai"
+          ]
+        }
+      ],
+      "identity_adjacent": [
+        {
+          "candidate_id": "T24",
+          "title": "How game AI decides enemy behavior",
+          "category": "AI",
+          "score": 1.0,
+          "matched_nodes": [
+            "game_ai",
+            "gaming"
+          ]
+        },
+        {
+          "candidate_id": "T25",
+          "title": "What a game engine actually does",
+          "category": "Other",
+          "score": 0.863,
+          "matched_nodes": [
+            "game_development",
+            "graphics"
+          ]
+        },
+        {
+          "candidate_id": "T18",
+          "title": "How CPU cache hierarchy affects software performance",
+          "category": "Hardware",
+          "score": 0.55,
+          "matched_nodes": [
+            "hardware"
+          ]
+        },
+        {
+          "candidate_id": "T19",
+          "title": "ARM vs x86 architecture explained simply",
+          "category": "Hardware",
+          "score": 0.55,
+          "matched_nodes": [
+            "hardware"
+          ]
+        },
+        {
+          "candidate_id": "T26",
+          "title": "Gaming laptop specs that actually matter",
+          "category": "Hardware",
+          "score": 0.55,
+          "matched_nodes": [
+            "hardware"
+          ]
+        }
+      ]
+    },
+    "candidates": [
       {
         "candidate_id": "T24",
         "title": "How game AI decides enemy behavior",
         "category": "AI",
-        "score": 1.0,
+        "difficulty": "Beginner",
+        "retrieval_score": 0.925,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "ai",
+          "gaming"
+        ],
         "matched_nodes": [
           "game_ai",
           "gaming"
         ]
       },
       {
-        "candidate_id": "T25",
-        "title": "What a game engine actually does",
-        "category": "Other",
-        "score": 0.863,
-        "matched_nodes": [
-          "game_development",
-          "graphics"
-        ]
-      },
-      {
         "candidate_id": "T18",
         "title": "How CPU cache hierarchy affects software performance",
         "category": "Hardware",
-        "score": 0.55,
+        "difficulty": "Advanced",
+        "retrieval_score": 0.537,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "hardware"
+        ],
         "matched_nodes": [
           "hardware"
         ]
@@ -109,7 +3059,15 @@
         "candidate_id": "T19",
         "title": "ARM vs x86 architecture explained simply",
         "category": "Hardware",
-        "score": 0.55,
+        "difficulty": "Beginner",
+        "retrieval_score": 0.537,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "hardware"
+        ],
         "matched_nodes": [
           "hardware"
         ]
@@ -118,128 +3076,78 @@
         "candidate_id": "T26",
         "title": "Gaming laptop specs that actually matter",
         "category": "Hardware",
-        "score": 0.55,
+        "difficulty": "Beginner",
+        "retrieval_score": 0.537,
+        "sources": [
+          "topical",
+          "identity_adjacent"
+        ],
+        "matched_terms": [
+          "hardware"
+        ],
         "matched_nodes": [
           "hardware"
         ]
+      },
+      {
+        "candidate_id": "T25",
+        "title": "What a game engine actually does",
+        "category": "Other",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.475,
+        "sources": [
+          "identity_adjacent"
+        ],
+        "matched_terms": [],
+        "matched_nodes": [
+          "game_development",
+          "graphics"
+        ]
+      },
+      {
+        "candidate_id": "T20",
+        "title": "Transformer attention mechanism animated with intuitive math",
+        "category": "AI",
+        "difficulty": "Intermediate",
+        "retrieval_score": 0.133,
+        "sources": [
+          "topical"
+        ],
+        "matched_terms": [
+          "ai"
+        ],
+        "matched_nodes": []
+      },
+      {
+        "candidate_id": "T97",
+        "title": "10 AI tools worth learning",
+        "category": "AI",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.133,
+        "sources": [
+          "topical"
+        ],
+        "matched_terms": [
+          "ai"
+        ],
+        "matched_nodes": []
+      },
+      {
+        "candidate_id": "T99",
+        "title": "10 AI tools that will get you a job",
+        "category": "AI",
+        "difficulty": "Beginner",
+        "retrieval_score": 0.133,
+        "sources": [
+          "topical"
+        ],
+        "matched_terms": [
+          "ai"
+        ],
+        "matched_nodes": []
       }
-    ]
-  },
-  "candidates": [
-    {
-      "candidate_id": "T24",
-      "title": "How game AI decides enemy behavior",
-      "category": "AI",
-      "difficulty": "Beginner",
-      "retrieval_score": 0.925,
-      "sources": [
-        "topical",
-        "identity_adjacent"
-      ],
-      "matched_terms": [
-        "ai",
-        "gaming"
-      ],
-      "matched_nodes": [
-        "game_ai",
-        "gaming"
-      ]
-    },
-    {
-      "candidate_id": "T18",
-      "title": "How CPU cache hierarchy affects software performance",
-      "category": "Hardware",
-      "difficulty": "Advanced",
-      "retrieval_score": 0.537,
-      "sources": [
-        "topical",
-        "identity_adjacent"
-      ],
-      "matched_terms": [
-        "hardware"
-      ],
-      "matched_nodes": [
-        "hardware"
-      ]
-    },
-    {
-      "candidate_id": "T19",
-      "title": "ARM vs x86 architecture explained simply",
-      "category": "Hardware",
-      "difficulty": "Beginner",
-      "retrieval_score": 0.537,
-      "sources": [
-        "topical",
-        "identity_adjacent"
-      ],
-      "matched_terms": [
-        "hardware"
-      ],
-      "matched_nodes": [
-        "hardware"
-      ]
-    },
-    {
-      "candidate_id": "T26",
-      "title": "Gaming laptop specs that actually matter",
-      "category": "Hardware",
-      "difficulty": "Beginner",
-      "retrieval_score": 0.537,
-      "sources": [
-        "topical",
-        "identity_adjacent"
-      ],
-      "matched_terms": [
-        "hardware"
-      ],
-      "matched_nodes": [
-        "hardware"
-      ]
-    },
-    {
-      "candidate_id": "T25",
-      "title": "What a game engine actually does",
-      "category": "Other",
-      "difficulty": "Beginner",
-      "retrieval_score": 0.475,
-      "sources": [
-        "identity_adjacent"
-      ],
-      "matched_terms": [],
-      "matched_nodes": [
-        "game_development",
-        "graphics"
-      ]
-    },
-    {
-      "candidate_id": "T20",
-      "title": "Transformer attention mechanism animated with intuitive math",
-      "category": "AI",
-      "difficulty": "Intermediate",
-      "retrieval_score": 0.133,
-      "sources": [
-        "topical"
-      ],
-      "matched_terms": [
-        "ai"
-      ],
-      "matched_nodes": []
-    },
-    {
-      "candidate_id": "T99",
-      "title": "10 AI tools that will get you a job",
-      "category": "AI",
-      "difficulty": "Beginner",
-      "retrieval_score": 0.133,
-      "sources": [
-        "topical"
-      ],
-      "matched_terms": [
-        "ai"
-      ],
-      "matched_nodes": []
-    }
-  ],
-  "candidate_count": 7,
-  "generated_at": "2026-08-18T00:00:00Z"
+    ],
+    "candidate_count": 8,
+    "generated_at": "2026-08-18T00:00:00Z"
+  }
 }
