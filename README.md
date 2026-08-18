@@ -25,7 +25,7 @@ python tools/validate_data.py
 ```
 
 ## Phase 1 — Stub Pipeline
-Phase 1 implements a deterministic, offline end-to-end stub pipeline to verify CLI wiring, contract mapping, output formatting, and trace generation. It does not yet contain real signal extraction, graph reasoning, gating, or ranking (which are implemented in subsequent phases).
+Phase 1 implements a deterministic, offline end-to-end stub pipeline to verify CLI wiring, contract mapping, output formatting, and trace generation. It does not yet contain real signal extraction, graph reasoning, gating, or ranking.
 
 ### Commands
 ```bash
@@ -47,6 +47,25 @@ python -m src.run --case trap_java_to_swe
 python -m src.run --case non_trap_gaming_only
 ```
 
+## Phase 2 — Signal Extraction
+Phase 2 uses deterministic offline signal extraction. It produces structured interest evidence (`ReelSignal`) for every watched Reel describing latent professional identity, domain, tooling, skill, and career stage signals, but does not yet aggregate that evidence into `InterestState` (which is handled in Phase 3).
+
+### Commands
+```bash
+# Validate data contracts and signal cache
+python tools/validate_data.py
+python tools/validate_signals.py
+
+# Run all unit tests (Plumbing + Signal Extraction)
+python -m unittest discover -s tests -v
+
+# Generate or view signals
+python -m src.signals --all
+python -m src.signals --reel R1
+python -m src.signals --reels R1,R2,R3,R4
+python -m src.signals --reels R5,R6,R7
+```
+
 ## Current Phase Status
-- **Current Phase**: Phase 1 (End-to-End Stub Pipeline)
+- **Current Phase**: Phase 2 (Signal Extraction Module)
 - **Status**: COMPLETE
