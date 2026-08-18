@@ -24,6 +24,29 @@ To validate data contracts, fixtures, identity graphs, and regression specs offl
 python tools/validate_data.py
 ```
 
+## Phase 1 — Stub Pipeline
+Phase 1 implements a deterministic, offline end-to-end stub pipeline to verify CLI wiring, contract mapping, output formatting, and trace generation. It does not yet contain real signal extraction, graph reasoning, gating, or ranking (which are implemented in subsequent phases).
+
+### Commands
+```bash
+# Run data validation suite (28 checks)
+python tools/validate_data.py
+
+# Run Phase 1 unit test suite
+python -m unittest discover -s tests -v
+
+# Run reel sequences
+python -m src.run --reels R1
+python -m src.run --reels R1,R2
+python -m src.run --reels R1,R2,R3
+python -m src.run --reels R1,R2,R3,R4
+python -m src.run --reels R5,R6,R7
+
+# Run named test cases
+python -m src.run --case trap_java_to_swe
+python -m src.run --case non_trap_gaming_only
+```
+
 ## Current Phase Status
-- **Current Phase**: Phase 0 (Data contracts, fixtures, validation, progress tracking)
+- **Current Phase**: Phase 1 (End-to-End Stub Pipeline)
 - **Status**: COMPLETE

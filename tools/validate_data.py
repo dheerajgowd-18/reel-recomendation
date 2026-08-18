@@ -1,4 +1,4 @@
-"""Validation script for ScrollSense Phase 0.1 hardened data contracts and fixtures."""
+"""Validation script for ScrollSense Phase 1 data contracts and fixtures."""
 
 from __future__ import annotations
 
@@ -49,9 +49,14 @@ REQUIRED_IDENTITY_NODES = {
 REQUIRED_GAMING_NODES = {
     "gaming",
     "game_development",
+    "game_developer",
     "game_ai",
+    "graphics",
     "gaming_hardware",
     "hardware",
+    "gameplay_highlight",
+    "game_ai_content",
+    "gaming_laptop",
 }
 
 REQUIRED_IDENTITY_EDGES = {
@@ -80,7 +85,7 @@ REQUIRED_GAMING_EDGES = {
 REQUIRED_WATCHED_TRAP_IDS = {"R1", "R2", "R3", "R4"}
 REQUIRED_WATCHED_GAMING_IDS = {"R5", "R6", "R7"}
 
-REQUIRED_CHECKPOINTS = [
+REQUIRED_TRAP_CHECKPOINTS = [
     "trap_after_R1",
     "trap_after_R1_R2",
     "trap_after_R1_R2_R3",
@@ -287,7 +292,7 @@ def run_checks() -> bool:
     else:
         report(16, "trap_regression.json references R1, R2, R3, and R4 in trap_java_to_swe", False, "Invalid data structure")
 
-    # Check 17: expected_outputs.json is a valid dictionary mapping case names to objects
+    # Check 17: expected_outputs.json contains valid checkpoints dictionary
     if e_ok and isinstance(expected_data, dict) and len(expected_data) >= 4:
         report(17, "expected_outputs.json contains valid checkpoints dictionary", True, f"Found {len(expected_data)} checkpoints")
     else:
@@ -300,33 +305,32 @@ def run_checks() -> bool:
     else:
         report(18, "Every candidate in tech_reels.json has score_type == 'reference_only'", False, "Invalid data structure")
 
-    # Check 19: data/expected_outputs.json contains the 4 required checkpoints
+    # Check 19: data/expected_outputs.json contains the 4 required trap checkpoints
     if e_ok and isinstance(expected_data, dict):
-        missing_checkpoints = [cp for cp in REQUIRED_CHECKPOINTS if cp not in expected_data]
-        report(19, "data/expected_outputs.json contains the 4 required checkpoints", len(missing_checkpoints) == 0, f"Missing checkpoints: {missing_checkpoints}" if missing_checkpoints else "All 4 checkpoints present")
+        missing_checkpoints = [cp for cp in REQUIRED_TRAP_CHECKPOINTS if cp not in expected_data]
+        report(19, "data/expected_outputs.json contains the 4 required checkpoints", len(missing_checkpoints) == 0, f"Missing checkpoints: {missing_checkpoints}" if missing_checkpoints else "All 4 required trap checkpoints present")
     else:
         report(19, "data/expected_outputs.json contains the 4 required checkpoints", False, "Invalid data structure")
 
     # Check 20: Each expected output entry contains all required output fields
     if e_ok and isinstance(expected_data, dict):
         missing_output_fields = []
-        for cp in REQUIRED_CHECKPOINTS:
-            entry = expected_data.get(cp)
+        for cp_key, entry in expected_data.items():
             if not isinstance(entry, dict):
-                missing_output_fields.append((cp, "Not an object"))
+                missing_output_fields.append((cp_key, "Not an object"))
                 continue
             diff = REQUIRED_OUTPUT_FIELDS - set(entry.keys())
             if diff:
-                missing_output_fields.append((cp, str(diff)))
-        report(20, "Each expected output entry contains all required output fields", len(missing_output_fields) == 0, f"Missing fields: {missing_output_fields}" if missing_output_fields else "All output fields present in all checkpoints")
+                missing_output_fields.append((cp_key, str(diff)))
+        report(20, "Each expected output entry contains all required output fields", len(missing_output_fields) == 0, f"Missing fields: {missing_output_fields}" if missing_output_fields else f"All output fields present in all {len(expected_data)} entries")
     else:
         report(20, "Each expected output entry contains all required output fields", False, "Invalid data structure")
 
-    # Check 21: Confidence sequence across checkpoints is non-decreasing (Low=0, Medium=1, High=2)
+    # Check 21: Confidence sequence across the 4 trap checkpoints is non-decreasing (Low=0, Medium=1, High=2)
     if e_ok and isinstance(expected_data, dict):
         conf_values = []
         conf_valid = True
-        for cp in REQUIRED_CHECKPOINTS:
+        for cp in REQUIRED_TRAP_CHECKPOINTS:
             entry = expected_data.get(cp, {})
             conf_str = entry.get("CONFIDENCE", "")
             if conf_str not in CONFIDENCE_MAP:
@@ -334,9 +338,9 @@ def run_checks() -> bool:
                 break
             conf_values.append(CONFIDENCE_MAP[conf_str])
         
-        if conf_valid and len(conf_values) == len(REQUIRED_CHECKPOINTS):
+        if conf_valid and len(conf_values) == len(REQUIRED_TRAP_CHECKPOINTS):
             is_non_decreasing = all(conf_values[i] <= conf_values[i + 1] for i in range(len(conf_values) - 1))
-            report(21, "Confidence sequence across checkpoints is non-decreasing", is_non_decreasing, f"Confidence sequence: {[expected_data[cp].get('CONFIDENCE') for cp in REQUIRED_CHECKPOINTS]}")
+            report(21, "Confidence sequence across checkpoints is non-decreasing", is_non_decreasing, f"Confidence sequence: {[expected_data[cp].get('CONFIDENCE') for cp in REQUIRED_TRAP_CHECKPOINTS]}")
         else:
             report(21, "Confidence sequence across checkpoints is non-decreasing", False, "Invalid or missing confidence values")
     else:
@@ -408,14 +412,14 @@ def run_checks() -> bool:
     else:
         report(26, "R5, R6, R7 are gaming-related without forbidden software engineering signals", False, "Invalid data structure")
 
-    # Check 27: data/identity_graph.json contains the gaming branch nodes
+    # Check 27: data/identity_graph.json contains all 10 gaming branch nodes
     if g_ok and isinstance(graph_data, dict):
         nodes = graph_data.get("nodes", [])
         node_ids = {n.get("id") for n in nodes if isinstance(n, dict)}
         missing_gaming_nodes = REQUIRED_GAMING_NODES - node_ids
-        report(27, "identity_graph.json contains the gaming branch nodes", len(missing_gaming_nodes) == 0, f"Missing gaming nodes: {missing_gaming_nodes}" if missing_gaming_nodes else f"Found all {len(REQUIRED_GAMING_NODES)} gaming nodes")
+        report(27, "identity_graph.json contains the full gaming branch nodes", len(missing_gaming_nodes) == 0, f"Missing gaming nodes: {missing_gaming_nodes}" if missing_gaming_nodes else f"Found all {len(REQUIRED_GAMING_NODES)} gaming nodes")
     else:
-        report(27, "identity_graph.json contains the gaming branch nodes", False, "Invalid data structure")
+        report(27, "identity_graph.json contains the full gaming branch nodes", False, "Invalid data structure")
 
     # Check 28: data/identity_graph.json contains required gaming edges
     if g_ok and isinstance(graph_data, dict):

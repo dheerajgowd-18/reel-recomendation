@@ -38,5 +38,15 @@
     "WHY THIS RECOMMENDATION": "It matches the inferred software-engineering identity and career curiosity, rather than overfitting to the Java keyword from the meme.",
     "DIFFICULTY": "Beginner",
     "CONFIDENCE": "High"
+  },
+  "non_trap_gaming_only": {
+    "CURRENT REEL": "session: R5, R6, R7",
+    "INTEREST DETECTED": "Gaming systems, game AI, and gaming hardware curiosity",
+    "WHY": "Gameplay clutch Reel shows gaming engagement; game AI Reel shows interest in intelligent game behavior; gaming laptop comparison shows interest in gaming hardware.",
+    "RECOMMENDED TECH REEL": "How game AI decides enemy behavior",
+    "CATEGORY": "AI",
+    "WHY THIS RECOMMENDATION": "It stays gaming-adjacent and connects gameplay/AI curiosity to concrete game AI concepts without over-generalizing into software engineering.",
+    "DIFFICULTY": "Beginner",
+    "CONFIDENCE": "Medium"
   }
 }

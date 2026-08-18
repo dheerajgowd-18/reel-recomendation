@@ -1,0 +1,45 @@
+{
+  "phase": "phase_1_stub",
+  "mode": "deterministic_stub",
+  "input_reels": [
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+  ],
+  "case": "trap_java_to_swe",
+  "mapped_expected_key": "trap_after_R1_R2_R3_R4",
+  "stages": {
+    "normalize_input": {
+      "input_reels": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "status": "completed"
+    },
+    "resolve_expected_key": {
+      "mapped_key": "trap_after_R1_R2_R3_R4",
+      "status": "completed"
+    },
+    "interest_stub": {
+      "interest_detected": "Software engineering culture and early career preparation",
+      "why": "Java meme shows programming humor; software-engineer lifestyle Reel shows role curiosity; coding interview joke shows career-preparation interest; laptop comparison shows interest in developer tooling.",
+      "status": "completed"
+    },
+    "recommend_stub": {
+      "recommended_reel": "How a junior software engineer ships a small feature",
+      "category": "Career",
+      "confidence": "High",
+      "difficulty": "Beginner",
+      "status": "completed"
+    },
+    "formatter": {
+      "lines_count": 8,
+      "status": "completed"
+    }
+  },
+  "output_file": "D:\\reel-recomendation\\output\\result.txt",
+  "trace_file": "D:\\reel-recomendation\\output\\trace.json"
+}

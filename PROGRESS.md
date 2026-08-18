@@ -1,23 +1,21 @@
 # ScrollSense Progress
 
 ## Current Phase
-Phase 0.1 — Data Contract Hardening
+Phase 1 — End-to-End Stub Pipeline
 
 ## Phase Status
 COMPLETE
 
 ## Completed
-- Initialized core repository scaffolding (`src/`, `tests/`, `tools/`, `data/`, `cache/`, `output/`, `prompts/`, `reports/`).
-- Updated `data/tech_reels.json` candidate catalog:
-  - Added `"score_type": "reference_only"` across all 31 candidate objects.
-  - Included checkpoint candidate tech reels (`Beginner programming concepts explained with memes`, `What software engineers actually do all day`, `What a coding interview is really testing`, `How a junior software engineer ships a small feature`).
-  - Included gaming-adjacent candidates (`How game AI decides enemy behavior`, `What a game engine actually does`, `Gaming laptop specs that actually matter`).
-  - Maintained exact hype candidate `T99` and other low-utility clickbait benchmark fixtures.
-- Updated `data/expected_outputs.json` to multi-step cumulative checkpoints (`trap_after_R1`, `trap_after_R1_R2`, `trap_after_R1_R2_R3`, `trap_after_R1_R2_R3_R4`) with non-decreasing confidence ratings.
-- Updated `data/watched_reels.json` with pure gaming-only non-trap fixtures (`R5`, `R6`, `R7`) devoid of software engineering signals.
-- Hardened `data/trap_regression.json` with multi-case benchmark specification (`trap_java_to_swe` and `non_trap_gaming_only`).
-- Expanded `data/identity_graph.json` with gaming domain branch nodes and relational edges.
-- Upgraded `tools/validate_data.py` test suite to 28 comprehensive deterministic contract checks.
+- Updated `data/expected_outputs.json` with `non_trap_gaming_only` checkpoint while preserving all four trap checkpoints (`trap_after_R1`, `trap_after_R1_R2`, `trap_after_R1_R2_R3`, `trap_after_R1_R2_R3_R4`).
+- Updated `tools/validate_data.py` to validate all entries in `expected_outputs.json` and 10 full gaming branch nodes while preserving 28 passing checks.
+- Implemented `src/config.py` with path constants, contract validation definitions, and deterministic checkpoint/case mappings.
+- Implemented `src/loaders.py` to load and validate all local JSON data fixtures with clean error handling.
+- Implemented `src/formatter.py` with strict validation of output categories, difficulties, confidences, and exact plaintext formatting.
+- Implemented `src/stub_pipeline.py` with clear stage boundaries (`normalize_input`, `resolve_expected_key`, `infer_interest_stub`, `recommend_stub`, `build_trace`) and result/trace file generation.
+- Implemented `src/run.py` CLI supporting `--reels`, `--case`, `--out`, and `--trace`.
+- Created `tests/test_phase1_stub.py` containing 10 comprehensive unittest test cases covering mappings, formatter rules, error handling, and false-positive prevention (10/10 passing).
+- Verified deterministic CLI execution across all required reel sequences and cases.
 
 ## In Progress
 - None.
@@ -26,7 +24,7 @@ COMPLETE
 - None.
 
 ## Next Phase
-Phase 1: End-to-end stub pipeline
+Phase 2 — Signal extraction module
 
 ## Critical Artifacts
 - data/watched_reels.json
@@ -35,3 +33,11 @@ Phase 1: End-to-end stub pipeline
 - data/trap_regression.json
 - data/expected_outputs.json
 - tools/validate_data.py
+- src/config.py
+- src/loaders.py
+- src/formatter.py
+- src/stub_pipeline.py
+- src/run.py
+- tests/test_phase1_stub.py
+- output/result.txt
+- output/trace.json
