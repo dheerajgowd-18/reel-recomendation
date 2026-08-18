@@ -18,54 +18,56 @@ DIFFICULTY: [Beginner / Intermediate / Advanced]
 CONFIDENCE: [High / Medium / Low]
 ```
 
-## Running Data Validation
-To validate data contracts, fixtures, identity graphs, and regression specs offline:
+## Running Data & Pipeline Validation
+To validate data contracts, fixtures, signal caches, hygiene, and inference offline:
 ```bash
+python tools/check_json_hygiene.py
 python tools/validate_data.py
+python tools/validate_signals.py
+python tools/validate_inference.py
+python -m unittest discover -s tests -v
 ```
 
 ## Phase 1 — Stub Pipeline
-Phase 1 implements a deterministic, offline end-to-end stub pipeline to verify CLI wiring, contract mapping, output formatting, and trace generation. It does not yet contain real signal extraction, graph reasoning, gating, or ranking.
+Phase 1 implements a deterministic, offline end-to-end stub pipeline to verify CLI wiring, contract mapping, output formatting, and trace generation.
 
 ### Commands
 ```bash
-# Run data validation suite (28 checks)
-python tools/validate_data.py
-
-# Run Phase 1 unit test suite
-python -m unittest discover -s tests -v
-
-# Run reel sequences
 python -m src.run --reels R1
 python -m src.run --reels R1,R2
 python -m src.run --reels R1,R2,R3
 python -m src.run --reels R1,R2,R3,R4
 python -m src.run --reels R5,R6,R7
-
-# Run named test cases
 python -m src.run --case trap_java_to_swe
 python -m src.run --case non_trap_gaming_only
 ```
 
 ## Phase 2 — Signal Extraction
-Phase 2 uses deterministic offline signal extraction. It produces structured interest evidence (`ReelSignal`) for every watched Reel describing latent professional identity, domain, tooling, skill, and career stage signals, but does not yet aggregate that evidence into `InterestState` (which is handled in Phase 3).
+Phase 2 uses deterministic offline signal extraction. It produces structured interest evidence (`ReelSignal`) for every watched Reel describing latent professional identity, domain, tooling, skill, and career stage signals.
 
 ### Commands
 ```bash
-# Validate data contracts and signal cache
-python tools/validate_data.py
-python tools/validate_signals.py
-
-# Run all unit tests (Plumbing + Signal Extraction)
-python -m unittest discover -s tests -v
-
-# Generate or view signals
 python -m src.signals --all
 python -m src.signals --reel R1
 python -m src.signals --reels R1,R2,R3,R4
 python -m src.signals --reels R5,R6,R7
 ```
 
+## Phase 3 — InterestState Aggregation and Graph Traversal
+Phase 3 aggregates individual `ReelSignal` items into an integrated `InterestState`, performs one-hop deterministic activation traversal across the `Identity/Skill Graph`, applies deterministic confidence bucketing (`Low`, `Medium`, `High`), and generates explainable inferred interest labels.
+
+### Commands
+```bash
+python -m src.infer --reels R1
+python -m src.infer --reels R1,R2
+python -m src.infer --reels R1,R2,R3
+python -m src.infer --reels R1,R2,R3,R4
+python -m src.infer --reels R5,R6,R7
+python -m src.infer --case trap_java_to_swe
+python -m src.infer --case non_trap_gaming_only
+python -m src.infer --all-checkpoints
+```
+
 ## Current Phase Status
-- **Current Phase**: Phase 2 (Signal Extraction Module)
+- **Current Phase**: Phase 3 (InterestState Aggregation and Graph Traversal)
 - **Status**: COMPLETE

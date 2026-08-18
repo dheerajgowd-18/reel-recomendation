@@ -1,0 +1,95 @@
+{
+  "phase": "phase_3_inference",
+  "case": "non_trap_gaming_only",
+  "reel_ids": [
+    "R5",
+    "R6",
+    "R7"
+  ],
+  "interest_state": {
+    "student_id": "student_001",
+    "session_id": "session_R5_R6_R7",
+    "reel_ids": [
+      "R5",
+      "R6",
+      "R7"
+    ],
+    "professional_identity": {},
+    "career_stage": {},
+    "domains": {
+      "gaming": 1.0,
+      "ai": 0.28,
+      "hardware": 0.6
+    },
+    "goals": {},
+    "depth": {
+      "gaming": "Beginner",
+      "ai": "Beginner",
+      "hardware": "Beginner"
+    },
+    "content_preference": {
+      "gameplay": 0.85,
+      "comparison": 0.65
+    },
+    "evidence": [
+      "R5",
+      "R6",
+      "R7"
+    ],
+    "updated_at": "2026-08-18T00:00:00Z"
+  },
+  "top_professional_identity": "",
+  "top_domains": [
+    "gaming",
+    "hardware",
+    "ai"
+  ],
+  "top_goals": [],
+  "top_career_stage": "",
+  "inferred_interest_label": "Gaming systems, game AI, and gaming hardware curiosity",
+  "confidence": "Medium",
+  "graph_traversal": {
+    "seed_nodes": [
+      {
+        "node": "gaming",
+        "weight": 1.0
+      },
+      {
+        "node": "hardware",
+        "weight": 0.6
+      }
+    ],
+    "activated_nodes": [
+      {
+        "node": "game_development",
+        "activation": 0.65,
+        "via": "gaming",
+        "relation": "domain_adjacent_skill"
+      },
+      {
+        "node": "graphics",
+        "activation": 0.6,
+        "via": "gaming",
+        "relation": "domain_adjacent_skill"
+      },
+      {
+        "node": "game_ai",
+        "activation": 0.6,
+        "via": "gaming",
+        "relation": "domain_adjacent_skill"
+      },
+      {
+        "node": "game_developer",
+        "activation": 0.5,
+        "via": "gaming",
+        "relation": "domain_implies_identity"
+      }
+    ]
+  },
+  "evidence_reel_ids": [
+    "R5",
+    "R6",
+    "R7"
+  ],
+  "generated_at": "2026-08-18T00:00:00Z"
+}
