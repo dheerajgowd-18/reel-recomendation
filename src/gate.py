@@ -213,7 +213,12 @@ def gate_retrieval_result(
             "candidate_id": cand["candidate_id"],
             "title": cand["title"],
             "category": cand["category"],
+            "difficulty": cand.get("difficulty", "Beginner"),
+            "concept_tags": cand.get("concept_tags", []),
             "retrieval_score": cand["retrieval_score"],
+            "sources": cand.get("sources", []),
+            "matched_terms": cand.get("matched_terms", []),
+            "matched_nodes": cand.get("matched_nodes", []),
             "gate_result": gate_res,
         }
 

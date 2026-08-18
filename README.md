@@ -19,7 +19,7 @@ CONFIDENCE: [High / Medium / Low]
 ```
 
 ## Running Data & Pipeline Validation
-To validate data contracts, fixtures, signal caches, hygiene, inference, retrieval, and gating offline:
+To validate data contracts, fixtures, signal caches, hygiene, inference, retrieval, gating, and full end-to-end pipeline offline:
 ```bash
 python tools/check_json_hygiene.py
 python tools/validate_data.py
@@ -27,6 +27,7 @@ python tools/validate_signals.py
 python tools/validate_inference.py
 python tools/validate_retrieval.py
 python tools/validate_gate.py
+python tools/validate_pipeline.py
 python -m unittest discover -s tests -v
 ```
 
@@ -35,13 +36,9 @@ Phase 1 implements a deterministic, offline end-to-end stub pipeline to verify C
 
 ### Commands
 ```bash
-python -m src.run --reels R1
-python -m src.run --reels R1,R2
-python -m src.run --reels R1,R2,R3
-python -m src.run --reels R1,R2,R3,R4
-python -m src.run --reels R5,R6,R7
-python -m src.run --case trap_java_to_swe
-python -m src.run --case non_trap_gaming_only
+python -m src.run --reels R1 --mode stub
+python -m src.run --case trap_java_to_swe --mode stub
+python -m src.run --case non_trap_gaming_only --mode stub
 ```
 
 ## Phase 2 — Signal Extraction
@@ -97,6 +94,20 @@ python -m src.gate --case non_trap_gaming_only
 python -m src.gate --all-checkpoints
 ```
 
+## Phase 6 — Ranking, Explanation, and Final Output
+Phase 6 produces the final required output using the deterministic real pipeline. It ranks gated candidates using heuristic weights (`HEURISTIC_WEIGHTS_V1`), computes goal-stage fit and overgeneralization penalties, synthesizes explainable text, and formats output blocks. Stub mode remains available for regression and demo safety.
+
+### Commands
+```bash
+python -m src.run --case trap_java_to_swe --mode real
+python -m src.run --case non_trap_gaming_only --mode real
+python -m src.run --reels R1 --mode real
+python -m src.run --reels R1,R2 --mode real
+python -m src.run --reels R1,R2,R3 --mode real
+python -m src.run --all-checkpoints --mode real
+python -m src.run --case trap_java_to_swe --mode stub
+```
+
 ## Current Phase Status
-- **Current Phase**: Phase 5 (Safety/Quality/Hype Gate)
+- **Current Phase**: Phase 6 (Ranking, Explanation, and Exact Output Generation)
 - **Status**: COMPLETE

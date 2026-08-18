@@ -118,6 +118,7 @@ def retrieve_candidates(
                 "title": title,
                 "category": category,
                 "difficulty": difficulty,
+                "concept_tags": raw_tags,
                 "retrieval_score": retrieval_score,
                 "sources": sources_list,
                 "matched_terms": sorted(matched_terms),

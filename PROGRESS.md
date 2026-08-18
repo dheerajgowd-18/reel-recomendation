@@ -1,23 +1,23 @@
 # ScrollSense Progress
 
 ## Current Phase
-Phase 5 — Safety/Quality/Hype Gate
+Phase 6 — Ranking, Explanation, and Exact Output Generation
 
 ## Phase Status
 COMPLETE
 
 ## Completed
-- Completed Preflight Gate: clean git tree, clean JSON hygiene, zero test regressions across Phases 0 through 4.
-- Added borderline useful listicle candidate `T97` ("10 AI tools worth learning") in `data/tech_reels.json` to prove the gate distinguishes true hype from high-concept listicles.
-- Defined `HARD_DENYLIST_PATTERNS`, `HYPE_PATTERNS`, and `CONCEPT_ANCHORS` in `src/config.py`.
-- Implemented `src/gate.py` computing live live safety, concept anchor substance, depth, and hype penalty scores without reading candidate reference scores (`score_source: "computed"`).
-- Implemented effective rejection rule: `hard_denylist_match or (concept_anchor_score < 0.35 and hype_penalty > 0.65)`.
-- Verified `T99` is rejected across trap and gaming cases, `T1` and `T24` pass, and `T97` passes with anchor score 1.0.
-- Implemented gate cache management (`cache/gate_results.json`) and gate CLI with JSON output to `output/gate.json`.
-- Created `tools/validate_gate.py` validating all 18 gate checks.
-- Created `tests/test_phase5_gate.py` expanding test suite to 64 passing unit tests.
-- Updated `prompts/concept_anchor.md` with complete gate architecture and decision rules.
-- Verified Phase 1 through Phase 4 CLI regressions remain completely stable.
+- Completed Preflight Gate: clean git tree, clean JSON hygiene, zero test regressions across Phases 0 through 5.
+- Enriched stage-fit concept tags in `data/tech_reels.json` for candidates T1, T4, T5, T7, T8, T22, T23, T24, T25, T26.
+- Defined `RANKING_VERSION`, `WEIGHTS_VERSION`, and `HEURISTIC_WEIGHTS_V1` in `src/config.py`.
+- Implemented deterministic ranker in `src/rank.py` computing identity graph fit, goal-stage fit, difficulty match, career relevance, quality, retrieval score, novelty, hype penalty, and overgeneralization penalty.
+- Implemented explainability engine in `src/explain.py` generating deterministic `INTEREST DETECTED`, `WHY`, and `WHY THIS RECOMMENDATION` fields.
+- Implemented pipeline orchestrator in `src/pipeline.py` with `real`, `stub`, and `auto` fallback modes.
+- Updated `src/run.py` CLI supporting `--reels`, `--case`, `--all-checkpoints`, `--mode real|stub|auto`, writing `output/result.txt` and `output/pipeline_trace.json`.
+- Created `tools/validate_pipeline.py` testing 25 pipeline contract assertions without fallback.
+- Created `tests/test_phase6_pipeline.py` expanding test suite to 82 passing unit tests.
+- Verified exact recommendation targets: R1 -> T22, R1+R2 -> T23, R1+R2+R3 -> T5, R1+R2+R3+R4 -> T1, Gaming -> T24.
+- Verified Phase 1 stub mode regression remains completely intact.
 
 ## In Progress
 - None.
@@ -26,7 +26,7 @@ COMPLETE
 - None.
 
 ## Next Phase
-Phase 6 — Ranking, explanation, and exact output generation
+Phase 7 — Baselines, demo trace, and final presentation harness
 
 ## Critical Artifacts
 - data/watched_reels.json
@@ -38,6 +38,7 @@ Phase 6 — Ranking, explanation, and exact output generation
 - cache/gate_results.json
 - output/result.txt
 - output/trace.json
+- output/pipeline_trace.json
 - output/inference.json
 - output/retrieval.json
 - output/gate.json
@@ -47,6 +48,7 @@ Phase 6 — Ranking, explanation, and exact output generation
 - tools/validate_inference.py
 - tools/validate_retrieval.py
 - tools/validate_gate.py
+- tools/validate_pipeline.py
 - src/config.py
 - src/loaders.py
 - src/formatter.py
@@ -57,9 +59,13 @@ Phase 6 — Ranking, explanation, and exact output generation
 - src/infer.py
 - src/retrieve.py
 - src/gate.py
+- src/rank.py
+- src/explain.py
+- src/pipeline.py
 - src/run.py
 - tests/test_phase1_stub.py
 - tests/test_phase2_signals.py
 - tests/test_phase3_inference.py
 - tests/test_phase4_retrieval.py
 - tests/test_phase5_gate.py
+- tests/test_phase6_pipeline.py

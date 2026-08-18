@@ -22,12 +22,28 @@ GATE_CACHE_PATH = CACHE_DIR / "gate_results.json"
 OUTPUT_DIR = PROJECT_ROOT / "output"
 DEFAULT_RESULT_PATH = OUTPUT_DIR / "result.txt"
 DEFAULT_TRACE_PATH = OUTPUT_DIR / "trace.json"
+DEFAULT_PIPELINE_TRACE_PATH = OUTPUT_DIR / "pipeline_trace.json"
 
 # Versioning metadata
 SIGNAL_VERSION = "v1"
 ONTOLOGY_VERSION = "graph-v1"
 MODEL_VERSION = "deterministic-rules-v1"
 GATE_VERSION = "v1"
+RANKING_VERSION = "v1"
+WEIGHTS_VERSION = "HEURISTIC_WEIGHTS_V1"
+
+# Heuristic weights for Phase 6 ranking (heuristic evidence combination, not learned/tuned)
+HEURISTIC_WEIGHTS_V1: Dict[str, float] = {
+    "identity_graph_fit": 0.26,
+    "goal_stage_fit": 0.22,
+    "difficulty_match": 0.16,
+    "career_relevance": 0.14,
+    "quality_score": 0.10,
+    "retrieval_score": 0.08,
+    "novelty": 0.04,
+    "hype_penalty": -0.15,
+    "overgeneralization_penalty": -0.20,
+}
 
 # Contract validation rules
 REQUIRED_OUTPUT_FIELDS: List[str] = [
@@ -235,6 +251,15 @@ CONCEPT_ALIAS_MAP: Dict[str, str] = {
     "self_attention": "ai",
     "deep_learning": "ai",
     "ai tools": "ai",
+    "practical_project": "software_engineering",
+    "first_feature": "software_engineering",
+    "codebase_reading": "software_engineering",
+    "candidate_readiness": "dsa",
+    "beginner_theory": "system_design",
+    "practical_skill": "debugging",
+    "meme_learning": "programming_humor",
+    "role_overview": "career",
+    "gaming_specific": "gaming",
     "docker": "cloud",
     "kubernetes": "cloud",
     "rag": "ai",

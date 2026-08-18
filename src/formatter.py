@@ -59,3 +59,9 @@ def format_recommendation_block(rec: Dict[str, str]) -> str:
         f"CONFIDENCE: {rec['CONFIDENCE']}",
     ]
     return "\n".join(lines)
+
+
+# Aliases for consistent naming across modules
+validate_output_fields = validate_recommendation
+format_output = format_recommendation_block
+

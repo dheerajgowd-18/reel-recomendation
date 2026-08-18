@@ -1,0 +1,67 @@
+{
+  "phase": "phase_6_pipeline",
+  "mode": "real",
+  "case": "trap_java_to_swe",
+  "reel_ids": [
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+  ],
+  "inference_summary": {
+    "top_professional_identity": "software_engineer",
+    "top_domains": [
+      "software_engineering",
+      "career",
+      "java"
+    ],
+    "top_goals": [
+      "career_prep",
+      "career_curiosity"
+    ],
+    "confidence": "High"
+  },
+  "retrieval_summary": {
+    "retrieved_count": 24,
+    "top_retrieved": [
+      "T1",
+      "T3",
+      "T4",
+      "T5",
+      "T23"
+    ]
+  },
+  "gate_summary": {
+    "passed_count": 20,
+    "rejected_count": 4,
+    "rejected_ids": [
+      "T99",
+      "T100",
+      "T102",
+      "T103"
+    ]
+  },
+  "ranking_summary": {
+    "top_candidate_id": "T1",
+    "top_candidate_title": "How a junior software engineer ships a small feature",
+    "final_score": 0.98,
+    "score_breakdown": {
+      "identity_graph_fit": 1.0,
+      "goal_stage_fit": 1.0,
+      "difficulty_match": 1.0,
+      "career_relevance": 1.0,
+      "quality_score": 1.0,
+      "retrieval_score": 1.0,
+      "novelty": 0.5,
+      "hype_penalty": 0.0,
+      "overgeneralization_penalty": 0.0
+    }
+  },
+  "explanation_summary": {
+    "interest_label": "Software engineering culture and early career preparation",
+    "why_source": "signal_evidence",
+    "why_recommendation_source": "candidate_match"
+  },
+  "fallback_used": false,
+  "generated_at": "2026-08-18T00:00:00Z"
+}
