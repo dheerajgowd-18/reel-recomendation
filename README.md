@@ -142,17 +142,40 @@ reel-recomendation/
 
 ---
 
+## Live Demo UI
+
+ScrollSense features a full local interactive demonstration dashboard:
+
+```bash
+# 1. Install optional UI server dependencies
+pip install -r requirements-ui.txt
+
+# 2. Start the local demo server (default: port 8000)
+python -m ui.server
+```
+
+Then open **`http://127.0.0.1:8000`** in any browser.
+
+The UI provides interactive controls for:
+- Evaluating the Trap case and comparing against naive Baselines 1 & 2.
+- Inspecting multi-reel signals and 1-hop Identity Graph activations.
+- Viewing live anti-hype gating decisions and clickbait filter logs.
+- Viewing the AI/Nemotron status panel and deterministic guardrails.
+- Instant fallback mode (`Load Cached Demo`) for guaranteed 100% offline stability on stage.
+
+---
+
 ## How to Run the Demo
 
-### 1. Live Presentation Demo
-Run the interactive master presentation runner:
+### 1. Terminal Presentation Demo (CLI)
+Run the master presentation script:
 ```bash
 python run_demo.py
 ```
 This prints the baseline vs. ScrollSense comparison, explains the trap escape, displays anti-hype rejections, outputs the exact required contract block, and creates an offline-ready HTML dashboard at `output/demo.html`.
 
 ### 2. Run Comprehensive Full Audit
-Execute the entire validation and test suite (all 9 suites, 103 unit tests, 123+ assertions):
+Execute the entire validation and test suite (all 10 suites, 133 unit tests, 137+ assertions):
 ```bash
 python tools/final_audit.py
 ```

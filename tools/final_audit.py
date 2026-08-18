@@ -57,7 +57,8 @@ def main() -> None:
         ("Step 6: Safety/Quality/Hype Gate Validation", [sys.executable, "tools/validate_gate.py"]),
         ("Step 7: Pipeline & Exact Output Validation", [sys.executable, "tools/validate_pipeline.py"]),
         ("Step 8: Demo & Baseline Validation", [sys.executable, "tools/validate_demo.py"]),
-        ("Step 9: Complete Unit Test Suite", [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"]),
+        ("Step 9: Live Demo UI Validation", [sys.executable, "tools/validate_ui.py"]),
+        ("Step 10: Complete Unit Test Suite", [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"]),
     ]
 
     results: List[Dict[str, Any]] = []

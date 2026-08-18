@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.2.0] - Phase 9B (Live Demo UI for ScrollSense)
+### Added
+- `ui/server.py` FastAPI local live demo server running on port 8000.
+- `ui/static/index.html`, `ui/static/styles.css`, `ui/static/app.js` projector-optimized interactive UI dashboard.
+- REST API endpoints: `GET /api/health`, `GET /api/cases`, `POST /api/run`, `GET /api/cached-demo`.
+- AI/Nemotron status panel and emergency demo fallback button.
+- `requirements-ui.txt` with UI dependencies.
+- `tools/validate_ui.py` automated validator (14 checks).
+- `tests/test_phase9_ui.py` unit test suite (14 tests, expanding total to 133 unit tests).
+- Updated `docs/LIVE_DEMO_SCRIPT.md` and `README.md`.
+
 ## [1.1.0] - Phase 9A-NVIDIA (NVIDIA Nemotron Integration)
 ### Added
 - Optional AI layer powered by **NVIDIA Nemotron 3.5 Lightning 30B A3B** (`nvidia/nemotron-3.5-lightning-30b-a3b`).
@@ -8,7 +19,7 @@
 - `src/ai_cache.py` managing offline persisted cache files (`cache/llm/signals.json`, `cache/llm/explanations.json`, `cache/llm/concept_anchor.json`).
 - `src/ai_signals.py` and `src/ai_explainer.py` implementing hybrid AI extraction/explanation with strict domain boundary checks and deterministic fallback.
 - AI telemetry logging in `output/pipeline_trace.json`.
-- `tests/test_phase9_nvidia.py` unit test suite (16 tests, expanding total to 119 tests).
+- `tests/test_phase9_nvidia.py` unit test suite.
 
 ## [1.0.0] - Phase 8 (Hardening, Offline Demo Freeze, and Final Audit)
 ### Added
