@@ -72,6 +72,9 @@ def run_hygiene_check() -> bool:
     return all_passed
 
 
+check_json_hygiene = run_hygiene_check
+
+
 if __name__ == "__main__":
     success = run_hygiene_check()
     if not success:

@@ -60,7 +60,7 @@ def run_checks() -> bool:
             json.dump(trace_trap, f, indent=2)
 
         expected_data = load_expected_outputs()
-        expected_cps = expected_data.get("checkpoints", {})
+        expected_cps = expected_data.get("checkpoints", expected_data)
     except Exception as exc:
         print(f"[FAIL] Execution exception during pipeline validation: {exc}")
         return False

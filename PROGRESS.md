@@ -1,20 +1,19 @@
 # ScrollSense Progress
 
 ## Current Phase
-Phase 7 — Baselines, Demo Trace, and Final Presentation Harness
+Phase 8 — Hardening, Offline Demo Freeze, and Final Audit
 
 ## Phase Status
-COMPLETE
+COMPLETE (ALL PHASES 0 THROUGH 8 COMPLETED)
 
 ## Completed
-- Completed Preflight Gate: clean git tree, clean JSON hygiene, zero test regressions across Phases 0 through 6.
-- Added naive baseline candidate `T96` ("Learn Java in 60 seconds", category Java) to `data/tech_reels.json`.
-- Implemented `src/baselines.py` with `topic_only` and `keyword_similarity` naive recommenders demonstrating trap failure.
-- Implemented `src/demo.py` orchestrating baseline vs ScrollSense evaluation, generating `output/demo_trace.json`, `output/demo_report.md`, and `output/demo.html`.
-- Formatted judge-facing markdown report containing the mandatory pitch line and 3-panel offline-safe HTML presentation dashboard.
-- Created `tools/validate_demo.py` checking 20 assertions across baselines, ScrollSense trap escape, hype rejection, pitch line presence, and offline safety.
-- Created `tests/test_phase7_baselines.py` and `tests/test_phase7_demo.py`, expanding the unit test suite to 103 passing tests.
-- Verified deterministic offline execution without external CDNs, network calls, or LLM dependencies.
+- Completed Preflight Gate: clean git tree, clean JSON hygiene, zero test regressions across all previous phases.
+- Created `run_demo.py` master presentation entrypoint running baseline comparisons, real pipeline execution, anti-hype gate checks, and output generation.
+- Created `tools/final_audit.py` automated runner executing all 9 validation suites and generating `reports/FINAL_AUDIT_REPORT.md`.
+- Created `docs/LIVE_DEMO_SCRIPT.md` judge presentation guide and talk track.
+- Completely polished `README.md` into the final hackathon submission document.
+- Verified 100% offline reproducible execution with 103 passing unit tests and 123+ automated validation checks.
+- Codebase frozen and verified ready for judging.
 
 ## In Progress
 - None.
@@ -23,9 +22,15 @@ COMPLETE
 - None.
 
 ## Next Phase
-Phase 8 — Hardening, offline demo freeze, and final audit
+None — Project Complete & Ready for Final Submission.
 
 ## Critical Artifacts
+- run_demo.py
+- README.md
+- PROGRESS.md
+- CHANGELOG.md
+- docs/LIVE_DEMO_SCRIPT.md
+- reports/FINAL_AUDIT_REPORT.md
 - data/watched_reels.json
 - data/tech_reels.json
 - data/identity_graph.json
@@ -50,6 +55,7 @@ Phase 8 — Hardening, offline demo freeze, and final audit
 - tools/validate_gate.py
 - tools/validate_pipeline.py
 - tools/validate_demo.py
+- tools/final_audit.py
 - src/config.py
 - src/loaders.py
 - src/formatter.py

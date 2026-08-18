@@ -1,24 +1,32 @@
 # Changelog
 
+## [1.0.0] - Phase 8 (Hardening, Offline Demo Freeze, and Final Audit)
+### Added
+- `run_demo.py` master entrypoint for live judge presentations with baseline comparison, trap escape explanation, and HTML dashboard rendering.
+- `tools/final_audit.py` comprehensive audit tool executing all 9 validation and test suites.
+- `reports/FINAL_AUDIT_REPORT.md` audit certificate verifying 103 unit tests, 123+ assertions, and 100% offline compliance.
+- `docs/LIVE_DEMO_SCRIPT.md` presentation script and judge talk track.
+- Final polished `README.md` submission document.
+
+### Changed
+- Project finalized, frozen, and verified ready for hackathon evaluation.
+
 ## [0.8.0] - Phase 7 (Baselines, Demo Trace, and Final Presentation Harness)
 ### Added
 - `src/baselines.py` implementing naive `topic_only` and `keyword_similarity` recommenders demonstrating trap failure modes.
-- Naive baseline candidate `T96` ("Learn Java in 60 seconds", category Java) in `data/tech_reels.json`.
+- Naive baseline candidate `T96` in `data/tech_reels.json`.
 - `src/demo.py` demo harness generating `output/demo_trace.json`, `output/demo_report.md`, and `output/demo.html`.
-- Self-contained, offline-safe 3-panel HTML presentation dashboard (`output/demo.html`) without external CSS, JS, or CDN dependencies.
-- `tools/validate_demo.py` validator script with 20 checks validating baselines, ScrollSense trap defeat, hype rejection, and pitch line presence.
-- `tests/test_phase7_baselines.py` and `tests/test_phase7_demo.py` unit test suites (expanding total test suite to 103 unit tests).
-- Updated `README.md` with Phase 7 instructions.
+- `tools/validate_demo.py` validator script with 20 checks.
+- `tests/test_phase7_baselines.py` and `tests/test_phase7_demo.py` unit test suites.
 
 ## [0.7.0] - Phase 6 (Ranking, Explanation, and Exact Output Generation)
 ### Added
 - `src/rank.py` implementing deterministic candidate ranking using heuristic weights (`HEURISTIC_WEIGHTS_V1`), graph fit, goal-stage fit, difficulty alignment, career relevance, and overgeneralization penalties.
 - `src/explain.py` generating deterministic, structured `INTEREST DETECTED`, `WHY`, and `WHY THIS RECOMMENDATION` fields synthesizing multi-reel evidence.
 - `src/pipeline.py` orchestrating end-to-end pipeline execution with `real`, `stub`, and `auto` fallback modes.
-- `output/pipeline_trace.json` recording structured execution trace from inference, retrieval, gating, ranking, and explanation.
+- `output/pipeline_trace.json` recording structured execution trace.
 - `tools/validate_pipeline.py` validation script with 25 checks.
 - `tests/test_phase6_pipeline.py` unit test suite with 18 tests.
-- Updated `src/run.py` CLI supporting `--mode real|stub|auto` and `--all-checkpoints`.
 
 ## [0.6.0] - Phase 5 (Safety/Quality/Hype Gate)
 ### Added
@@ -26,8 +34,7 @@
 - `HARD_DENYLIST_PATTERNS`, `HYPE_PATTERNS`, and `CONCEPT_ANCHORS` in `src/config.py`.
 - Candidate `T97` in `data/tech_reels.json`.
 - Gate cache management (`cache/gate_results.json`).
-- Gate CLI and `tools/validate_gate.py` (18 checks).
-- `tests/test_phase5_gate.py` unit test suite (15 tests).
+- `tools/validate_gate.py` (18 checks) and `tests/test_phase5_gate.py` (15 tests).
 
 ## [0.5.0] - Phase 4 (Candidate Retrieval)
 ### Added

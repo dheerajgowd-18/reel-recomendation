@@ -1,124 +1,169 @@
-# ScrollSense
+# ScrollSense: Identity-Gated Tech Reel Recommender
 
-ScrollSense is an AI-powered recommendation agent that analyzes short-form video engagement, decodes underlying latent interests across heterogeneous content, and recommends high-utility, educational technology Reels that advance student careers and skills. Rather than relying on superficial keyword matching, ScrollSense performs deterministic signal extraction, maps evidence to an identity/skill knowledge graph, applies quality and anti-hype gates, and generates explainable recommendations.
+ScrollSense is an AI-powered recommendation agent that transforms passive short-form video browsing into career-accelerating technical learning. Instead of trapping students in superficial keyword loops or serving sensationalized clickbait, ScrollSense infers latent professional identity from heterogeneous engagement signals, traverses an engineering skill knowledge graph, filters candidates through a strict anti-hype quality gate, and generates explainable recommendations.
 
-## The Trap Case
-A student frequently scrolls through a Java meme, a software engineer lifestyle vlog, a coding interview joke, and a laptop comparison video. A shallow recommendation system falls into the trap of recommending another superficial Java meme or syntax tutorial. ScrollSense identifies the latent synthesis: curiosity about software engineering culture, tooling, and career preparation. It connects these signals across the identity graph and recommends foundational career and engineering content while rejecting deceptive clickbait hype (such as "10 AI tools that will get you a job").
+Built with standard library Python 3 as a modular monolith, ScrollSense runs 100% offline, deterministically, and reproducibly with zero external API or network dependencies.
 
-## Required Output Format
-All final recommendations conform strictly to the standard contract:
+---
+
+## The Problem & The Trap
+
+A college student scrolls through short-form videos and watches:
+1. **R1**: A comedic Java programming meme about missing semicolons (`#javamemes`).
+2. **R2**: A junior software engineer vlog showing daily workflows and standups (`#swe`).
+3. **R3**: A whiteboard coding interview joke about inverting binary trees (`#leetcode`).
+4. **R4**: A comparison of developer laptops handling Docker and IntelliJ (`#devsetup`).
+
+### The Superficial Trap
+Standard recommendation engines overfit to surface keywords and literal category frequencies. They see the word "Java" in `R1` and trap the student with more programming memes or basic syntax tutorials like *"Learn Java in 60 seconds"*.
+
+### The ScrollSense Solution
+ScrollSense decodes the underlying synthesis: the student is not just browsing Java jokes—they are actively exploring **Software Engineering Culture and Early Career Preparation**. ScrollSense activates developer tooling and core competency concepts across its identity graph and recommends practical engineering craftsmanship: *"How a junior software engineer ships a small feature"*.
+
+---
+
+## The Architecture
+
+ScrollSense executes an offline 6-stage deterministic pipeline:
+
+```
+Watched Reels Sequence (R1, R2, R3, R4)
+                 │
+                 ▼
+ 1. Signal Extraction (src/signals.py)
+    └─ Structured ReelSignal (identities, domains, tooling, skills, career stages)
+                 │
+                 ▼
+ 2. InterestState & Graph Traversal (src/persona.py & src/graph.py)
+    └─ Multi-reel aggregation + 1-hop activation traversal across Identity Graph
+                 │
+                 ▼
+ 3. Dual-Source Candidate Retrieval (src/retrieve.py)
+    └─ Source A (topical matching) + Source B (graph identity-adjacent activation)
+                 │
+                 ▼
+ 4. Safety / Quality / Anti-Hype Gate (src/gate.py)
+    └─ Hard predatory denylists + concrete concept-anchor substance scoring
+    └─ [NOTE: Candidate catalog scores are 'reference_only'; gate scores are computed live]
+                 │
+                 ▼
+ 5. Heuristic Ranking & Stage Fit (src/rank.py)
+    └─ HEURISTIC_WEIGHTS_V1: identity fit, goal fit, difficulty match, overgen penalties
+                 │
+                 ▼
+ 6. Explanation & Output Formatting (src/explain.py & src/formatter.py)
+    └─ Exact contract generation with explainable WHY & WHY THIS RECOMMENDATION
+```
+
+---
+
+## How It Defeats the Trap
+
+### Live Comparison on Trap Session (`trap_java_to_swe`)
+
+| Recommender | Inferred Interest | Recommended Tech Reel | Category | Verdict |
+|---|---|---|---|---|
+| **Baseline 1 (Topic-Only)** | `Java` (Surface frequency) | *Learn Java in 60 seconds* (`T96`) | Java | ❌ **Trap Failure** (Superficial loop) |
+| **Baseline 2 (Keyword Overlap)** | `java, programming` (Tokens) | *Learn Java in 60 seconds* (`T96`) | Java | ❌ **Trap Failure** (Keyword overfitting) |
+| **ScrollSense (Real Pipeline)** | `Software engineering culture and early career preparation` | **How a junior software engineer ships a small feature** (`T1`) | **Career** | ✅ **Trap Defeated** (Latent identity match) |
+
+### Anti-Hype Gate: Rejection of Clickbait
+Deceptive career-promise content such as `T99` (*"10 AI tools that will get you a job"*) is shortlisted during initial retrieval but **strictly rejected by the quality gate**:
+- **Gate Match**: `hard_denylist_match: True` (Matched `'get you a job'`)
+- **Concept Anchor Score**: `0.0` (Zero concrete technical mechanisms)
+- **Gate Result**: `effective_reject: True`
+
+Meanwhile, legitimate educational listicles such as `T97` (*"10 AI tools worth learning"*, teaching Docker, Kubernetes, RAG, and Vector DBs) pass the gate because of strong concrete concept anchors ($S_{\text{concept}} = 1.0$).
+
+---
+
+## Repository Structure
+
 ```text
-CURRENT REEL: [reference]
-INTEREST DETECTED: [topic / interest]
-WHY: [evidence from content]
-RECOMMENDED TECH REEL: [topic/title]
-CATEGORY: [AI / DSA / Java / HLD / Cybersecurity / Cloud / Hardware / Career / Other]
-WHY THIS RECOMMENDATION: [connection to interest]
-DIFFICULTY: [Beginner / Intermediate / Advanced]
-CONFIDENCE: [High / Medium / Low]
+reel-recomendation/
+├── run_demo.py               # Master entrypoint for live judge presentation
+├── data/                     # Data contracts & candidate catalog
+│   ├── watched_reels.json    # Watched reel session fixtures (R1-R7)
+│   ├── tech_reels.json       # Candidate tech catalog (T1-T103, score_type: reference_only)
+│   ├── identity_graph.json   # 10-node ontology of roles, skills, and tools
+│   ├── expected_outputs.json # Standard contract benchmark outputs
+│   └── trap_regression.json  # Regression test case definitions
+├── src/                      # Monolithic core pipeline modules
+│   ├── config.py             # Schema, paths, weights, and alias mappings
+│   ├── loaders.py            # Strict schema data loaders
+│   ├── signals.py            # Structured signal extraction & cache
+│   ├── persona.py            # InterestState aggregation
+│   ├── graph.py              # Identity graph activation traversal
+│   ├── infer.py              # Inference coordinator & confidence scoring
+│   ├── retrieve.py           # Dual-source candidate retrieval
+│   ├── gate.py               # Safety, quality & anti-hype live gate
+│   ├── rank.py               # Heuristic candidate ranker
+│   ├── explain.py            # Deterministic explanation synthesizer
+│   ├── formatter.py          # Output contract validator & formatter
+│   ├── pipeline.py           # End-to-end pipeline orchestrator (real/stub/auto)
+│   ├── baselines.py          # Naive topic & keyword baseline models
+│   ├── demo.py               # Multi-case demo harness & trace generator
+│   └── run.py                # Main CLI runner
+├── tools/                    # Validation and audit utilities
+│   ├── check_json_hygiene.py # Whitespace & corruption checker
+│   ├── validate_data.py      # Contract validation (28 checks)
+│   ├── validate_signals.py   # Signal extraction validation (18 checks)
+│   ├── validate_inference.py # Inference validation (14 checks)
+│   ├── validate_retrieval.py # Retrieval validation (18 checks)
+│   ├── validate_gate.py      # Quality gate validation (18 checks)
+│   ├── validate_pipeline.py  # Pipeline validation (25 checks)
+│   ├── validate_demo.py      # Demo & baseline validation (20 checks)
+│   └── final_audit.py        # Comprehensive master audit runner
+├── tests/                    # 103 Unit tests across 8 test suites
+├── output/                   # Generated artifacts (result.txt, traces, demo.html)
+├── docs/                     # Documentation & presentation scripts
+└── reports/                  # Phase-by-phase verification reports
 ```
 
-## Running Data & Pipeline Validation
-To validate data contracts, fixtures, signal caches, hygiene, inference, retrieval, gating, full pipeline, and demo harness offline:
+---
+
+## How to Run the Demo
+
+### 1. Live Presentation Demo
+Run the interactive master presentation runner:
 ```bash
-python tools/check_json_hygiene.py
-python tools/validate_data.py
-python tools/validate_signals.py
-python tools/validate_inference.py
-python tools/validate_retrieval.py
-python tools/validate_gate.py
-python tools/validate_pipeline.py
-python tools/validate_demo.py
-python -m unittest discover -s tests -v
+python run_demo.py
+```
+This prints the baseline vs. ScrollSense comparison, explains the trap escape, displays anti-hype rejections, outputs the exact required contract block, and creates an offline-ready HTML dashboard at `output/demo.html`.
+
+### 2. Run Comprehensive Full Audit
+Execute the entire validation and test suite (all 9 suites, 103 unit tests, 123+ assertions):
+```bash
+python tools/final_audit.py
 ```
 
-## Phase 1 — Stub Pipeline
-Phase 1 implements a deterministic, offline end-to-end stub pipeline to verify CLI wiring, contract mapping, output formatting, and trace generation.
-
-### Commands
+### 3. Run Pipeline CLI
+Run recommendations for specific reels or named benchmark cases:
 ```bash
-python -m src.run --reels R1 --mode stub
-python -m src.run --case trap_java_to_swe --mode stub
-python -m src.run --case non_trap_gaming_only --mode stub
-```
-
-## Phase 2 — Signal Extraction
-Phase 2 uses deterministic offline signal extraction. It produces structured interest evidence (`ReelSignal`) for every watched Reel describing latent professional identity, domain, tooling, skill, and career stage signals.
-
-### Commands
-```bash
-python -m src.signals --all
-python -m src.signals --reel R1
-python -m src.signals --reels R1,R2,R3,R4
-python -m src.signals --reels R5,R6,R7
-```
-
-## Phase 3 — InterestState Aggregation and Graph Traversal
-Phase 3 aggregates individual `ReelSignal` items into an integrated `InterestState`, performs one-hop deterministic activation traversal across the `Identity/Skill Graph`, applies deterministic confidence bucketing (`Low`, `Medium`, `High`), and generates explainable inferred interest labels.
-
-### Commands
-```bash
-python -m src.infer --reels R1
-python -m src.infer --reels R1,R2
-python -m src.infer --reels R1,R2,R3
-python -m src.infer --reels R1,R2,R3,R4
-python -m src.infer --reels R5,R6,R7
-python -m src.infer --case trap_java_to_swe
-python -m src.infer --case non_trap_gaming_only
-python -m src.infer --all-checkpoints
-```
-
-## Phase 4 — Candidate Retrieval
-Phase 4 retrieves candidate Reels using topical and identity-adjacent graph signals. It combines Source A (topical matching) and Source B (graph identity-adjacent activation) into a unified shortlisted candidate catalog.
-
-### Commands
-```bash
-python -m src.retrieve --reels R1
-python -m src.retrieve --reels R1,R2
-python -m src.retrieve --reels R1,R2,R3
-python -m src.retrieve --reels R1,R2,R3,R4
-python -m src.retrieve --reels R5,R6,R7
-python -m src.retrieve --case trap_java_to_swe
-python -m src.retrieve --case non_trap_gaming_only
-python -m src.retrieve --all-checkpoints
-```
-
-## Phase 5 — Safety/Quality/Hype Gate
-Phase 5 filters retrieved candidates using a deterministic safety/quality/hype gate. It rejects hype content before ranking and does not use candidate reference scores as live gate truth. It enforces hard denylists and concept-anchor thresholds while allowing legitimate educational listicles (`T97`) to pass.
-
-### Commands
-```bash
-python -m src.gate --reels R1,R2,R3,R4
-python -m src.gate --reels R5,R6,R7
-python -m src.gate --case trap_java_to_swe
-python -m src.gate --case non_trap_gaming_only
-python -m src.gate --all-checkpoints
-```
-
-## Phase 6 — Ranking, Explanation, and Final Output
-Phase 6 produces the final required output using the deterministic real pipeline. It ranks gated candidates using heuristic weights (`HEURISTIC_WEIGHTS_V1`), computes goal-stage fit and overgeneralization penalties, synthesizes explainable text, and formats output blocks. Stub mode remains available for regression and demo safety.
-
-### Commands
-```bash
+# Final Trap Case (Real Pipeline)
 python -m src.run --case trap_java_to_swe --mode real
+
+# Gaming Non-Trap Case (Proves zero SWE leakage)
 python -m src.run --case non_trap_gaming_only --mode real
-python -m src.run --reels R1 --mode real
-python -m src.run --reels R1,R2 --mode real
+
+# Arbitrary Reel Sequences
 python -m src.run --reels R1,R2,R3 --mode real
+
+# All Standard Checkpoints
 python -m src.run --all-checkpoints --mode real
-python -m src.run --case trap_java_to_swe --mode stub
 ```
 
-## Phase 7 — Baselines and Demo Harness
-Phase 7 produces deterministic baselines and a judge-facing demo harness. It evaluates naive surface topic-only and token keyword similarity baselines, proves that naive systems fail the trap, and generates structured demo traces, reports, and offline HTML presentation panels. It does not change the core recommendation logic.
+---
 
-### Commands
-```bash
-python -m src.demo --all
-python -m src.demo --case trap_java_to_swe
-python -m src.demo --case non_trap_gaming_only
+## Standard Contract Output Format
+All generated recommendations strictly adhere to the standard contract schema:
+```text
+CURRENT REEL: session: R1, R2, R3, R4
+INTEREST DETECTED: Software engineering culture and early career preparation
+WHY: Java meme shows programming humor; software-engineer lifestyle Reel shows role curiosity; coding interview joke shows career-preparation interest; laptop comparison shows interest in developer tooling.
+RECOMMENDED TECH REEL: How a junior software engineer ships a small feature
+CATEGORY: Career
+WHY THIS RECOMMENDATION: It matches the inferred software-engineering identity and career curiosity, rather than overfitting to the Java keyword from the meme.
+DIFFICULTY: Beginner
+CONFIDENCE: High
 ```
-
-## Current Phase Status
-- **Current Phase**: Phase 7 (Baselines, Demo Trace, and Final Presentation Harness)
-- **Status**: COMPLETE
